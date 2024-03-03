@@ -1,0 +1,16 @@
+@font-face {
+    font-family: montserrat;
+    src: url(/assets/fonts/Montserrat-VariableFont_wght.ttf);
+}
+
+@font-face {
+    font-family: genos;
+    src: url(/assets/fonts/Genos-VariableFont_wght.ttf);
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background: rgba(217, 217, 217, 1);
+}
