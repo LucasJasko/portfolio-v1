@@ -1,31 +1,25 @@
 .career-cards-area {
-    z-index: -1;
     background: linear-gradient(
         180deg,
         rgba(217, 217, 217, 1) 0%,
         rgba(223, 223, 223, 1) 51%,
         rgba(170, 170, 170, 1) 100%
     );
-    margin: 0;
+    padding-top: 100vh;
     height: 100vh;
     width: 100%;
-    left: 0;
-    top: 0;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 .card-display {
-    width: 60%;
-    max-width: 900px;
-    height: 600px;
     display: flex;
+    justify-content: center;
+    max-width: 900px;
+    height: 60%;
     gap: 20px;
 }
-.box2020,
-.box2021,
-.box2022,
-.box2023 {
+.box {
     border-radius: 20px;
     box-shadow: 0px 0px 14px 8px rgb(0 0 0 / 0.05);
     height: 100%;
@@ -82,10 +76,7 @@
 #menu-btn {
     display: none;
 }
-.box2020:hover,
-.box2021:hover,
-.box2022:hover,
-.box2023:hover {
+.box:hover {
     .year {
         opacity: 1;
         transform: translateY(-50px);
@@ -112,14 +103,5 @@
         opacity: 1;
         transform: translateY(-50px);
         width: 110px;
-    }
-}
-
-@keyframes scroll-opacity {
-    from {
-        opacity: 1;
-    }
-    to {
-        opacity: 0;
     }
 }
