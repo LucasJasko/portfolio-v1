@@ -8,9 +8,12 @@
     src: url(/assets/fonts/Genos-VariableFont_wght.ttf);
 }
 
+* {
+    cursor: none;
+}
+
 body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    background: rgba(217, 217, 217, 1);
 }
