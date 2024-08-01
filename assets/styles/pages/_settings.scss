@@ -17,3 +17,13 @@ body {
     padding: 0;
     box-sizing: border-box;
 }
+
+.mouse {
+    position: absolute;
+    overflow: hidden;
+    z-index: 50;
+    height: 20px;
+    width: 20px;
+    clip-path: polygon(1% 1%, 100% 50%, 60% 60%, 50% 100%);
+    background: rgb(234, 255, 0);
+}
