@@ -18,7 +18,7 @@ const mouse = document.querySelector(".mouse");
 window.addEventListener("mousemove", (e) => {
     let windowWidht = window.innerWidth;
     let windowHeight = window.innerHeight;
-
+    
     if (e.x > 5 && e.x < windowWidht && e.y > 5 && e.y < windowHeight - 5) {
         mouse.style.visibility = "visible";
         mouse.style.top = e.y + "px";
@@ -31,6 +31,16 @@ window.addEventListener("mousemove", (e) => {
 window.addEventListener("scroll", () => {
     mouse.style.position = "fixed";
 });
+
+const timeline = document.querySelector(".timeline-area")
+timeline.addEventListener("mouseover", () => {
+    mouse.style.background = "black";
+})
+
+const welcomeArea = document.querySelector(".welcome-area")
+welcomeArea.addEventListener("mouseover", () => {
+    mouse.style.background = "yellow";
+})
 
 
 let ScrollTrigger = true;
@@ -64,3 +74,5 @@ window.addEventListener("scroll", () => {
         }
     }
 });
+
+window.addEventListener()
