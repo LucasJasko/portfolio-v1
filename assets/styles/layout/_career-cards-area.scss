@@ -1,106 +1,106 @@
 .career-cards-area {
-    z-index: 2;
-    height: 100vh;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    position: absolute;
-    bottom: 0;
+  scroll-snap-align: start;
+  z-index: 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  bottom: 0;
 
-    .career-cards-area-title {
-        margin-bottom: 50px;
+  .career-cards-area-title {
+    margin-bottom: 50px;
 
-        h2 {
-            color: whitesmoke;
-            font-size: 2rem;
-            text-transform: uppercase;
-        }
+    h2 {
+      color: whitesmoke;
+      margin: 0;
+      font-size: 2rem;
+      text-transform: uppercase;
     }
-    .card-display {
-        display: flex;
-        justify-content: center;
-        max-width: 900px;
-        height: 60%;
-        gap: 20px;
+  }
+  .card-display {
+    display: flex;
+    justify-content: center;
+    max-width: 900px;
+    height: 60%;
+    gap: 20px;
 
-        .box {
-            border-radius: 20px;
-            box-shadow: 0px 0px 14px 8px rgb(0 0 0 / 0.05);
-            height: 100%;
-            width: 110px;
-            position: relative;
-            transition: 0.3s ease;
-            &:hover {
-                .year {
-                    opacity: 1;
-                    transform: translateY(-50px);
-                }
-                .hback {
-                    opacity: 0.5;
-                }
-            }
-        }
-        .box2020 {
-            background: url(/assets/images/Freelance\ Lucas.jpg) center/cover;
-        }
-        .box2021 {
-            background: url(/assets/images/Logo\ Ikea.jpg) center/cover;
-        }
-        .box2022 {
-            background: url(/assets/images/Logo\ Alive.jpg) center/cover;
-        }
-        .box2023 {
-            background: url(/assets/images/Logo\ ECCL.jpg) center/cover;
+    .box {
+      border-radius: 20px;
+      box-shadow: 0px 0px 14px 8px rgb(0 0 0 / 0.05);
+      height: 100%;
+      width: 110px;
+      position: relative;
+      transition: 0.3s ease;
+      &:hover {
+        .year {
+          opacity: 1;
+          transform: translateY(-50px);
         }
         .hback {
-            width: 110px;
-            background: linear-gradient(
-                180deg,
-                rgba(255, 255, 255, 0) 32%,
-                rgba(0, 0, 0, 1) 100%
-            );
-            opacity: 0;
-            transition: 0.3s ease;
-            position: absolute;
-            top: 0;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            border-radius: 20px;
+          opacity: 0.5;
         }
-        
+      }
+    }
+    .box2020 {
+      background: url(/assets/images/Freelance\ Lucas.jpg) center/cover;
+    }
+    .box2021 {
+      background: url(/assets/images/Logo\ Ikea.jpg) center/cover;
+    }
+    .box2022 {
+      background: url(/assets/images/Logo\ Alive.jpg) center/cover;
+    }
+    .box2023 {
+      background: url(/assets/images/Logo\ ECCL.jpg) center/cover;
+    }
+    .hback {
+      width: 110px;
+      background: linear-gradient(
+        180deg,
+        rgba(255, 255, 255, 0) 32%,
+        rgba(0, 0, 0, 1) 100%
+      );
+      opacity: 0;
+      transition: 0.3s ease;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      border-radius: 20px;
+    }
+
+    .year {
+      margin: 0;
+      width: 110px;
+      text-align: center;
+      position: absolute;
+      bottom: 0;
+      transition: 0.3s ease;
+      font-family: montserrat;
+      color: rgb(220, 220, 220);
+      letter-spacing: 2px;
+      opacity: 0;
+      transform: translateY(0px);
+    }
+    .input {
+      display: none;
+
+      &:checked + label {
+        .box {
+          width: 600px;
+        }
+        .hback {
+          opacity: 0.5;
+          width: 600px;
+        }
         .year {
-            margin: 0;
-            width: 110px;
-            text-align: center;
-            position: absolute;
-            bottom: 0;
-            transition: 0.3s ease;
-            font-family: montserrat;
-            color: rgb(220, 220, 220);
-            letter-spacing: 2px;
-            opacity: 0;
-            transform: translateY(0px);
+          opacity: 1;
+          transform: translateY(-50px);
+          width: 110px;
         }
-        .input {
-            display: none;
-            
-            &:checked + label {
-                .box {
-                    width: 600px;
-                }
-                .hback {
-                    opacity: 0.5;
-                    width: 600px;
-                }
-                .year {
-                    opacity: 1;
-                    transform: translateY(-50px);
-                    width: 110px;
-                }
-            }
-        }
-    }    
+      }
+    }
+  }
 }

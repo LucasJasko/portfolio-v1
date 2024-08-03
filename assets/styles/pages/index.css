@@ -7,7 +7,6 @@
   src: url(/assets/fonts/Genos-VariableFont_wght.ttf);
 }
 * {
-  cursor: none;
   font-family: montserrat;
 }
 
@@ -16,65 +15,19 @@ body {
   padding: 0;
   box-sizing: border-box;
 }
-body .mouse {
-  position: absolute;
-  overflow: hidden;
-  z-index: 10;
-  height: 20px;
-  width: 20px;
-  -webkit-clip-path: polygon(1% 1%, 100% 50%, 60% 60%, 50% 100%);
-          clip-path: polygon(1% 1%, 100% 50%, 60% 60%, 50% 100%);
-  background: rgb(234, 255, 0);
-}
 
-.welcome-area {
-  width: 100%;
-  height: 200vh;
-  overflow: hidden;
-  position: relative;
-}
-
-.beamdisplay {
-  z-index: 0;
-  position: fixed;
-  overflow: hidden;
-  width: 100%;
+.snap-container {
+  scroll-snap-type: y mandatory;
+  overflow-y: scroll;
   height: 100vh;
-  background: #0d0c14;
 }
 
-.beam {
-  position: absolute;
-  top: var(--beamt);
-  left: var(--beaml);
-  border: 20px solid rgba(0, 0, 0, 0.696);
-  border-radius: 10000px;
-  animation: beamanim 5s ease-in-out forwards;
-  transform: translateX(-50%) translateY(-50%);
-  width: 0px;
-  height: 0px;
-}
-
-@keyframes beamanim {
-  0% {
-    opacity: 0;
-    border: 0px solid rgba(0, 0, 0, 0.696);
-  }
-  20% {
-    opacity: 0.3;
-  }
-  100% {
-    width: 1500px;
-    height: 1500px;
-    border: 100px solid rgba(0, 0, 0, 0.696);
-    opacity: 0;
-  }
-}
 .intro-area {
+  scroll-snap-align: start;
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
 }
 .intro-area .intro-container {
   display: grid;
@@ -167,15 +120,51 @@ body .mouse {
   }
 }
 
-.career-cards-area {
-  z-index: 2;
-  height: 100vh;
+.beam-display {
+  z-index: -1;
+  position: fixed;
+  overflow: hidden;
   width: 100%;
+  height: 100%;
+  background: #0d0c14;
+  scroll-snap-align: start;
+}
+
+.beam {
+  position: absolute;
+  top: var(--beamt);
+  left: var(--beaml);
+  border: 20px solid rgba(0, 0, 0, 0.696);
+  border-radius: 10000px;
+  animation: beamanim 5s ease-in-out forwards;
+  transform: translateX(-50%) translateY(-50%);
+  width: 0px;
+  height: 0px;
+}
+
+@keyframes beamanim {
+  0% {
+    opacity: 0;
+    border: 0px solid rgba(0, 0, 0, 0.696);
+  }
+  20% {
+    opacity: 0.3;
+  }
+  100% {
+    width: 1500px;
+    height: 1500px;
+    border: 100px solid rgba(0, 0, 0, 0.696);
+    opacity: 0;
+  }
+}
+.career-cards-area {
+  scroll-snap-align: start;
+  z-index: 0;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  position: absolute;
   bottom: 0;
 }
 .career-cards-area .career-cards-area-title {
@@ -183,6 +172,7 @@ body .mouse {
 }
 .career-cards-area .career-cards-area-title h2 {
   color: whitesmoke;
+  margin: 0;
   font-size: 2rem;
   text-transform: uppercase;
 }
@@ -320,6 +310,36 @@ body .mouse {
 .timeline-area .eccl-area {
   grid-area: b;
 }
+.timeline-area .eccl-area .eccl-area-card-display {
+  display: flex;
+  justify-content: space-evenly;
+}
+.timeline-area .eccl-area .eccl-area-card-display .eccl-area-card {
+  position: relative;
+  border: 2px solid rgb(44, 44, 44);
+  border-radius: 5px;
+  background: radial-gradient(rgb(255, 255, 255), rgba(80, 52, 17, 0.664));
+  height: 300px;
+  width: 200px;
+  text-align: center;
+  transform-style: preserve-3d;
+  transition: all 1s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.timeline-area .eccl-area .eccl-area-card-display .eccl-area-card:hover {
+  transform: rotateY(180deg);
+}
+.timeline-area .eccl-area .eccl-area-card-display .eccl-area-card .eccl-area-card-front {
+  position: absolute;
+  backface-visibility: hidden;
+}
+.timeline-area .eccl-area .eccl-area-card-display .eccl-area-card .eccl-area-card-back {
+  position: absolute;
+  backface-visibility: hidden;
+  transform: rotateY(180deg);
+}
 .timeline-area .eccl-area img {
   position: absolute;
   transform: translateX(-50%) translateY(-50%);
@@ -333,7 +353,8 @@ body .mouse {
 .timeline-area .alive-area {
   grid-area: d;
 }
-.timeline-area .freelance-area, .timeline-area .ikea-area {
+.timeline-area .freelance-area,
+.timeline-area .ikea-area {
   grid-area: e;
 }
 .timeline-area .bts-area {

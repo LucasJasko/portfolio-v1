@@ -1,29 +1,25 @@
 @font-face {
-    font-family: montserrat;
-    src: url(/assets/fonts/Montserrat-VariableFont_wght.ttf);
+  font-family: montserrat;
+  src: url(/assets/fonts/Montserrat-VariableFont_wght.ttf);
 }
 
 @font-face {
-    font-family: genos;
-    src: url(/assets/fonts/Genos-VariableFont_wght.ttf);
+  font-family: genos;
+  src: url(/assets/fonts/Genos-VariableFont_wght.ttf);
 }
 
 * {
-    cursor: none;
-    font-family: montserrat;
+  font-family: montserrat;
 }
 
 body {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    .mouse {
-        position: absolute;
-        overflow: hidden;
-        z-index: 10;
-        height: 20px;
-        width: 20px;
-        clip-path: polygon(1% 1%, 100% 50%, 60% 60%, 50% 100%);
-        background: rgb(234, 255, 0);
-    }
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.snap-container {
+  scroll-snap-type: y mandatory;
+  overflow-y: scroll;
+  height: 100vh;
 }
