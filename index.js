@@ -10,22 +10,21 @@ const beamMaker = () => {
     beam.remove();
   }, 6000);
 };
-
 setInterval(beamMaker, 3000);
 
+const BlacklineArea = document.querySelector(".blackline-area");
 let ScrollTrigger = true;
 
-const BlacklineArea = document.querySelector(".blackline-area");
-
 window.addEventListener("scroll", () => {
+  scrollTop = window.scrollY / document.body.offsetHeight;
   scrollLvl =
     (window.scrollY + window.innerHeight) / document.body.offsetHeight;
-  scrollTop = window.scrollY / document.body.offsetHeight;
-  console.log(window.scrollY);
 
-  if (scrollTop > 0.25) {
+  console.log(scrollTop);
+
+  if (scrollTop >= 0.16) {
     BlacklineArea.style.position = "fixed";
-    BlacklineArea.style.width = "25%";
+    BlacklineArea.style.width = "15%";
     BlacklineArea.style.top = "0";
     BlacklineArea.style.left = "0";
     if (ScrollTrigger) {
@@ -39,7 +38,7 @@ window.addEventListener("scroll", () => {
   if (PositionDot) {
     PositionDot.style.top = (scrollTop - 0.1) * 100 + "%";
   }
-  if (scrollTop < 0.25) {
+  if (scrollTop < 0.16 || scrollLvl > 0.67) {
     BlacklineArea.style.position = "static";
     BlacklineArea.style.width = "100%";
     ScrollTrigger = true;

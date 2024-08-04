@@ -1,5 +1,4 @@
 .career-cards-area {
-  scroll-snap-align: start;
   z-index: 0;
   height: 100vh;
   display: flex;
@@ -42,13 +41,13 @@
         }
       }
     }
-    .box2020 {
+    .box2017 {
       background: url(/assets/images/Freelance\ Lucas.jpg) center/cover;
     }
-    .box2021 {
+    .box2019 {
       background: url(/assets/images/Logo\ Ikea.jpg) center/cover;
     }
-    .box2022 {
+    .box2021 {
       background: url(/assets/images/Logo\ Alive.jpg) center/cover;
     }
     .box2023 {
@@ -71,7 +70,9 @@
       border-radius: 20px;
     }
 
-    .year {
+    .year,
+    .title {
+      height: 23px;
       margin: 0;
       width: 110px;
       text-align: center;
@@ -84,6 +85,14 @@
       opacity: 0;
       transform: translateY(0px);
     }
+    .title {
+      text-transform: uppercase;
+      letter-spacing: 5px;
+      font-weight: 800;
+      width: 95%;
+      text-align: right;
+    }
+
     .input {
       display: none;
 
@@ -96,9 +105,12 @@
           width: 600px;
         }
         .year {
+          width: 110px;
+        }
+        .year,
+        .title {
           opacity: 1;
           transform: translateY(-50px);
-          width: 110px;
         }
       }
     }

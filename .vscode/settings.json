@@ -1,3 +1,11 @@
 {
-    "liveServer.settings.port": 5501
+  "liveServer.settings.port": 5501,
+
+  "workbench.colorCustomizations": {
+    "menu.background": "#2e333b2a", //context menu
+    "menu.selectionBackground": "#42475049", //context menu hover
+    "editorWidget.background": "#51586320", //widget and tooltip
+    "quickInput.background": "#2e333b00", //command center drop down menu
+    "notifications.background": "#29303bd7" //Notification background color.
+  }
 }

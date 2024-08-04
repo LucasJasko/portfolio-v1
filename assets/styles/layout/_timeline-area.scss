@@ -1,14 +1,15 @@
 .timeline-area {
   display: grid;
-  grid-template-columns: 25% 75%;
-  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-columns: 15% 85%;
+  grid-template-rows: 1fr 1fr 1fr 1fr 0.5fr 0.5fr 1fr;
   grid-template-areas:
     "a b"
     "a c"
     "a d"
     "a e"
     "a f"
-    "a g";
+    "a g"
+    "a h";
   position: relative;
   background: linear-gradient(
     360deg,
@@ -16,6 +17,8 @@
     rgb(223, 223, 223) 97%,
     rgba(170, 170, 170, 1) 100%
   );
+  border-radius: 50px;
+  overflow: hidden;
 
   .blackline-area {
     grid-area: a;
@@ -64,94 +67,159 @@
     height: 100vh;
     // border: 1px solid red;
     position: relative;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
 
-    h3 {
-      text-align: center;
-    }
-  }
-
-  .eccl-area {
-    grid-area: b;
-
-    .eccl-area-card-display {
+    .area-title {
+      height: 25%;
+      width: 100%;
       display: flex;
-      justify-content: space-evenly;
-      .eccl-area-card {
-        position: relative;
-        border: 2px solid rgb(44, 44, 44);
-        border-radius: 5px;
-        background: radial-gradient(
-          rgb(255, 255, 255),
-          rgba(80, 52, 17, 0.664)
-        );
-        height: 300px;
-        width: 200px;
+      justify-content: center;
+      align-items: center;
+
+      h3 {
         text-align: center;
-        transform-style: preserve-3d;
-        transition: all 1s ease;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        color: whitesmoke;
+        font-size: 2.5rem;
+        text-transform: uppercase;
+        letter-spacing: 5px;
+      }
+    }
+
+    .area-card-display {
+      height: 50%;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-evenly;
+      .card-container {
+        height: 100%;
+        max-height: 400px;
+        .card {
+          position: relative;
+          border-radius: 10px;
+          background-color: #f5f5f5;
+          box-shadow: 0px 0px 10px 0px;
+          height: 100%;
+          width: 250px;
+          text-align: center;
+          transform-style: preserve-3d;
+          transition: all 0.5s ease;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          .card-front {
+            position: absolute;
+            backface-visibility: hidden;
+          }
+          .card-back {
+            position: absolute;
+            backface-visibility: hidden;
+            transform: rotateY(180deg);
+          }
+        }
         &:hover {
-          transform: rotateY(180deg);
-        }
-        .eccl-area-card-front {
-          position: absolute;
-          backface-visibility: hidden;
-        }
-        .eccl-area-card-back {
-          position: absolute;
-          backface-visibility: hidden;
-          transform: rotateY(180deg);
+          .card {
+            transform: rotateY(180deg) scale(120%);
+          }
         }
       }
     }
 
-    img {
-      position: absolute;
-      transform: translateX(-50%) translateY(-50%);
-      top: 80%;
-      left: 70%;
-      width: 400px;
+    .area-button {
+      height: 25%;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      button {
+        height: 50px;
+        width: 200px;
+        outline-style: none;
+        border: none;
+        border-radius: 8px;
+        transition: 0.3s;
+        cursor: pointer;
+
+        a {
+          text-decoration: none;
+          color: black;
+          font-size: 1rem;
+          font-weight: 700;
+          text-transform: uppercase;
+        }
+        &:hover {
+          background-color: black;
+          transform: scale(110%);
+          a {
+            color: whitesmoke;
+          }
+        }
+      }
     }
   }
 
+  .eccl-area {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)),
+      url(/assets/images/Background\ ECCL.jpg) center/cover;
+    grid-area: b;
+  }
+
   .north-east-area {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)),
+      url(/assets/images/Background\ North\ East.jpg) center/cover;
     grid-area: c;
   }
 
   .alive-area {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)),
+      url(/assets/images/Background\ ALIVE.jpg) center/cover;
     grid-area: d;
   }
 
-  .freelance-area,
   .ikea-area {
     grid-area: e;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)),
+      url(/assets/images/Background\ IKEA.jpg) center/cover;
   }
 
   .bts-area {
+    height: 50vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)),
+      url(/assets/images/Background\ BTS.jpg) center/cover;
     grid-area: f;
+    .bts-area-title {
+      height: 30%;
+      h3 {
+        font-size: 1.5rem;
+      }
+    }
+  }
+
+  .freelance-area {
+    height: 50vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)),
+      url(/assets/images/Background\ Freelance\ 1.JPG) center/cover;
+    grid-area: g;
+    .freelance-area-title {
+      height: 30%;
+    }
   }
 
   .bac-area {
     position: relative;
-    grid-area: g;
+    grid-area: h;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)),
+      url(/assets/images/Background\ BAC.png) center/cover;
 
     .bac-pic {
-      border: 10px solid rgb(97, 75, 55);
-      max-width: 400px;
-      transform: rotate(25deg);
+      border: 5px solid rgb(97, 75, 55);
+      max-width: 270px;
       position: absolute;
-      top: 200px;
-      right: 200px;
-    }
-
-    .high-school-pic {
-      border-radius: 20px;
-      position: absolute;
-      left: 100px;
-      bottom: 120px;
-      height: 250px;
+      bottom: 4%;
+      right: 12%;
     }
   }
 }

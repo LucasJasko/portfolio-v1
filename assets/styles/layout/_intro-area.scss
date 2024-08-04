@@ -1,5 +1,4 @@
 .intro-area {
-  scroll-snap-align: start;
   height: 100vh;
   display: flex;
   justify-content: center;
@@ -9,7 +8,7 @@
     display: grid;
     grid-template-columns: 25% 75%;
     min-height: 335px;
-    width: 80%;
+    width: 75%;
     max-width: 1500px;
 
     .intro-img {
@@ -55,11 +54,7 @@
         text-transform: uppercase;
         color: rgba(255, 255, 255, 0);
         background-clip: text;
-        background-image: linear-gradient(
-          30deg,
-          rgb(91, 154, 99),
-          rgb(82, 128, 192)
-        );
+        background-image: linear-gradient(to top, #d9afd9 0%, #97d9e1 100%);
       }
 
       p {

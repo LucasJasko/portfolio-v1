@@ -23,7 +23,6 @@ body {
 }
 
 .intro-area {
-  scroll-snap-align: start;
   height: 100vh;
   display: flex;
   justify-content: center;
@@ -33,7 +32,7 @@ body {
   display: grid;
   grid-template-columns: 25% 75%;
   min-height: 335px;
-  width: 80%;
+  width: 75%;
   max-width: 1500px;
 }
 .intro-area .intro-container .intro-img {
@@ -80,7 +79,7 @@ body {
   color: rgba(255, 255, 255, 0);
   -webkit-background-clip: text;
           background-clip: text;
-  background-image: linear-gradient(30deg, rgb(91, 154, 99), rgb(82, 128, 192));
+  background-image: linear-gradient(to top, #d9afd9 0%, #97d9e1 100%);
 }
 .intro-area .intro-container .intro-text p {
   font-size: 1.5rem;
@@ -158,7 +157,6 @@ body {
   }
 }
 .career-cards-area {
-  scroll-snap-align: start;
   z-index: 0;
   height: 100vh;
   display: flex;
@@ -198,13 +196,13 @@ body {
 .career-cards-area .card-display .box:hover .hback {
   opacity: 0.5;
 }
-.career-cards-area .card-display .box2020 {
+.career-cards-area .card-display .box2017 {
   background: url(/assets/images/Freelance\ Lucas.jpg) center/cover;
 }
-.career-cards-area .card-display .box2021 {
+.career-cards-area .card-display .box2019 {
   background: url(/assets/images/Logo\ Ikea.jpg) center/cover;
 }
-.career-cards-area .card-display .box2022 {
+.career-cards-area .card-display .box2021 {
   background: url(/assets/images/Logo\ Alive.jpg) center/cover;
 }
 .career-cards-area .card-display .box2023 {
@@ -222,7 +220,9 @@ body {
   right: 0;
   border-radius: 20px;
 }
-.career-cards-area .card-display .year {
+.career-cards-area .card-display .year,
+.career-cards-area .card-display .title {
+  height: 23px;
   margin: 0;
   width: 110px;
   text-align: center;
@@ -235,6 +235,13 @@ body {
   opacity: 0;
   transform: translateY(0px);
 }
+.career-cards-area .card-display .title {
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  font-weight: 800;
+  width: 95%;
+  text-align: right;
+}
 .career-cards-area .card-display .input {
   display: none;
 }
@@ -246,18 +253,23 @@ body {
   width: 600px;
 }
 .career-cards-area .card-display .input:checked + label .year {
+  width: 110px;
+}
+.career-cards-area .card-display .input:checked + label .year,
+.career-cards-area .card-display .input:checked + label .title {
   opacity: 1;
   transform: translateY(-50px);
-  width: 110px;
 }
 
 .timeline-area {
   display: grid;
-  grid-template-columns: 25% 75%;
-  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
-  grid-template-areas: "a b" "a c" "a d" "a e" "a f" "a g";
+  grid-template-columns: 15% 85%;
+  grid-template-rows: 1fr 1fr 1fr 1fr 0.5fr 0.5fr 1fr;
+  grid-template-areas: "a b" "a c" "a d" "a e" "a f" "a g" "a h";
   position: relative;
   background: linear-gradient(360deg, rgb(238, 238, 238) 0%, rgb(223, 223, 223) 97%, rgb(170, 170, 170) 100%);
+  border-radius: 50px;
+  overflow: hidden;
 }
 .timeline-area .blackline-area {
   grid-area: a;
@@ -303,79 +315,252 @@ body {
 .timeline-area .timelines {
   height: 100vh;
   position: relative;
-}
-.timeline-area .timelines h3 {
-  text-align: center;
-}
-.timeline-area .eccl-area {
-  grid-area: b;
-}
-.timeline-area .eccl-area .eccl-area-card-display {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
 }
-.timeline-area .eccl-area .eccl-area-card-display .eccl-area-card {
-  position: relative;
-  border: 2px solid rgb(44, 44, 44);
-  border-radius: 5px;
-  background: radial-gradient(rgb(255, 255, 255), rgba(80, 52, 17, 0.664));
-  height: 300px;
-  width: 200px;
-  text-align: center;
-  transform-style: preserve-3d;
-  transition: all 1s ease;
+.timeline-area .timelines .area-title {
+  height: 25%;
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.timeline-area .eccl-area .eccl-area-card-display .eccl-area-card:hover {
-  transform: rotateY(180deg);
+.timeline-area .timelines .area-title h3 {
+  text-align: center;
+  color: whitesmoke;
+  font-size: 2.5rem;
+  text-transform: uppercase;
+  letter-spacing: 5px;
 }
-.timeline-area .eccl-area .eccl-area-card-display .eccl-area-card .eccl-area-card-front {
+.timeline-area .timelines .area-card-display {
+  height: 50%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.timeline-area .timelines .area-card-display .card-container {
+  height: 100%;
+  max-height: 400px;
+}
+.timeline-area .timelines .area-card-display .card-container .card {
+  position: relative;
+  border-radius: 10px;
+  background-color: #f5f5f5;
+  box-shadow: 0px 0px 10px 0px;
+  height: 100%;
+  width: 250px;
+  text-align: center;
+  transform-style: preserve-3d;
+  transition: all 0.5s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.timeline-area .timelines .area-card-display .card-container .card .card-front {
   position: absolute;
   backface-visibility: hidden;
 }
-.timeline-area .eccl-area .eccl-area-card-display .eccl-area-card .eccl-area-card-back {
+.timeline-area .timelines .area-card-display .card-container .card .card-back {
   position: absolute;
   backface-visibility: hidden;
   transform: rotateY(180deg);
 }
-.timeline-area .eccl-area img {
-  position: absolute;
-  transform: translateX(-50%) translateY(-50%);
-  top: 80%;
-  left: 70%;
-  width: 400px;
+.timeline-area .timelines .area-card-display .card-container:hover .card {
+  transform: rotateY(180deg) scale(120%);
+}
+.timeline-area .timelines .area-button {
+  height: 25%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.timeline-area .timelines .area-button button {
+  height: 50px;
+  width: 200px;
+  outline-style: none;
+  border: none;
+  border-radius: 8px;
+  transition: 0.3s;
+  cursor: pointer;
+}
+.timeline-area .timelines .area-button button a {
+  text-decoration: none;
+  color: black;
+  font-size: 1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+.timeline-area .timelines .area-button button:hover {
+  background-color: black;
+  transform: scale(110%);
+}
+.timeline-area .timelines .area-button button:hover a {
+  color: whitesmoke;
+}
+.timeline-area .eccl-area {
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), url(/assets/images/Background\ ECCL.jpg) center/cover;
+  grid-area: b;
 }
 .timeline-area .north-east-area {
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), url(/assets/images/Background\ North\ East.jpg) center/cover;
   grid-area: c;
 }
 .timeline-area .alive-area {
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), url(/assets/images/Background\ ALIVE.jpg) center/cover;
   grid-area: d;
 }
-.timeline-area .freelance-area,
 .timeline-area .ikea-area {
   grid-area: e;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), url(/assets/images/Background\ IKEA.jpg) center/cover;
 }
 .timeline-area .bts-area {
+  height: 50vh;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), url(/assets/images/Background\ BTS.jpg) center/cover;
   grid-area: f;
+}
+.timeline-area .bts-area .bts-area-title {
+  height: 30%;
+}
+.timeline-area .bts-area .bts-area-title h3 {
+  font-size: 1.5rem;
+}
+.timeline-area .freelance-area {
+  height: 50vh;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), url(/assets/images/Background\ Freelance\ 1.JPG) center/cover;
+  grid-area: g;
+}
+.timeline-area .freelance-area .freelance-area-title {
+  height: 30%;
 }
 .timeline-area .bac-area {
   position: relative;
-  grid-area: g;
+  grid-area: h;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), url(/assets/images/Background\ BAC.png) center/cover;
 }
 .timeline-area .bac-area .bac-pic {
-  border: 10px solid rgb(97, 75, 55);
-  max-width: 400px;
-  transform: rotate(25deg);
+  border: 5px solid rgb(97, 75, 55);
+  max-width: 270px;
   position: absolute;
-  top: 200px;
-  right: 200px;
+  bottom: 4%;
+  right: 12%;
 }
-.timeline-area .bac-area .high-school-pic {
-  border-radius: 20px;
+
+.skills-area {
+  height: 100vh;
+  background-color: rgba(255, 0, 0, 0);
+}
+
+.strengths-area {
+  height: 100vh;
+  background-color: rgb(241, 241, 241);
+  border-radius: 50px 50px 0 0;
+}
+
+.interests-area {
+  height: 100vh;
+  background-color: rgba(255, 0, 0, 0);
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  overflow: hidden;
+  border-radius: 0 0 50px 50px;
+}
+.interests-area .interests-container {
+  position: relative;
+  overflow: hidden;
+}
+.interests-area .interests-container img {
+  transition: 0.5s ease;
+  filter: brightness(1);
+  height: 100%;
+  transform: translateX(-30%) scale(110%);
+}
+.interests-area .interests-container .area-text {
+  text-transform: uppercase;
+  font-size: 2rem;
+  opacity: 0;
+  color: whitesmoke;
+  transition: 0.5s ease;
   position: absolute;
-  left: 100px;
-  bottom: 120px;
-  height: 250px;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  text-align: center;
+}
+.interests-area .interests-container:hover img {
+  filter: brightness(0.5) blur(4px);
+  transform: translateX(-30%) scale(100%);
+}
+.interests-area .interests-container:hover .area-text {
+  opacity: 1;
+}
+
+.contact-area {
+  z-index: 1;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.contact-area .contact-container {
+  height: 70%;
+  max-height: 600px;
+  width: 80%;
+  max-width: 1100px;
+  background-color: whitesmoke;
+  border-radius: 50px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 20% 80%;
+  grid-template-areas: "a b" "c c";
+  overflow: hidden;
+}
+.contact-area .contact-container .container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.contact-area .contact-container .container .text-area {
+  display: grid;
+  grid-template-columns: 10% 90%;
+  width: 85%;
+  border-radius: 40px;
+  color: white;
+  background: #0d0c14;
+  font-size: 1.7rem;
+}
+.contact-area .contact-container .container .text-area .icon-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #0d0c14;
+  border-radius: 30px;
+  margin: 10px;
+  background-color: whitesmoke;
+  height: 50px;
+  width: 50px;
+}
+.contact-area .contact-container .container .text-area p {
+  width: 100%;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.contact-area .contact-container .telephone-container {
+  grid-area: a;
+}
+.contact-area .contact-container .telephone-container p {
+  letter-spacing: 2px;
+}
+.contact-area .contact-container .email-container {
+  grid-area: b;
+}
+.contact-area .contact-container .form-container {
+  grid-area: c;
+  background-color: green;
 }/*# sourceMappingURL=index.css.map */
