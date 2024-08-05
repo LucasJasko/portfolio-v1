@@ -49,12 +49,25 @@
         animation-delay: 1.3s;
       }
       h1 span {
-        text-shadow: none;
-        font-size: 4rem;
+        color: #0e0d15;
+        font-size: 4.2rem;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
         text-transform: uppercase;
-        color: rgba(255, 255, 255, 0);
+        -webkit-text-stroke: 1px transparent;
+        -webkit-text-stroke-width: 4px;
+        background-color: #dcd9d4;
+        background-image: linear-gradient(
+            to bottom,
+            rgba(255, 255, 255, 0.5) 0%,
+            rgba(0, 0, 0, 0.5) 100%
+          ),
+          radial-gradient(
+            at 50% 0%,
+            rgba(255, 255, 255, 0.1) 0%,
+            rgba(0, 0, 0, 0.18) 50%
+          );
         background-clip: text;
-        background-image: linear-gradient(to top, #d9afd9 0%, #97d9e1 100%);
+        letter-spacing: 3px;
       }
 
       p {

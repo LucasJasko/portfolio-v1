@@ -20,9 +20,7 @@ window.addEventListener("scroll", () => {
   scrollLvl =
     (window.scrollY + window.innerHeight) / document.body.offsetHeight;
 
-  console.log(scrollTop);
-
-  if (scrollTop >= 0.16) {
+  if (scrollTop >= 0.166 && scrollLvl < 0.666) {
     BlacklineArea.style.position = "fixed";
     BlacklineArea.style.width = "15%";
     BlacklineArea.style.top = "0";
@@ -35,10 +33,12 @@ window.addEventListener("scroll", () => {
     }
   }
   const PositionDot = document.querySelector(".position-dot");
+  const Timeline = document.querySelector(".timeline-area");
   if (PositionDot) {
-    PositionDot.style.top = (scrollTop - 0.1) * 100 + "%";
+    PositionDot.style.top =
+      (window.scrollY / Timeline.clientHeight - 0.25) * 100 + "%";
   }
-  if (scrollTop < 0.16 || scrollLvl > 0.67) {
+  if (scrollTop < 0.166) {
     BlacklineArea.style.position = "static";
     BlacklineArea.style.width = "100%";
     ScrollTrigger = true;
@@ -46,5 +46,11 @@ window.addEventListener("scroll", () => {
     if (PositionDot) {
       PositionDot.remove();
     }
+  }
+  if (scrollLvl > 0.666) {
+    BlacklineArea.style.position = "absolute";
+    BlacklineArea.style.width = "100%";
+    BlacklineArea.style.top = "auto";
+    BlacklineArea.style.bottom = "0";
   }
 });

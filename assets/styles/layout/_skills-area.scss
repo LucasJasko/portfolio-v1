@@ -1,4 +1,91 @@
 .skills-area {
   height: 100vh;
   background-color: rgba(255, 0, 0, 0);
+  position: relative;
+  display: grid;
+  grid-template-columns: 50% 50%;
+
+  .skills-container {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    animation: autoRun 50s linear infinite;
+    @keyframes autoRun {
+      from {
+        transform: rotateZ(0deg);
+      }
+      to {
+        transform: rotateZ(360deg);
+      }
+    }
+    .skills-bubble {
+      color: #0d0c14;
+      background-color: whitesmoke;
+      height: 150px;
+      width: 150px;
+      border: 5px solid rgb(156, 156, 156);
+      border-radius: 100px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-transform: uppercase;
+      transition: 0.2s ease;
+      position: absolute;
+      transform: rotateZ(calc(((var(--position) - 1) * 60) * 1deg))
+        translateX(200px);
+      .skills-bubble-container {
+        animation: autoBack 50s linear infinite;
+        @keyframes autoBack {
+          from {
+            transform: rotateZ(0deg);
+          }
+          to {
+            transform: rotateZ(-360deg);
+          }
+        }
+      }
+      &:hover {
+        transform: rotateZ(calc(((var(--position) - 1) * 60) * 1deg))
+          translateX(200px) scale(110%);
+      }
+    }
+  }
+  .skills-bubble-img {
+    position: absolute;
+    top: 50%;
+    left: 25%;
+    transform: translateX(-50%) translateY(-50%);
+    img {
+      object-fit: cover;
+      height: 150px;
+      width: 150px;
+      border: 5px solid rgb(156, 156, 156);
+      border-radius: 100px;
+    }
+  }
+  .skills-text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .skills-text-container {
+      height: 70%;
+      width: 90%;
+      background-color: whitesmoke;
+      border-radius: 40px;
+      text-align: center;
+      h3 {
+        text-transform: uppercase;
+        font-size: 3rem;
+        font-weight: 300;
+        color: #7d5a3f;
+      }
+      p {
+        margin: 0 5%;
+        font-size: 1.2rem;
+      }
+    }
+  }
 }

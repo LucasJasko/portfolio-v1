@@ -27,6 +27,12 @@
       top: 0;
       left: 0;
       text-align: center;
+
+      p {
+        margin: auto;
+        width: 80%;
+        font-size: 1.5rem;
+      }
     }
     &:hover {
       img {

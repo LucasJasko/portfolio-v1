@@ -2,4 +2,46 @@
   height: 100vh;
   background-color: rgb(241, 241, 241);
   border-radius: 50px 50px 0 0;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .strengths-headband {
+    position: absolute;
+    width: 100%;
+    height: 100px;
+    background-color: #0d0c14;
+    top: 15%;
+  }
+  .strengths-container {
+    height: 80%;
+    max-width: 1600px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    text-align: center;
+    .strengths-item {
+      height: 100%;
+      margin: 0 40px 0 40px;
+      border: 4px solid #0d0c14;
+      border-radius: 20px;
+      position: relative;
+      h4 {
+        width: 100%;
+        text-transform: uppercase;
+        font-size: 1.5rem;
+        margin: 0;
+        position: absolute;
+        transform: translateX(-50%) translateY(-50%);
+        top: 13%;
+        left: 50%;
+        color: whitesmoke;
+      }
+      p {
+        position: absolute;
+        top: 30%;
+      }
+    }
+  }
 }
