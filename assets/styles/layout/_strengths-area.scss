@@ -1,47 +1,68 @@
 .strengths-area {
   height: 100vh;
-  background-color: rgb(241, 241, 241);
+  background-color: $color2;
   border-radius: 50px 50px 0 0;
   position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  @include DisplayJustifyAlign;
 
   .strengths-headband {
+    z-index: 1;
     position: absolute;
     width: 100%;
     height: 100px;
-    background-color: #0d0c14;
+    background: linear-gradient(
+      90deg,
+      rgba(216, 191, 170, 1) 15%,
+      rgba(166, 138, 124, 1) 35%,
+      rgba(121, 103, 93, 1) 58%,
+      rgba(79, 66, 53, 1) 80%
+    );
     top: 15%;
+    @include DisplayJustifyAlign;
+    text-align: center;
+    h4 {
+      width: 100%;
+      padding: 0 20px;
+      text-transform: uppercase;
+      font-size: 1.5rem;
+      margin: 0;
+      color: $color2;
+    }
   }
   .strengths-container {
+    z-index: 0;
+    display: flex;
+    justify-content: space-around;
     height: 80%;
-    max-width: 1600px;
-    width: 100%;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
     text-align: center;
     .strengths-item {
-      height: 100%;
-      margin: 0 40px 0 40px;
-      border: 4px solid #0d0c14;
+      background: $color3;
+      width: 20%;
+      border: 4px solid;
       border-radius: 20px;
-      position: relative;
-      h4 {
-        width: 100%;
-        text-transform: uppercase;
-        font-size: 1.5rem;
-        margin: 0;
-        position: absolute;
-        transform: translateX(-50%) translateY(-50%);
-        top: 13%;
-        left: 50%;
-        color: whitesmoke;
-      }
+      display: flex;
+      justify-content: center;
+      overflow-y: scroll;
+      scrollbar-width: none;
       p {
-        position: absolute;
-        top: 30%;
+        margin-top: 170px;
+        width: 80%;
+        font-weight: 600;
+        text-align: justify;
+        font-size: 1.1rem;
       }
+    }
+    .strength-1 {
+      border-color: #d8bfaa;
+    }
+    .strength-2 {
+      border-color: #a68a7c;
+    }
+    .strength-3 {
+      border-color: #79675d;
+    }
+    .strength-4 {
+      border-color: #4f4235;
     }
   }
 }

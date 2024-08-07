@@ -8,18 +8,31 @@
   src: url(/assets/fonts/Genos-VariableFont_wght.ttf);
 }
 
+@mixin DisplayJustifyAlign {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+$color1: #0d0c14;
+$color2: #f5f5f5;
+$color3: linear-gradient(
+  315deg,
+  rgba(207, 207, 207, 1) 0%,
+  rgba(242, 242, 242, 1) 15%,
+  rgba(235, 232, 232, 1) 35%,
+  rgba(215, 215, 215, 1) 50%,
+  rgba(222, 222, 222, 1) 65%,
+  rgba(242, 242, 242, 1) 85%,
+  rgba(207, 207, 207, 1) 100%
+);
+
 * {
-  font-family: montserrat;
+  font-family: montserrat, sans-serif;
 }
 
 body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-}
-
-.snap-container {
-  scroll-snap-type: y mandatory;
-  overflow-y: scroll;
-  height: 100vh;
 }
