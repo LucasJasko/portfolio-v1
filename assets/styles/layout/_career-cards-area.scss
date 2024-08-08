@@ -1,4 +1,4 @@
-.career-cards-area {
+#career-cards-area {
   z-index: 0;
   height: 100vh;
   @include DisplayJustifyAlign;
@@ -9,7 +9,7 @@
     margin-bottom: 50px;
 
     h2 {
-      color: whitesmoke;
+      color: $color2;
       margin: 0;
       font-size: 2rem;
       text-transform: uppercase;
@@ -78,7 +78,7 @@
       bottom: 0;
       transition: 0.3s ease;
       font-family: montserrat;
-      color: rgb(220, 220, 220);
+      color: $color2;
       letter-spacing: 2px;
       opacity: 0;
       transform: translateY(0px);

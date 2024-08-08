@@ -1,7 +1,7 @@
 const beamMaker = () => {
   const beam = document.createElement("span");
   beam.classList.add("beam");
-  document.querySelector(".beam-display").appendChild(beam);
+  document.getElementById("beam-display").appendChild(beam);
 
   beam.style.setProperty("--beamt", Math.random() * 100 + "%");
   beam.style.setProperty("--beaml", Math.random() * 100 + "%");
@@ -10,10 +10,13 @@ const beamMaker = () => {
     beam.remove();
   }, 6000);
 };
-setInterval(beamMaker, 3000);
-
 const BlacklineArea = document.querySelector(".blackline-area");
+const Timeline = document.getElementById("timeline-area");
+const NavBar = document.getElementById("navbar-area");
+const NavButton = document.querySelector(".navbar-button");
 let ScrollTrigger = true;
+
+setInterval(beamMaker, 3000);
 
 window.addEventListener("scroll", () => {
   scrollTop = window.scrollY / document.body.offsetHeight;
@@ -33,7 +36,7 @@ window.addEventListener("scroll", () => {
     }
   }
   const PositionDot = document.querySelector(".position-dot");
-  const Timeline = document.querySelector(".timeline-area");
+  console.log(Timeline.clientHeight);
   if (PositionDot) {
     PositionDot.style.top =
       (window.scrollY / Timeline.clientHeight - 0.25) * 100 + "%";
@@ -52,5 +55,13 @@ window.addEventListener("scroll", () => {
     BlacklineArea.style.width = "100%";
     BlacklineArea.style.top = "auto";
     BlacklineArea.style.bottom = "0";
+  }
+});
+
+NavButton.addEventListener("click", () => {
+  if (NavBar.style.transform === "translateY(-100%)") {
+    NavBar.style.transform = "translateY(0)";
+  } else {
+    NavBar.style.transform = "translateY(-100%)";
   }
 });
