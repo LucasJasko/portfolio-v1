@@ -14,6 +14,7 @@ const BlacklineArea = document.querySelector(".blackline-area");
 const Timeline = document.getElementById("timeline-area");
 const NavBar = document.getElementById("navbar-area");
 const NavButton = document.querySelector(".navbar-button");
+const NavButtonTxt = document.getElementById("nav-button-text");
 let ScrollTrigger = true;
 
 setInterval(beamMaker, 3000);
@@ -36,7 +37,6 @@ window.addEventListener("scroll", () => {
     }
   }
   const PositionDot = document.querySelector(".position-dot");
-  console.log(Timeline.clientHeight);
   if (PositionDot) {
     PositionDot.style.top =
       (window.scrollY / Timeline.clientHeight - 0.25) * 100 + "%";
@@ -61,7 +61,9 @@ window.addEventListener("scroll", () => {
 NavButton.addEventListener("click", () => {
   if (NavBar.style.transform === "translateY(-100%)") {
     NavBar.style.transform = "translateY(0)";
+    NavButtonTxt.innerHTML = "Hide";
   } else {
     NavBar.style.transform = "translateY(-100%)";
+    NavButtonTxt.innerHTML = "Menu";
   }
 });

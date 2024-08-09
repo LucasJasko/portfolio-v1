@@ -4,6 +4,7 @@
   position: relative;
   display: grid;
   grid-template-columns: 50% 50%;
+  overflow: hidden;
 
   .skills-container {
     height: 100%;
@@ -70,6 +71,60 @@
         margin: 0 5%;
         font-size: 1.3rem;
       }
+    }
+  }
+
+  @media screen and (max-width: 1200px) {
+    grid-template-columns: 100%;
+    grid-template-rows: 65% 35%;
+
+    .skills-bubble-img {
+      top: 32.5%;
+      left: 50%;
+    }
+
+    .skills-text {
+      .skills-text-container {
+        height: 90%;
+        width: 100%;
+        max-width: 90%;
+        overflow-y: scroll;
+        scrollbar-width: none;
+
+        h3 {
+          display: none;
+        }
+        p {
+          line-height: 30px;
+          height: 90%;
+        }
+      }
+    }
+  }
+  @media screen and (max-width: 650px) {
+    height: auto;
+    grid-template-rows: 50% 50%;
+    .skills-container {
+      margin: 0 auto;
+      width: 90%;
+      display: flex;
+      justify-content: space-evenly;
+      flex-wrap: wrap;
+      gap: 10px;
+      .skills-bubble {
+        position: static;
+        transform: rotateZ(0) translateX(0);
+        .skills-bubble-container {
+          transform: rotateZ(0);
+        }
+        &:hover {
+          transform: rotateZ(0) translateX(0) scale(110%);
+          border-color: green;
+        }
+      }
+    }
+    .skills-bubble-img {
+      display: none;
     }
   }
 }

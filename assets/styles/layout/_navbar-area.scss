@@ -6,7 +6,6 @@
   background-color: $color2;
   color: $color1;
   transition: 0.2s ease;
-  transform: translateY(-100%);
   border-bottom: 4px solid $color1;
   .navbar-container {
     height: 100%;
@@ -47,6 +46,12 @@
         background-color: $color1;
         border: 2px solid $color2;
         color: $color2;
+      }
+    }
+  }
+  @media screen and (max-width: 1050px) {
+    .navbar-container {
+      a {
       }
     }
   }

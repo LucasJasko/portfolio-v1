@@ -1,22 +1,21 @@
 #contact-area {
   z-index: 1;
-  height: 100vh;
+  height: auto;
   @include DisplayJustifyAlign;
 
   .contact-container {
-    height: 80%;
-    max-height: 700px;
+    margin: 20px;
+    min-height: 700px;
     width: 80%;
     max-width: 1100px;
     background-color: $color2;
     border-radius: 50px;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 20% 80%;
+    grid-template-rows: 1fr 1fr;
     grid-template-areas:
       "a b"
       "c c";
-    overflow: hidden;
 
     .container {
       @include DisplayJustifyAlign;
@@ -59,10 +58,10 @@
       grid-area: c;
 
       form {
-        height: 100%;
+        height: auto;
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
-        grid-template-rows: 20% 20% 45% 12%;
+        grid-template-rows: 20% 20% 45% 15%;
         grid-template-areas:
           "a a a"
           "b b b"
@@ -79,7 +78,7 @@
           }
           input {
             padding: 10px;
-            border: 4px solid $color1;
+            border: 3px solid $color1;
             border-radius: 40px;
             font-size: 1.1rem;
           }
@@ -96,7 +95,7 @@
           grid-area: b;
           justify-content: center;
           .form-part-2-container {
-            border: 4px solid $color1;
+            border: 3px solid $color1;
             border-radius: 40px;
             font-size: 1.1rem;
             min-width: 300px;
@@ -142,6 +141,56 @@
             &:hover {
               color: $color2;
               background-color: $color1;
+            }
+          }
+        }
+      }
+    }
+  }
+  @media screen and (max-width: 1300px) {
+    .contact-container {
+      width: 95%;
+      max-width: 100%;
+      .container {
+        .text-area {
+          min-width: 400px;
+        }
+      }
+    }
+  }
+  @media screen and (max-width: 1200px) {
+    .contact-container {
+      height: 95%;
+      max-height: 100%;
+      grid-template-columns: 1fr;
+      grid-template-rows: 15% 15% 70%;
+      grid-template-areas:
+        "a "
+        "b"
+        "c";
+    }
+  }
+  @media screen and (max-width: 600px) {
+    height: auto;
+    .contact-container {
+      width: 95%;
+      max-width: 100%;
+      .container {
+        .text-area {
+          font-size: 1rem;
+          min-width: 300px;
+        }
+      }
+      .form-container {
+        height: 100%;
+        form {
+          grid-template-rows: 1fr 20% 45% 10%;
+          .form-part-1 {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            input {
+              width: 70%;
             }
           }
         }

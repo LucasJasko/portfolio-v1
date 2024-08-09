@@ -1,9 +1,7 @@
 #career-cards-area {
-  z-index: 0;
   height: 100vh;
   @include DisplayJustifyAlign;
   flex-direction: column;
-  bottom: 0;
 
   .career-cards-area-title {
     margin-bottom: 50px;
@@ -18,6 +16,7 @@
   .card-display {
     display: flex;
     justify-content: center;
+    width: 80%;
     max-width: 900px;
     height: 60%;
     gap: 20px;
@@ -109,6 +108,50 @@
         .title {
           opacity: 1;
           transform: translateY(-50px);
+        }
+      }
+    }
+  }
+  @media screen and (max-width: 1050px) {
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 10% 90%;
+    justify-content: center;
+
+    .career-cards-area-title {
+      text-align: center;
+      margin-bottom: 0;
+    }
+
+    .card-display {
+      margin: 0 auto;
+      height: 100%;
+      width: 80%;
+      flex-direction: column;
+      .box {
+        height: 110px;
+        width: 100%;
+        .hback {
+          width: 100%;
+        }
+      }
+      .input {
+        &:checked + label {
+          .box {
+            width: 100%;
+            height: 250px;
+          }
+          .hback {
+            opacity: 0.5;
+            width: 100%;
+            height: 250px;
+          }
+          .year,
+          .title {
+            height: 20px;
+            opacity: 1;
+            transform: translateY(-50px);
+          }
         }
       }
     }

@@ -66,7 +66,6 @@
       @include DisplayJustifyAlign;
 
       h3 {
-        margin: auto;
         text-align: center;
         color: $color2;
         font-size: 2.5rem;
@@ -77,22 +76,22 @@
     .area-card-display {
       display: grid;
       grid-template-columns: 1fr 1fr 1fr;
+      gap: 20px;
       .card-container {
         margin: 0 auto;
-        height: 100%;
-        max-height: 400px;
+        width: 100%;
+        max-width: 350px;
         .card {
           @include DisplayJustifyAlign;
+          height: 100%;
           background: $color3;
           position: relative;
           border-radius: 10px;
-          background-color: $color2;
           box-shadow: 0px 0px 10px 0px;
-          height: 100%;
-          width: 350px;
           text-align: center;
           transform-style: preserve-3d;
           transition: all 0.5s ease;
+          line-height: 25px;
           .card-front {
             width: 80%;
             font-size: 1.3rem;
@@ -204,12 +203,77 @@
     background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)),
       url(/assets/images/Background\ BAC.webp) center/cover;
   }
-}
 
-@media all and (max-width: 1290px) {
-  .bac-area {
-    h3 {
-      font-size: 0.5rem;
+  @media screen and (max-width: 1600px) {
+    grid-template-columns: 0% 100%;
+    .blackline-area {
+      display: none;
+    }
+    .timelines .area-card-display {
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-template-rows: 1fr 1fr 1fr;
+      gap: 20px;
+      .card-container {
+        max-width: 80%;
+        .card {
+          .card-back {
+            width: 90%;
+            transform: rotateX(180deg);
+          }
+        }
+        &:hover {
+          .card {
+            transform: rotateX(180deg) scale(120%);
+          }
+        }
+      }
+    }
+    .bts-area {
+      grid-template-rows: 20% 70%;
+      height: 100vh;
+      .bts-area-title {
+        height: 100%;
+        h3 {
+          font-size: 1rem;
+        }
+      }
+    }
+
+    .freelance-area {
+      grid-template-rows: 20% 70%;
+      height: 100vh;
+      .freelance-area-title {
+        height: 100%;
+      }
+    }
+
+    .bac-area {
+      .bac-area-title {
+        h3 {
+          font-size: 1.5rem;
+        }
+      }
+    }
+  }
+  @media screen and (max-width: 650px) {
+    .timelines {
+      display: grid;
+      grid-template-rows: 15% 70% 15%;
+    }
+    .eccl-area {
+      .eccl-area-title {
+        h3 {
+          font-size: 1rem;
+        }
+      }
+    }
+    .bac-area {
+      .bac-area-title {
+        h3 {
+          font-size: 0.8rem;
+        }
+      }
     }
   }
 }
