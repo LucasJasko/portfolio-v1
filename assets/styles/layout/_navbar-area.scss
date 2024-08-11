@@ -15,6 +15,7 @@
     justify-content: space-around;
     align-items: center;
     text-transform: uppercase;
+    flex-wrap: wrap;
     a {
       color: $color1;
       text-decoration: none;
@@ -49,10 +50,12 @@
       }
     }
   }
-  @media screen and (max-width: 1050px) {
+
+  @media screen and (max-width: 400px) {
+    height: 100px;
     .navbar-container {
-      a {
-      }
+      justify-content: space-around;
+      align-items: center;
     }
   }
 }

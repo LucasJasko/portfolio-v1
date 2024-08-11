@@ -1,6 +1,6 @@
 #contact-area {
   z-index: 1;
-  height: auto;
+  height: 100vh;
   @include DisplayJustifyAlign;
 
   .contact-container {
@@ -12,7 +12,7 @@
     border-radius: 50px;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
+    grid-template-rows: 20% 80%;
     grid-template-areas:
       "a b"
       "c c";
@@ -58,7 +58,7 @@
       grid-area: c;
 
       form {
-        height: auto;
+        height: 100%;
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
         grid-template-rows: 20% 20% 45% 15%;
@@ -175,6 +175,7 @@
     .contact-container {
       width: 95%;
       max-width: 100%;
+      grid-template-rows: 12% 12% 76%;
       .container {
         .text-area {
           font-size: 1rem;
@@ -184,11 +185,11 @@
       .form-container {
         height: 100%;
         form {
-          grid-template-rows: 1fr 20% 45% 10%;
+          grid-template-rows: auto auto auto auto;
           .form-part-1 {
             display: flex;
             flex-direction: column;
-            gap: 20px;
+            gap: 10px;
             input {
               width: 70%;
             }

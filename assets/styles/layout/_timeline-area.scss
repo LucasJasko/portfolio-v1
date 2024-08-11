@@ -161,6 +161,23 @@
     grid-area: c;
     background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)),
       url(/assets/images/Background\ North\ East.webp) center/cover;
+    grid-template-rows: 15% 25% 60%;
+    .north-east-text-area-container {
+      text-align: center;
+      margin: auto;
+      width: 90%;
+      color: $color2;
+      font-size: 1.5rem;
+    }
+    .north-east-img-area-container {
+      @include DisplayJustifyAlign;
+
+      img {
+        filter: brightness(0.9);
+        border-radius: 20px;
+        height: 85%;
+      }
+    }
   }
 
   .alive-area {
@@ -256,10 +273,20 @@
       }
     }
   }
+
+  @media screen and (max-width: 990px) {
+    .north-east-area {
+      grid-template-rows: 15% 50% 35%;
+    }
+  }
+
   @media screen and (max-width: 650px) {
     .timelines {
       display: grid;
       grid-template-rows: 15% 70% 15%;
+    }
+    .north-east-area {
+      grid-template-rows: 15% 50% 35%;
     }
     .eccl-area {
       .eccl-area-title {
@@ -273,6 +300,15 @@
         h3 {
           font-size: 0.8rem;
         }
+      }
+    }
+  }
+
+  @media screen and (max-width: 650px) {
+    .north-east-area {
+      grid-template-rows: 15% 85%;
+      .north-east-img-area-container {
+        display: none;
       }
     }
   }
