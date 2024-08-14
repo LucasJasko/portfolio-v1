@@ -77,6 +77,7 @@
   @media screen and (max-width: 1200px) {
     grid-template-columns: 100%;
     grid-template-rows: 65% 35%;
+    height: 100vh;
 
     .skills-bubble-img {
       top: 32.5%;
@@ -125,6 +126,45 @@
     }
     .skills-bubble-img {
       display: none;
+    }
+  }
+  @media screen and (max-height: 770px) {
+    height: auto;
+    .skills-container {
+      margin: 0 auto;
+      width: 90%;
+      display: flex;
+      justify-content: space-evenly;
+      flex-wrap: wrap;
+      gap: 10px;
+      .skills-bubble {
+        position: static;
+        transform: rotateZ(0) translateX(0);
+        .skills-bubble-container {
+          transform: rotateZ(0);
+        }
+        &:hover {
+          transform: rotateZ(0) translateX(0) scale(110%);
+          border-color: green;
+        }
+      }
+    }
+    .skills-bubble-img {
+      display: none;
+    }
+    .skills-text {
+      .skills-text-container {
+        height: 90%;
+        overflow-y: scroll;
+        scrollbar-width: none;
+        h3 {
+          display: none;
+        }
+        p {
+          line-height: 30px;
+          height: 90%;
+        }
+      }
     }
   }
 }

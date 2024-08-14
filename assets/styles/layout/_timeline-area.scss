@@ -30,7 +30,7 @@
       width: 20px;
       height: 20px;
       border-radius: 20px;
-      background: rgb(225, 128, 17);
+      background: $color1;
     }
     .blackline {
       height: 100vh;
@@ -71,6 +71,7 @@
         font-size: 2.5rem;
         text-transform: uppercase;
         letter-spacing: 5px;
+        margin: 0;
       }
     }
     .area-card-display {
@@ -198,7 +199,6 @@
     background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)),
       url(/assets/images/Background-BTS.webp) center/cover;
     .bts-area-title {
-      height: 30%;
       h3 {
         font-size: 1.5rem;
       }
@@ -210,9 +210,6 @@
     height: 50vh;
     background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)),
       url(/assets/images/Background-Freelance.webp) center/cover;
-    .freelance-area-title {
-      height: 30%;
-    }
   }
 
   .bac-area {

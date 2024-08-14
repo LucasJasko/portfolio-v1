@@ -67,3 +67,12 @@ NavButton.addEventListener("click", () => {
     NavButtonTxt.innerHTML = "Menu";
   }
 });
+
+NavBar.addEventListener("scroll", () => {
+  var st = window.offsetHeight || document.documentElement.scrollTop;
+  if (NavBar.style.transform === "translateY(-100%)") {
+    NavBar.style.transform = "translateY(0)";
+  } else {
+    NavBar.style.transform = "translateY(-100%)";
+  }
+});

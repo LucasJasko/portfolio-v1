@@ -139,11 +139,9 @@ body {
   align-items: center;
 }
 #intro-area .intro-container .intro-img img {
-  max-height: 100%;
-  max-width: 100%;
+  width: 100%;
+  height: 100%;
   margin-right: 20px;
-  animation: imgslide 0.5s ease-out forwards;
-  animation-delay: 1s;
   border-radius: 100px;
 }
 #intro-area .intro-text {
@@ -153,14 +151,12 @@ body {
   flex-direction: column;
   color: #f5f5f5;
   overflow: hidden;
-  padding-left: 20px;
+  padding-left: 1%;
 }
 #intro-area .intro-text h1 {
   margin: 0 0 30px 0;
   font-size: 3.4rem;
   text-shadow: 0 0 0 #0d0c14;
-  animation: slide 0.5s ease-out forwards;
-  animation-delay: 1.3s;
 }
 #intro-area .intro-text h1 span {
   color: #0d0c14;
@@ -179,15 +175,9 @@ body {
   font-size: 1.5rem;
   margin: 0;
 }
-#intro-area .intro-text .p1 {
-  animation: slide 0.5s ease-out forwards;
-  animation-delay: 1.6s;
-}
 #intro-area .intro-text .p2 {
   color: rgb(179, 179, 179);
   font-style: italic;
-  animation: slide 0.5s ease-out forwards;
-  animation-delay: 1.9s;
 }
 #intro-area .intro-text:after {
   content: "";
@@ -197,8 +187,6 @@ body {
   width: 2px;
   height: 100%;
   background-color: #f5f5f5;
-  animation: drop 1s ease-in-out forwards;
-  animation-delay: 0.2s;
 }
 @media screen and (max-width: 1050px) {
   #intro-area .intro-container {
@@ -420,7 +408,7 @@ body {
   width: 20px;
   height: 20px;
   border-radius: 20px;
-  background: rgb(225, 128, 17);
+  background: #0d0c14;
 }
 #timeline-area .blackline-area .blackline {
   height: 100vh;
@@ -462,6 +450,7 @@ body {
   font-size: 2.5rem;
   text-transform: uppercase;
   letter-spacing: 5px;
+  margin: 0;
 }
 #timeline-area .timelines .area-card-display {
   display: grid;
@@ -582,9 +571,6 @@ body {
   height: 50vh;
   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), url(/assets/images/Background-BTS.webp) center/cover;
 }
-#timeline-area .bts-area .bts-area-title {
-  height: 30%;
-}
 #timeline-area .bts-area .bts-area-title h3 {
   font-size: 1.5rem;
 }
@@ -592,9 +578,6 @@ body {
   grid-area: g;
   height: 50vh;
   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), url(/assets/images/Background-Freelance.webp) center/cover;
-}
-#timeline-area .freelance-area .freelance-area-title {
-  height: 30%;
 }
 #timeline-area .bac-area {
   grid-area: h;
@@ -759,6 +742,7 @@ body {
   #skills-area {
     grid-template-columns: 100%;
     grid-template-rows: 65% 35%;
+    height: 100vh;
   }
   #skills-area .skills-bubble-img {
     top: 32.5%;
@@ -807,6 +791,45 @@ body {
     display: none;
   }
 }
+@media screen and (max-height: 770px) {
+  #skills-area {
+    height: auto;
+  }
+  #skills-area .skills-container {
+    margin: 0 auto;
+    width: 90%;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  #skills-area .skills-container .skills-bubble {
+    position: static;
+    transform: rotateZ(0) translateX(0);
+  }
+  #skills-area .skills-container .skills-bubble .skills-bubble-container {
+    transform: rotateZ(0);
+  }
+  #skills-area .skills-container .skills-bubble:hover {
+    transform: rotateZ(0) translateX(0) scale(110%);
+    border-color: green;
+  }
+  #skills-area .skills-bubble-img {
+    display: none;
+  }
+  #skills-area .skills-text .skills-text-container {
+    height: 90%;
+    overflow-y: scroll;
+    scrollbar-width: none;
+  }
+  #skills-area .skills-text .skills-text-container h3 {
+    display: none;
+  }
+  #skills-area .skills-text .skills-text-container p {
+    line-height: 30px;
+    height: 90%;
+  }
+}
 
 #strengths-area {
   height: 100vh;
@@ -845,7 +868,7 @@ body {
 }
 #strengths-area .strengths-container .strengths-item {
   background: linear-gradient(315deg, rgba(207, 207, 207, 0.8) 0%, rgb(242, 242, 242) 15%, rgba(235, 232, 232, 0.8) 35%, rgba(215, 215, 215, 0.9) 50%, rgba(222, 222, 222, 0.8) 65%, rgba(242, 242, 242, 0.9) 85%, rgba(207, 207, 207, 0.8) 100%);
-  width: 20%;
+  width: 23%;
   border: 4px solid;
   border-radius: 20px;
   display: flex;
@@ -896,6 +919,14 @@ body {
     margin: 20px 20px 20px 210px;
     width: 90%;
     line-height: 25px;
+  }
+}
+@media screen and (max-width: 1200px) {
+  #strengths-area {
+    height: auto;
+  }
+  #strengths-area .strengths-container {
+    margin: 20px 0;
   }
 }
 @media screen and (max-width: 650px) {
