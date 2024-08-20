@@ -155,13 +155,13 @@
   .eccl-area {
     grid-area: b;
     background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)),
-      url(/assets/images/Background-ECCL.webp) center/cover;
+      url(../../images/Background-ECCL.webp) center/cover;
   }
 
   .north-east-area {
     grid-area: c;
     background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)),
-      url(/assets/images/Background\ North\ East.webp) center/cover;
+      url(../../images/Background-North-East.webp) center/cover;
     grid-template-rows: 15% 25% 60%;
     .north-east-text-area-container {
       text-align: center;
@@ -184,20 +184,20 @@
   .alive-area {
     grid-area: d;
     background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)),
-      url(/assets/images/Background-ALIVE.webp) center/cover;
+      url(../../images/Background-ALIVE.webp) center/cover;
   }
 
   .ikea-area {
     grid-area: e;
     background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)),
-      url(/assets/images/Background\ IKEA.webp) center/cover;
+      url(../../images/Background-IKEA.webp) center/cover;
   }
 
   .bts-area {
     grid-area: f;
     height: 50vh;
     background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)),
-      url(/assets/images/Background-BTS.webp) center/cover;
+      url(../../images/Background-BTS.webp) center/cover;
     .bts-area-title {
       h3 {
         font-size: 1.5rem;
@@ -209,13 +209,13 @@
     grid-area: g;
     height: 50vh;
     background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)),
-      url(/assets/images/Background-Freelance.webp) center/cover;
+      url(../../images/Background-Freelance.webp) center/cover;
   }
 
   .bac-area {
     grid-area: h;
     background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)),
-      url(/assets/images/Background\ BAC.webp) center/cover;
+      url(/assets/images/Background-BAC.webp) center/cover;
   }
 
   @media screen and (max-width: 1600px) {

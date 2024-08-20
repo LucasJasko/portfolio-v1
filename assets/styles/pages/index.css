@@ -277,16 +277,16 @@ body {
   opacity: 0.5;
 }
 #career-cards-area .card-display .box2017 {
-  background: url(/assets/images/Freelance\ Lucas.webp) center/cover;
+  background: url(../../images/Freelance-Lucas.webp) center/cover;
 }
 #career-cards-area .card-display .box2019 {
-  background: url(/assets/images/Logo\ Ikea.webp) center/cover;
+  background: url(../../images/Logo-Ikea.webp) center/cover;
 }
 #career-cards-area .card-display .box2021 {
-  background: url(/assets/images/Logo\ Alive.webp) center/cover;
+  background: url(../../images/Logo-Alive.webp) center/cover;
 }
 #career-cards-area .card-display .box2023 {
-  background: url(/assets/images/Logo\ ECCL.webp) center/cover;
+  background: url(../../images/Logo-ECCL.webp) center/cover;
 }
 #career-cards-area .card-display .hback {
   width: 110px;
@@ -534,11 +534,11 @@ body {
 }
 #timeline-area .eccl-area {
   grid-area: b;
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), url(/assets/images/Background-ECCL.webp) center/cover;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), url(../../images/Background-ECCL.webp) center/cover;
 }
 #timeline-area .north-east-area {
   grid-area: c;
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), url(/assets/images/Background\ North\ East.webp) center/cover;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), url(../../images/Background-North-East.webp) center/cover;
   grid-template-rows: 15% 25% 60%;
 }
 #timeline-area .north-east-area .north-east-text-area-container {
@@ -560,16 +560,16 @@ body {
 }
 #timeline-area .alive-area {
   grid-area: d;
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), url(/assets/images/Background-ALIVE.webp) center/cover;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), url(../../images/Background-ALIVE.webp) center/cover;
 }
 #timeline-area .ikea-area {
   grid-area: e;
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), url(/assets/images/Background\ IKEA.webp) center/cover;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), url(../../images/Background-IKEA.webp) center/cover;
 }
 #timeline-area .bts-area {
   grid-area: f;
   height: 50vh;
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), url(/assets/images/Background-BTS.webp) center/cover;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), url(../../images/Background-BTS.webp) center/cover;
 }
 #timeline-area .bts-area .bts-area-title h3 {
   font-size: 1.5rem;
@@ -577,11 +577,11 @@ body {
 #timeline-area .freelance-area {
   grid-area: g;
   height: 50vh;
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), url(/assets/images/Background-Freelance.webp) center/cover;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), url(../../images/Background-Freelance.webp) center/cover;
 }
 #timeline-area .bac-area {
   grid-area: h;
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), url(/assets/images/Background\ BAC.webp) center/cover;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), url(/assets/images/Background-BAC.webp) center/cover;
 }
 @media screen and (max-width: 1600px) {
   #timeline-area {
