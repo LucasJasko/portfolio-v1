@@ -10,7 +10,7 @@
   position: absolute;
   top: var(--beamt);
   left: var(--beaml);
-  border: 20px solid rgba(0, 0, 0, 0.696);
+  border: 20px solid #0d0c14;
   border-radius: 1000px;
   animation: beamanim 5s ease-in-out forwards;
   transform: translateX(-50%) translateY(-50%);
@@ -31,7 +31,7 @@
   100% {
     width: 1500px;
     height: 1500px;
-    border: 100px solid rgba(0, 0, 0, 0.696);
+    border: 100px solid #0d0c14;
     opacity: 0;
   }
 }

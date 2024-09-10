@@ -30,7 +30,7 @@ body {
   position: absolute;
   top: var(--beamt);
   left: var(--beaml);
-  border: 20px solid rgba(0, 0, 0, 0.696);
+  border: 20px solid #0d0c14;
   border-radius: 1000px;
   animation: beamanim 5s ease-in-out forwards;
   transform: translateX(-50%) translateY(-50%);
@@ -49,7 +49,7 @@ body {
   100% {
     width: 1500px;
     height: 1500px;
-    border: 100px solid rgba(0, 0, 0, 0.696);
+    border: 100px solid #0d0c14;
     opacity: 0;
   }
 }
@@ -581,7 +581,7 @@ body {
 }
 #timeline-area .bac-area {
   grid-area: h;
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), url(/assets/images/Background-BAC.webp) center/cover;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), url(../../images/Background-BAC.webp) center/cover;
 }
 @media screen and (max-width: 1600px) {
   #timeline-area {
