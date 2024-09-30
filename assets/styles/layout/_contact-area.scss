@@ -108,6 +108,18 @@
               cursor: pointer;
               width: 34%;
             }
+            label[for="school"]:hover {
+              color: $color2;
+              background-color: #0d0c14a8;
+            }
+            label[for="recruiter"]:hover {
+              color: $color2;
+              background-color: #0d0c14a8;
+            }
+            label[for="particular"]:hover {
+              color: $color2;
+              background-color: #0d0c14a8;
+            }
             p {
               transition: 0.2s ease;
               margin: 0;

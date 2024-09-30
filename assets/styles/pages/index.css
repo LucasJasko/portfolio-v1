@@ -1146,6 +1146,18 @@ body {
   cursor: pointer;
   width: 34%;
 }
+#contact-area .contact-container .form-container form .form-part-2 .form-part-2-container label[for=school]:hover {
+  color: #f5f5f5;
+  background-color: rgba(13, 12, 20, 0.6588235294);
+}
+#contact-area .contact-container .form-container form .form-part-2 .form-part-2-container label[for=recruiter]:hover {
+  color: #f5f5f5;
+  background-color: rgba(13, 12, 20, 0.6588235294);
+}
+#contact-area .contact-container .form-container form .form-part-2 .form-part-2-container label[for=particular]:hover {
+  color: #f5f5f5;
+  background-color: rgba(13, 12, 20, 0.6588235294);
+}
 #contact-area .contact-container .form-container form .form-part-2 .form-part-2-container p {
   transition: 0.2s ease;
   margin: 0;
