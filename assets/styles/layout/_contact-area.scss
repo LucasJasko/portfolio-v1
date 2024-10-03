@@ -138,9 +138,13 @@
         }
         .form-part-3 {
           grid-area: c;
-          input {
+          textarea {
             height: 70%;
             width: 80%;
+            padding: 25px;
+            border: 3px solid $color1;
+            border-radius: 40px;
+            font-size: 1.1rem;
           }
         }
 
@@ -150,6 +154,8 @@
             min-width: 300px;
             width: 30%;
             transition: 0.2s ease;
+            text-transform: uppercase;
+            cursor: pointer;
             &:hover {
               color: $color2;
               background-color: $color1;
