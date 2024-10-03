@@ -1181,6 +1181,7 @@ body {
   border: 3px solid #0d0c14;
   border-radius: 40px;
   font-size: 1.1rem;
+  resize: none;
 }
 #contact-area .contact-container .form-container form .form-part-4 {
   grid-area: d;
