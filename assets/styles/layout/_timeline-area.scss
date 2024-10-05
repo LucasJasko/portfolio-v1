@@ -13,6 +13,10 @@
   position: relative;
   background: $color2;
   overflow: hidden;
+  border-radius: 50px;
+  width: 99%;
+  margin: 0 auto;
+  box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.393);
 
   .blackline-area {
     grid-area: a;
@@ -26,7 +30,7 @@
     .position-dot {
       position: absolute;
       transform: translateX(-50%) translateY(-50%);
-      left: 19.4%;
+      left: 19.45%;
       width: 20px;
       height: 20px;
       border-radius: 20px;
@@ -34,7 +38,7 @@
     }
     .blackline {
       height: 100vh;
-      border-right: 3px solid $color1;
+      border-right: 2px solid $color1;
     }
     .blackline-display {
       height: 95%;
@@ -47,10 +51,10 @@
         font-weight: 600;
         font-size: 1rem;
         .blsp {
-          color: rgb(49, 49, 49);
+          color: $color1;
           font-size: 1.8rem;
           display: inline-block;
-          transform: translateX(-15px) translateY(3px) rotate(-90deg);
+          transform: translateX(-14px) translateY(3px) rotate(-90deg);
         }
       }
     }
@@ -98,12 +102,13 @@
             font-size: 1.3rem;
             position: absolute;
             backface-visibility: hidden;
+            backdrop-filter: blur(10px);
           }
           .card-back {
-            font-size: 0.9rem;
+            font-size: 1rem;
             height: 90%;
             width: 80%;
-            text-align: justify;
+            text-align: left;
             overflow-y: scroll;
             scrollbar-width: none;
             position: absolute;

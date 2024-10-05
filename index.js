@@ -1,3 +1,4 @@
+// Paramétrage des beams du background
 const beamMaker = () => {
   const beam = document.createElement("span");
   beam.classList.add("beam");
@@ -10,40 +11,37 @@ const beamMaker = () => {
     beam.remove();
   }, 6000);
 };
-const BlacklineArea = document.querySelector(".blackline-area");
-const Timeline = document.getElementById("timeline-area");
-const NavBar = document.getElementById("navbar-area");
-const NavButton = document.querySelector(".navbar-button");
-const NavButtonTxt = document.getElementById("nav-button-text");
-let ScrollTrigger = true;
-
 setInterval(beamMaker, 3000);
 
+// Configuration du point rouge de localisation et du fix de la timeline
+const blacklineArea = document.querySelector(".blackline-area");
+const timeline = document.getElementById("timeline-area");
+let ScrollTrigger = true;
 window.addEventListener("scroll", () => {
   scrollTop = window.scrollY / document.body.offsetHeight;
   scrollLvl =
     (window.scrollY + window.innerHeight) / document.body.offsetHeight;
 
   if (scrollTop >= 0.166 && scrollLvl < 0.666) {
-    BlacklineArea.style.position = "fixed";
-    BlacklineArea.style.width = "15%";
-    BlacklineArea.style.top = "0";
-    BlacklineArea.style.left = "0";
+    blacklineArea.style.position = "fixed";
+    blacklineArea.style.width = "15%";
+    blacklineArea.style.top = "0";
+    blacklineArea.style.left = "0";
     if (ScrollTrigger) {
       ScrollTrigger = false;
       const PositionDot = document.createElement("span");
       PositionDot.classList.add("position-dot");
-      BlacklineArea.appendChild(PositionDot);
+      blacklineArea.appendChild(PositionDot);
     }
   }
   const PositionDot = document.querySelector(".position-dot");
   if (PositionDot) {
     PositionDot.style.top =
-      (window.scrollY / Timeline.clientHeight - 0.25) * 100 + "%";
+      (window.scrollY / timeline.clientHeight - 0.25) * 100 + "%";
   }
   if (scrollTop < 0.166) {
-    BlacklineArea.style.position = "static";
-    BlacklineArea.style.width = "100%";
+    blacklineArea.style.position = "static";
+    blacklineArea.style.width = "100%";
     ScrollTrigger = true;
     const PositionDot = document.querySelector(".position-dot");
     if (PositionDot) {
@@ -51,28 +49,51 @@ window.addEventListener("scroll", () => {
     }
   }
   if (scrollLvl > 0.666) {
-    BlacklineArea.style.position = "absolute";
-    BlacklineArea.style.width = "100%";
-    BlacklineArea.style.top = "auto";
-    BlacklineArea.style.bottom = "0";
+    blacklineArea.style.position = "absolute";
+    blacklineArea.style.width = "100%";
+    blacklineArea.style.top = "auto";
+    blacklineArea.style.bottom = "0";
   }
 });
 
-NavButton.addEventListener("click", () => {
-  if (NavBar.style.transform === "translateY(-100%)") {
-    NavBar.style.transform = "translateY(0)";
-    NavButtonTxt.innerHTML = "Hide";
+// comportements de la navbar
+const navBar = document.querySelector("nav");
+const navItems = navBar.querySelectorAll("nav a");
+const navBgs = navBar.querySelectorAll(".bg-hover");
+lastPos = 0;
+window.addEventListener("scroll", () => {
+  if (lastPos < window.scrollY) {
+    navBar.style.transform = "translateY(-100%)";
   } else {
-    NavBar.style.transform = "translateY(-100%)";
-    NavButtonTxt.innerHTML = "Menu";
+    navBar.style.transform = "translateY(0)";
   }
+  lastPos = window.scrollY;
 });
 
-NavBar.addEventListener("scroll", () => {
-  var st = window.offsetHeight || document.documentElement.scrollTop;
-  if (NavBar.style.transform === "translateY(-100%)") {
-    NavBar.style.transform = "translateY(0)";
-  } else {
-    NavBar.style.transform = "translateY(-100%)";
-  }
+navItems.forEach((item, index) => {
+  item.addEventListener("mouseover", () => {
+    navBgs[index].style.transform =
+      "translateY(-40%) translateX(0) rotateZ(45deg)";
+  });
+  item.addEventListener("mouseout", () => {
+    navBgs[index].style.transform =
+      "translateY(50%) translateX(-180%) rotateZ(45deg)";
+  });
+});
+
+// Reveal des coordonnées
+const textArea = document.querySelectorAll(".text-area");
+const cordP = document.querySelectorAll(".text-area > p");
+
+cordP.forEach((p, i) => {
+  p.addEventListener("click", () => {
+    textArea[i].style.color = "#f5f5f5";
+    textArea[i].style.background = "rgb(17, 17, 17)";
+    if (i == 0) {
+      cordP[i].textContent = "06.07.90.04.55";
+    }
+    if (i == 1) {
+      cordP[i].textContent = "lucasjaskowiak@yahoo.fr";
+    }
+  });
 });

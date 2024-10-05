@@ -1,6 +1,5 @@
 #intro-area {
   height: 100vh;
-  width: 100%;
   @include DisplayJustifyAlign;
   overflow: hidden;
 
@@ -10,14 +9,16 @@
     min-height: 335px;
     width: 75%;
     max-width: 1500px;
+    text-shadow: 0 0 2px rgba(0, 0, 0, 0.731);
 
     .intro-img {
       @include DisplayJustifyAlign;
       img {
         width: 100%;
-        height: 100%;
         margin-right: 60px;
         border-radius: 100px;
+        box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.393);
+        filter: brightness(0.9);
       }
     }
   }
@@ -36,25 +37,10 @@
       text-shadow: 0 0 0 $color1;
     }
     h1 span {
-      color: $color1;
       font-size: 4.2rem;
-      font-family: Verdana, Geneva, Tahoma, sans-serif;
       text-transform: uppercase;
-      -webkit-text-stroke: 1px transparent;
-      -webkit-text-stroke-width: 4px;
-      background-color: $color2;
-      background-image: linear-gradient(
-          to bottom,
-          rgba(255, 255, 255, 0.5) 0%,
-          rgba(0, 0, 0, 0.5) 100%
-        ),
-        radial-gradient(
-          at 50% 0%,
-          rgba(255, 255, 255, 0.1) 0%,
-          rgba(0, 0, 0, 0.18) 50%
-        );
-      background-clip: text;
       letter-spacing: 3px;
+      color: $color2;
     }
 
     p {
@@ -95,7 +81,7 @@
         }
       }
       .intro-img {
-        height: 50%;
+        width: 40%;
         img {
           margin: 0;
         }
@@ -105,7 +91,7 @@
   @media screen and (max-width: 650px) {
     .intro-container {
       .intro-img {
-        height: 30%;
+        width: 50%;
         img {
           margin: 0;
         }
@@ -121,7 +107,7 @@
   @media screen and (max-width: 450px) {
     .intro-container {
       .intro-img {
-        height: 25%;
+        width: 50%;
       }
       .intro-text {
         h1 span {

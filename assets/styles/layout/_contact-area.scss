@@ -8,7 +8,10 @@
     min-height: 700px;
     width: 80%;
     max-width: 1100px;
-    background-color: $color2;
+    background-color: rgba(255, 255, 255, 0);
+    backdrop-filter: blur(2px);
+    color: $color2;
+    border: 1px solid $color2;
     border-radius: 50px;
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -21,12 +24,15 @@
       @include DisplayJustifyAlign;
       .text-area {
         display: grid;
+        transition: 0.2s ease;
         grid-template-columns: 10% 90%;
         width: 85%;
         border-radius: 40px;
-        color: $color2;
-        background: $color1;
+        color: $color1;
+        background: $color2;
+        border: 1px solid $color2;
         font-size: 1.5rem;
+        cursor: pointer;
         .icon-container {
           @include DisplayJustifyAlign;
           color: $color1;
@@ -42,6 +48,10 @@
           width: 100%;
           margin: 0;
           @include DisplayJustifyAlign;
+        }
+        &:hover {
+          color: $color2;
+          background: $color1;
         }
       }
     }
@@ -78,7 +88,7 @@
           }
           input {
             padding: 10px;
-            border: 3px solid $color1;
+            border: 1px solid $color2;
             border-radius: 40px;
             font-size: 1.1rem;
           }
@@ -95,8 +105,9 @@
           grid-area: b;
           justify-content: center;
           .form-part-2-container {
-            border: 3px solid $color1;
+            border: 1px solid $color2;
             border-radius: 40px;
+            background-color: rgb(255, 255, 255);
             font-size: 1.1rem;
             min-width: 300px;
             width: 30%;
@@ -108,22 +119,16 @@
               cursor: pointer;
               width: 34%;
             }
-            label[for="school"]:hover {
-              color: $color2;
-              background-color: #0d0c14a8;
-            }
-            label[for="recruiter"]:hover {
-              color: $color2;
-              background-color: #0d0c14a8;
-            }
+            label[for="school"]:hover,
+            label[for="recruiter"]:hover,
             label[for="particular"]:hover {
-              color: $color2;
-              background-color: #0d0c14a8;
+              background-color: #3534373f;
             }
             p {
               transition: 0.2s ease;
               margin: 0;
               padding: 10px;
+              color: $color1;
             }
             input {
               display: none;
@@ -142,7 +147,7 @@
             height: 70%;
             width: 80%;
             padding: 25px;
-            border: 3px solid $color1;
+            border: 1px solid $color2;
             border-radius: 40px;
             font-size: 1.1rem;
             resize: none;

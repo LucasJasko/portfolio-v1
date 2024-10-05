@@ -1,19 +1,20 @@
 #strengths-area {
   height: 100vh;
-  background-color: $color2;
+  background-color: rgba(255, 255, 255, 0);
   position: relative;
   @include DisplayJustifyAlign;
-  overflow: hidden;
 
   .strengths-headband {
     z-index: 1;
     position: absolute;
+    top: 0;
     width: 100%;
     height: 100px;
-    background: linear-gradient(90deg, #8177c4, #48426e, #201d30, #0d0c14);
-    top: 15%;
+    background: linear-gradient(90deg, rgb(17, 17, 17), rgb(66, 66, 66));
     @include DisplayJustifyAlign;
     text-align: center;
+    border-top: 1px solid $color2;
+    box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.393);
     h4 {
       width: 100%;
       text-transform: uppercase;
@@ -29,44 +30,30 @@
     height: 80%;
     text-align: center;
     .strengths-item {
-      background: $color3;
+      background: rgba(255, 255, 255, 0);
+      backdrop-filter: blur(2px);
       width: 23%;
-      border: 4px solid;
-      border-radius: 20px;
+      border-radius: 0 0 20px 20px;
       display: flex;
       justify-content: center;
       overflow-y: scroll;
       scrollbar-width: none;
+      border: 1px solid $color2;
+      border-top: none;
+      box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.393);
       p {
-        margin-top: 170px;
+        color: $color2;
+        margin-top: 50px;
         width: 80%;
-        font-weight: 00;
-        text-align: justify;
-        font-size: 1.2rem;
+        text-align: left;
+        font-size: 1.3rem;
+        line-height: 35px;
       }
-    }
-    .strength-1 {
-      border-color: #8177c4;
-    }
-    .strength-2 {
-      border-color: #48426e;
-    }
-    .strength-3 {
-      border-color: #201d30;
-    }
-    .strength-4 {
-      border-color: #0d0c14;
     }
   }
   @media screen and (max-width: 1200px) {
     .strengths-headband {
-      background: linear-gradient(
-        180deg,
-        rgba(216, 191, 170, 1) 15%,
-        rgba(166, 138, 124, 1) 35%,
-        rgba(121, 103, 93, 1) 58%,
-        rgba(79, 66, 53, 1) 80%
-      );
+      background: linear-gradient(90deg, rgb(17, 17, 17), rgb(66, 66, 66));
       width: 200px;
       height: 100%;
       top: 0;

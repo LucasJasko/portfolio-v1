@@ -3,6 +3,10 @@
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   overflow: hidden;
+  border-radius: 50px;
+  width: 99%;
+  margin: 0 auto;
+  box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.393);
 
   .interests-container {
     position: relative;
@@ -25,16 +29,19 @@
       top: 0;
       left: 0;
       text-align: center;
+      overflow-y: scroll;
+      scrollbar-width: none;
 
       h3 {
         text-transform: uppercase;
       }
 
       p {
-        text-align: justify;
+        text-align: left;
         margin: auto;
         width: 80%;
         font-size: 1.5rem;
+        line-height: 40px;
       }
     }
     &:hover {

@@ -1,63 +1,59 @@
-#navbar-area {
+nav {
+  width: 100%;
   position: fixed;
   z-index: 4;
-  width: 100%;
-  height: 50px;
-  background-color: $color2;
-  color: $color1;
+  background-color: rgba(0, 0, 0, 0);
+  backdrop-filter: blur(10px);
   transition: 0.2s ease;
-  border-bottom: 3px solid $color1;
-  .navbar-container {
-    height: 100%;
-    width: 100%;
-    position: relative;
+  border-bottom: 1px solid $color2;
+  box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.393);
+  ul {
+    margin: 0;
+    padding: 0;
     display: flex;
     justify-content: space-around;
     align-items: center;
-    text-transform: uppercase;
     flex-wrap: wrap;
-    a {
-      color: $color1;
-      text-decoration: none;
-      font-size: 1rem;
-      font-weight: 400;
-      transition: 0.3s;
-      padding: 15px;
-      &:hover {
-        font-weight: 700;
-        color: $color1;
-      }
-    }
-    .navbar-button {
-      position: absolute;
-      bottom: -60px;
-      right: 10px;
-      @include DisplayJustifyAlign;
-      height: 50px;
-      width: 100px;
-      background-color: $color2;
-      color: $color1;
-      border: 3px solid $color1;
-      border-radius: 8px;
-      text-transform: uppercase;
-      font-size: 1rem;
-      font-weight: 700;
-      transition: 0.2s ease;
-      box-sizing: border-box;
-      cursor: pointer;
-      &:hover {
-        background-color: $color1;
-        border: 2px solid $color2;
+    overflow: hidden;
+    li {
+      position: relative;
+      list-style: none;
+      a {
+        display: inline-block;
         color: $color2;
+        text-decoration: none;
+        text-transform: uppercase;
+        font-size: 1rem;
+        font-weight: 400;
+        transition: 0.3s;
+        padding: 15px;
+        z-index: 1;
+        font-weight: 700;
+        &:hover {
+          color: $color2;
+        }
+      }
+      .bg-hover {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 480%;
+        width: 100%;
+        transform: translateY(50%) translateX(-180%) rotateZ(45deg);
+        border-left: 1px solid $color2;
+        border-right: 1px solid $color2;
+        transition: 0.2s;
+        z-index: -1;
       }
     }
   }
 
-  @media screen and (max-width: 400px) {
-    height: 100px;
-    .navbar-container {
-      justify-content: space-around;
-      align-items: center;
+  @media screen and (max-width: 564px) {
+    li {
+      overflow: hidden;
+      .bg-hover {
+        display: none;
+      }
     }
   }
 }
