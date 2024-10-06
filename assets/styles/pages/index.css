@@ -1251,7 +1251,8 @@ nav ul li .bg-hover {
     height: 30vh;
   }
   #contact-area .coordinates-area .container {
-    min-width: 480px;
+    min-width: 400px;
+    padding: 0;
     margin: auto;
   }
   #contact-area .form-area {
