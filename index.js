@@ -26,7 +26,7 @@ window.addEventListener("scroll", () => {
     blacklineArea.style.position = "fixed";
     blacklineArea.style.width = "15%";
     blacklineArea.style.top = "0";
-    blacklineArea.style.left = "0";
+    blacklineArea.style.left = "45px";
     if (ScrollTrigger) {
       ScrollTrigger = false;
       const PositionDot = document.createElement("span");
@@ -52,6 +52,7 @@ window.addEventListener("scroll", () => {
     blacklineArea.style.position = "absolute";
     blacklineArea.style.width = "100%";
     blacklineArea.style.top = "auto";
+    blacklineArea.style.left = "0";
     blacklineArea.style.bottom = "0";
   }
 });
@@ -96,4 +97,83 @@ cordP.forEach((p, i) => {
       cordP[i].textContent = "lucasjaskowiak@yahoo.fr";
     }
   });
+});
+
+// Complétion du formulaire
+
+const contactCont = document.querySelector("form");
+
+const nameInp = document.getElementById("name");
+const emailInp = document.getElementById("email");
+const telInp = document.getElementById("telephone");
+const radioInp = document.querySelectorAll(".form-part-2-container input");
+const textInp = document.getElementById("description");
+const submInp = document.getElementById("submit");
+let username;
+let email;
+let telephone;
+let choice;
+let message;
+
+nameInp.addEventListener("input", () => {
+  username = nameInp.value;
+  contactCont.style.border = "1px solid white";
+});
+emailInp.addEventListener("input", () => {
+  email = emailInp.value;
+  contactCont.style.border = "1px solid white";
+});
+telInp.addEventListener("input", () => {
+  telephone = telInp.value;
+  contactCont.style.border = "1px solid white";
+});
+radioInp.forEach((radio, x) => {
+  radio.addEventListener("input", () => {
+    if (x == 0) {
+      contactCont.style.border = "1px solid white";
+      choice = "school";
+    } else if (x == 1) {
+      contactCont.style.border = "1px solid white";
+      choice = "recruiter";
+    } else if (x == 2) {
+      contactCont.style.border = "1px solid white";
+      choice = "particular";
+    }
+  });
+});
+textInp.addEventListener("input", () => {
+  contactCont.style.border = "1px solid white";
+  message = textInp.value;
+});
+submInp.addEventListener("click", (e) => {
+  e.preventDefault();
+  if (!username || !email || !telephone || !choice || !message) {
+    contactCont.classList.add("notvalid");
+    setTimeout(() => {
+      contactCont.classList.remove("notvalid");
+    }, 2000);
+  } else if (username && email && telephone && choice && message) {
+    contactCont.classList.add("valid");
+    const data = {
+      username,
+      email,
+      telephone,
+      choice,
+      message,
+    };
+    console.log(data);
+    for (objects in data) data[objects] = null;
+    nameInp.value = null;
+    emailInp.value = null;
+    telInp.value = null;
+    textInp.value = null;
+    username = null;
+    email = null;
+    telephone = null;
+    choice = null;
+    message = null;
+    setTimeout(() => {
+      contactCont.classList.remove("valid");
+    }, 2000);
+  }
 });

@@ -1,27 +1,15 @@
 #contact-area {
-  z-index: 1;
-  height: 100vh;
-  @include DisplayJustifyAlign;
-
-  .contact-container {
-    margin: 20px;
-    min-height: 700px;
-    width: 80%;
-    max-width: 1100px;
-    background-color: rgba(255, 255, 255, 0);
-    backdrop-filter: blur(2px);
-    color: $color2;
-    border: 1px solid $color2;
-    border-radius: 50px;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 20% 80%;
-    grid-template-areas:
-      "a b"
-      "c c";
-
+  .coordinates-area {
+    width: fit-content;
+    margin: auto;
+    height: 15vh;
+    display: flex;
     .container {
-      @include DisplayJustifyAlign;
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+      width: 30%;
+      min-width: 550px;
       .text-area {
         display: grid;
         transition: 0.2s ease;
@@ -47,6 +35,7 @@
         p {
           width: 100%;
           margin: 0;
+          letter-spacing: 2px;
           @include DisplayJustifyAlign;
         }
         &:hover {
@@ -55,168 +44,169 @@
         }
       }
     }
-    .telephone-container {
-      grid-area: a;
-      p {
-        letter-spacing: 2px;
+  }
+  .form-area {
+    height: 85vh;
+    @include DisplayJustifyAlign;
+    form {
+      max-height: 650px;
+      width: 80%;
+      max-width: 1100px;
+      background-color: rgba(255, 255, 255, 0);
+      backdrop-filter: blur(2px);
+      color: $color2;
+      border: 1px solid $color2;
+      transition: 0.5s ease;
+      border-radius: 50px;
+      height: 100%;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-rows: 20% 20% 45% 15%;
+      grid-template-areas:
+        "a a a"
+        "b b b"
+        "c c c"
+        "d d d";
+      fieldset {
+        padding: 0;
+        border: none;
+        @include DisplayJustifyAlign;
+        legend {
+          text-align: center;
+          font-size: 1.3rem;
+          font-weight: 600;
+        }
+        input {
+          padding: 10px;
+          border: 1px solid $color2;
+          border-radius: 40px;
+          font-size: 1.1rem;
+        }
       }
-    }
-    .email-container {
-      grid-area: b;
-    }
-    .form-container {
-      grid-area: c;
-
-      form {
-        height: 100%;
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-        grid-template-rows: 20% 20% 45% 15%;
-        grid-template-areas:
-          "a a a"
-          "b b b"
-          "c c c"
-          "d d d";
-        fieldset {
-          padding: 0;
-          border: none;
-          @include DisplayJustifyAlign;
-          legend {
-            text-align: center;
-            font-size: 1.3rem;
-            font-weight: 600;
-          }
-          input {
-            padding: 10px;
-            border: 1px solid $color2;
-            border-radius: 40px;
-            font-size: 1.1rem;
-          }
+      .form-part-1 {
+        grid-area: a;
+        justify-content: space-evenly;
+        legend {
+          padding-top: 20px;
         }
-        .form-part-1 {
-          grid-area: a;
+        input {
+          text-align: center;
+          width: 25%;
+        }
+      }
+      .form-part-2 {
+        grid-area: b;
+        .form-part-2-container {
+          border: 1px solid $color2;
+          border-radius: 40px;
+          background-color: rgb(255, 255, 255);
+          font-size: 1.1rem;
+          min-width: 300px;
+          width: 30%;
+          display: flex;
           justify-content: space-evenly;
-          input {
-            text-align: center;
-            width: 25%;
-          }
-        }
-        .form-part-2 {
-          grid-area: b;
-          justify-content: center;
-          .form-part-2-container {
-            border: 1px solid $color2;
-            border-radius: 40px;
-            background-color: rgb(255, 255, 255);
-            font-size: 1.1rem;
-            min-width: 300px;
-            width: 30%;
-            display: flex;
-            justify-content: space-evenly;
-            text-align: center;
-            overflow: hidden;
-            label {
-              cursor: pointer;
-              width: 34%;
-            }
-            label[for="school"]:hover,
-            label[for="recruiter"]:hover,
-            label[for="particular"]:hover {
-              background-color: #3534373f;
-            }
-            p {
-              transition: 0.2s ease;
-              margin: 0;
-              padding: 10px;
-              color: $color1;
-            }
-            input {
-              display: none;
-              &:checked + label {
-                p {
-                  color: $color2;
-                  background-color: $color1;
-                }
-              }
-            }
-          }
-        }
-        .form-part-3 {
-          grid-area: c;
-          textarea {
-            height: 70%;
-            width: 80%;
-            padding: 25px;
-            border: 1px solid $color2;
-            border-radius: 40px;
-            font-size: 1.1rem;
-            resize: none;
-          }
-        }
-
-        .form-part-4 {
-          grid-area: d;
-          input {
-            min-width: 300px;
-            width: 30%;
-            transition: 0.2s ease;
-            text-transform: uppercase;
+          text-align: center;
+          overflow: hidden;
+          label {
             cursor: pointer;
-            &:hover {
+            width: 34%;
+            transition: 0.2s ease;
+            margin: 0;
+            padding: 10px;
+            color: $color1;
+          }
+          label[for="school"]:hover,
+          label[for="recruiter"]:hover,
+          label[for="particular"]:hover {
+            background-color: #3534373f;
+          }
+          input {
+            display: none;
+            &:checked + label {
               color: $color2;
               background-color: $color1;
             }
           }
         }
       }
-    }
-  }
-  @media screen and (max-width: 1300px) {
-    .contact-container {
-      width: 95%;
-      max-width: 100%;
-      .container {
-        .text-area {
-          min-width: 400px;
+      .form-part-3 {
+        grid-area: c;
+        textarea {
+          height: 70%;
+          width: 80%;
+          padding: 25px;
+          border: 1px solid $color2;
+          border-radius: 40px;
+          font-size: 1.1rem;
+          resize: none;
         }
       }
+
+      .form-part-4 {
+        grid-area: d;
+        input {
+          min-width: 300px;
+          width: 30%;
+          transition: 0.2s ease;
+          text-transform: uppercase;
+          cursor: pointer;
+          &:hover {
+            color: $color2;
+            background-color: $color1;
+          }
+        }
+      }
+    }
+  }
+  .valid {
+    animation: validate 2s ease;
+  }
+  @keyframes validate {
+    0% {
+      border: 1px solid green;
+    }
+    100% {
+      border: 1px solid $color2;
+    }
+  }
+  .notvalid {
+    animation: notvalidate 2s ease;
+  }
+  @keyframes notvalidate {
+    0% {
+      border: 1px solid red;
+    }
+    100% {
+      border: 1px solid $color2;
     }
   }
   @media screen and (max-width: 1200px) {
-    .contact-container {
-      height: 95%;
-      max-height: 100%;
-      grid-template-columns: 1fr;
-      grid-template-rows: 15% 15% 70%;
-      grid-template-areas:
-        "a "
-        "b"
-        "c";
+    .coordinates-area {
+      flex-direction: column;
+      .container {
+        padding: 10px;
+      }
     }
   }
   @media screen and (max-width: 600px) {
-    height: auto;
-    .contact-container {
-      width: 95%;
-      max-width: 100%;
-      grid-template-rows: 12% 12% 76%;
+    .coordinates-area {
+      height: 30vh;
       .container {
-        .text-area {
-          font-size: 1rem;
-          min-width: 300px;
-        }
+        min-width: 480px;
+        margin: auto;
       }
-      .form-container {
-        height: 100%;
-        form {
-          grid-template-rows: auto auto auto auto;
-          .form-part-1 {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-            input {
-              width: 70%;
-            }
+    }
+    .form-area {
+      height: 80vh;
+      form {
+        grid-template-rows: auto auto auto auto;
+        .form-part-1 {
+          flex-direction: column;
+          #name,
+          #email,
+          #telephone {
+            width: 80%;
+            margin: 5px;
           }
         }
       }
