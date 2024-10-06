@@ -1178,11 +1178,6 @@ nav ul li .bg-hover {
   padding: 10px;
   color: rgb(17, 17, 17);
 }
-#contact-area .form-area form .form-part-2 .form-part-2-container label[for=school]:hover,
-#contact-area .form-area form .form-part-2 .form-part-2-container label[for=recruiter]:hover,
-#contact-area .form-area form .form-part-2 .form-part-2-container label[for=particular]:hover {
-  background-color: rgba(53, 52, 55, 0.2470588235);
-}
 #contact-area .form-area form .form-part-2 .form-part-2-container input {
   display: none;
 }
@@ -1255,11 +1250,17 @@ nav ul li .bg-hover {
     padding: 0;
     margin: auto;
   }
+  #contact-area .coordinates-area .container .text-area > p {
+    font-size: 0.9rem;
+  }
   #contact-area .form-area {
     height: 80vh;
   }
   #contact-area .form-area form {
     grid-template-rows: auto auto auto auto;
+  }
+  #contact-area .form-area form .form-part legend {
+    font-size: 1.1rem;
   }
   #contact-area .form-area form .form-part-1 {
     flex-direction: column;
@@ -1269,5 +1270,8 @@ nav ul li .bg-hover {
   #contact-area .form-area form .form-part-1 #telephone {
     width: 80%;
     margin: 5px;
+  }
+  #contact-area .form-area form .form-part-3 legend {
+    padding-bottom: 20px;
   }
 }/*# sourceMappingURL=index.css.map */

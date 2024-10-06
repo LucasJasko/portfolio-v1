@@ -115,11 +115,6 @@
             padding: 10px;
             color: $color1;
           }
-          label[for="school"]:hover,
-          label[for="recruiter"]:hover,
-          label[for="particular"]:hover {
-            background-color: #3534373f;
-          }
           input {
             display: none;
             &:checked + label {
@@ -195,12 +190,18 @@
         min-width: 400px;
         padding: 0;
         margin: auto;
+        .text-area > p {
+          font-size: 0.9rem;
+        }
       }
     }
     .form-area {
       height: 80vh;
       form {
         grid-template-rows: auto auto auto auto;
+        .form-part legend {
+          font-size: 1.1rem;
+        }
         .form-part-1 {
           flex-direction: column;
           #name,
@@ -209,6 +210,9 @@
             width: 80%;
             margin: 5px;
           }
+        }
+        .form-part-3 legend {
+          padding-bottom: 20px;
         }
       }
     }
