@@ -1110,6 +1110,8 @@ nav ul li .bg-hover {
   align-items: center;
 }
 #contact-area .form-area form {
+  position: relative;
+  overflow: hidden;
   max-height: 650px;
   width: 80%;
   max-width: 1100px;
@@ -1125,6 +1127,31 @@ nav ul li .bg-hover {
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 20% 20% 45% 15%;
   grid-template-areas: "a a a" "b b b" "c c c" "d d d";
+}
+#contact-area .form-area form .not-available {
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.903);
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#contact-area .form-area form .not-available p {
+  width: 80%;
+  font-size: 1.7rem;
+  text-align: center;
+  letter-spacing: 5px;
+}
+#contact-area .form-area form .not-available p a {
+  font-weight: bold;
+  font-style: oblique;
+  color: #dcdcdc;
+  text-decoration: none;
+  transition: 0.2s ease;
+}
+#contact-area .form-area form .not-available p a:hover {
+  color: lightblue;
 }
 #contact-area .form-area form fieldset {
   padding: 0;
