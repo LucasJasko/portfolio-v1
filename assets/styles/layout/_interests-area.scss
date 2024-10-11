@@ -2,8 +2,8 @@
   height: 100vh;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  overflow: hidden;
   border-radius: 50px;
+  overflow: hidden;
   width: 95%;
   margin: 0 auto;
   box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.393);
@@ -87,5 +87,8 @@
         }
       }
     }
+  }
+  @media screen and (max-width: 650px) {
+    width: 100%;
   }
 }

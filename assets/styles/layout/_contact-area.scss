@@ -32,9 +32,14 @@
           font-weight: 900;
           font-size: 1.9rem;
         }
-        p {
-          width: 100%;
+        span {
           margin: 0;
+          letter-spacing: 2px;
+          @include DisplayJustifyAlign;
+        }
+        p {
+          text-align: center;
+          margin: auto;
           letter-spacing: 2px;
           @include DisplayJustifyAlign;
         }
@@ -208,7 +213,7 @@
       }
     }
   }
-  @media screen and (max-width: 600px) {
+  @media screen and (max-width: 650px) {
     .coordinates-area {
       height: 30vh;
       .container {

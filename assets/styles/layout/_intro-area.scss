@@ -14,9 +14,9 @@
     .intro-img {
       @include DisplayJustifyAlign;
       img {
-        width: 100%;
-        margin-right: 60px;
-        border-radius: 100px;
+        max-width: 80%;
+        margin: 0 40px 0 auto;
+        border-radius: 10px;
         box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.393);
         filter: brightness(0.9);
       }
@@ -68,8 +68,7 @@
       flex-direction: column;
       justify-content: space-evenly;
       align-items: center;
-      height: 90%;
-      width: 90%;
+      width: 100%;
       .intro-text {
         text-align: center;
         padding-left: 0;
@@ -78,20 +77,24 @@
         }
         h1 {
           font-size: 1.5rem;
+          span {
+            font-size: 3rem;
+          }
         }
       }
       .intro-img {
-        width: 40%;
+        max-width: 40%;
         img {
-          margin: 0;
+          margin: 20px;
         }
       }
     }
   }
   @media screen and (max-width: 650px) {
     .intro-container {
+      height: 100%;
       .intro-img {
-        width: 50%;
+        max-width: 50%;
         img {
           margin: 0;
         }
@@ -107,7 +110,7 @@
   @media screen and (max-width: 450px) {
     .intro-container {
       .intro-img {
-        width: 50%;
+        max-width: 50%;
       }
       .intro-text {
         h1 span {

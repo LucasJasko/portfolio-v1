@@ -59,16 +59,30 @@ window.addEventListener("scroll", () => {
 
 // comportements de la navbar
 const navBar = document.querySelector("nav");
-const navItems = navBar.querySelectorAll("nav a");
+const navItems = navBar.querySelectorAll("nav ul li a");
 const navBgs = navBar.querySelectorAll(".bg-hover");
+const burgerButton = document.querySelector(".burger-button");
+
 lastPos = 0;
+
 window.addEventListener("scroll", () => {
-  if (lastPos < window.scrollY) {
-    navBar.style.transform = "translateY(-100%)";
-  } else {
-    navBar.style.transform = "translateY(0)";
+  if (window.innerWidth > 730) {
+    if (lastPos < window.scrollY) {
+      navBar.style.transform = "translateY(-100%)";
+    } else {
+      navBar.style.transform = "translateY(0)";
+    }
   }
   lastPos = window.scrollY;
+});
+burgerButton.addEventListener("click", () => {
+  if (window.innerWidth <= 730) {
+    if (navBar.style.transform == "translateX(-100%)") {
+      navBar.style.transform = "translateX(0)";
+    } else {
+      navBar.style.transform = "translateX(-100%)";
+    }
+  }
 });
 
 navItems.forEach((item, index) => {
@@ -84,9 +98,9 @@ navItems.forEach((item, index) => {
 
 // Reveal des coordonnées
 const textArea = document.querySelectorAll(".text-area");
-const cordP = document.querySelectorAll(".text-area > p");
+const cordP = document.querySelectorAll(".text-area p");
 
-cordP.forEach((p, i) => {
+textArea.forEach((p, i) => {
   p.addEventListener("click", () => {
     textArea[i].style.color = "#f5f5f5";
     textArea[i].style.background = "rgb(17, 17, 17)";

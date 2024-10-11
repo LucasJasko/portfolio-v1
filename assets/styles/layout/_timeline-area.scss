@@ -309,6 +309,10 @@
   }
 
   @media screen and (max-width: 650px) {
+    width: 100%;
+    .card {
+      transform: rotateY(180deg);
+    }
     .north-east-area {
       grid-template-rows: 30% 50%;
       .north-east-img-area-container {
