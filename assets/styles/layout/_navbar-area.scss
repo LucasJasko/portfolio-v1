@@ -31,9 +31,6 @@ nav {
         z-index: 1;
         font-weight: 700;
         text-shadow: 0 0 10px black;
-        &:hover {
-          color: #8b8b8b;
-        }
       }
       .bg-hover {
         position: absolute;
@@ -116,6 +113,9 @@ nav {
       li {
         width: 100%;
         text-align: center;
+        a:hover {
+          color: #8b8b8b;
+        }
         .bg-hover {
           display: none;
         }

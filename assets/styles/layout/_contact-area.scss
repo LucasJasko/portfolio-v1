@@ -216,18 +216,21 @@
   @media screen and (max-width: 650px) {
     .coordinates-area {
       height: 30vh;
+      width: 100%;
       .container {
-        min-width: 400px;
+        min-width: 500px;
         padding: 0;
         margin: auto;
         .text-area > p {
-          font-size: 0.9rem;
+          font-size: 1.2rem;
         }
       }
     }
     .form-area {
       height: 80vh;
+      margin-bottom: 30px;
       form {
+        width: 90%;
         grid-template-rows: auto auto auto auto;
         .form-part legend {
           font-size: 1.1rem;

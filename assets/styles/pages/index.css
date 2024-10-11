@@ -94,9 +94,6 @@ nav ul li a {
   font-weight: 700;
   text-shadow: 0 0 10px black;
 }
-nav ul li a:hover {
-  color: #8b8b8b;
-}
 nav ul li .bg-hover {
   position: absolute;
   top: 0;
@@ -177,6 +174,9 @@ nav .burger-button:hover {
   nav ul li {
     width: 100%;
     text-align: center;
+  }
+  nav ul li a:hover {
+    color: #8b8b8b;
   }
   nav ul li .bg-hover {
     display: none;
@@ -417,6 +417,7 @@ nav .burger-button:hover {
 }
 @media screen and (max-width: 1050px) {
   #career-cards-area {
+    height: 140vh;
     display: grid;
     grid-template-columns: 100%;
     grid-template-rows: 10% 90%;
@@ -1383,19 +1384,22 @@ nav .burger-button:hover {
 @media screen and (max-width: 650px) {
   #contact-area .coordinates-area {
     height: 30vh;
+    width: 100%;
   }
   #contact-area .coordinates-area .container {
-    min-width: 400px;
+    min-width: 500px;
     padding: 0;
     margin: auto;
   }
   #contact-area .coordinates-area .container .text-area > p {
-    font-size: 0.9rem;
+    font-size: 1.2rem;
   }
   #contact-area .form-area {
     height: 80vh;
+    margin-bottom: 30px;
   }
   #contact-area .form-area form {
+    width: 90%;
     grid-template-rows: auto auto auto auto;
   }
   #contact-area .form-area form .form-part legend {
