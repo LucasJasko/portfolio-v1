@@ -70,7 +70,7 @@ window.addEventListener("scroll", () => {
     if (lastPos < window.scrollY) {
       navBar.style.transform = "translateY(-100%)";
     } else {
-      navBar.style.transform = "translateY(0)";
+      navBar.style.transform = "translateY(0px)";
     }
   }
   lastPos = window.scrollY;
@@ -78,11 +78,22 @@ window.addEventListener("scroll", () => {
 burgerButton.addEventListener("click", () => {
   if (window.innerWidth <= 730) {
     if (navBar.style.transform == "translateX(-100%)") {
-      navBar.style.transform = "translateX(0)";
+      navBar.style.transform = "translateX(0px)";
     } else {
       navBar.style.transform = "translateX(-100%)";
     }
   }
+});
+navItems.forEach((item) => {
+  item.addEventListener("click", () => {
+    if (
+      window.innerWidth <= 730 &&
+      navBar.style.transform == "translateX(0px)"
+    ) {
+      console.log("hello");
+      navBar.style.transform = "translateX(-100%)";
+    }
+  });
 });
 
 navItems.forEach((item, index) => {

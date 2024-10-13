@@ -161,7 +161,7 @@ nav .burger-button:hover {
 }
 @media screen and (max-width: 730px) {
   nav {
-    height: 100%;
+    height: 100vh;
     width: 50%;
     border-bottom: none;
     border-right: 1px solid #dcdcdc;
@@ -184,7 +184,7 @@ nav .burger-button:hover {
   nav .network-logo {
     height: 10%;
     width: 100%;
-    left: 17%;
+    left: 0;
     top: 90%;
   }
   nav .burger-button {
@@ -193,6 +193,7 @@ nav .burger-button:hover {
 }
 
 #intro-area {
+  width: 100vw;
   height: 100vh;
   display: flex;
   justify-content: center;
@@ -1387,12 +1388,12 @@ nav .burger-button:hover {
     width: 100%;
   }
   #contact-area .coordinates-area .container {
-    min-width: 500px;
+    min-width: 400px;
     padding: 0;
     margin: auto;
   }
   #contact-area .coordinates-area .container .text-area > p {
-    font-size: 1.2rem;
+    font-size: 1rem;
   }
   #contact-area .form-area {
     height: 80vh;
