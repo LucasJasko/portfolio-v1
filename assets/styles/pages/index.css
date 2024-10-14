@@ -667,7 +667,7 @@ nav .burger-button:hover {
   grid-area: h;
   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), url(../../images/Background-BAC.webp) center/cover;
 }
-@media screen and (max-width: 1600px) {
+@media screen and (max-width: 1500px) {
   #timeline-area {
     grid-template-columns: 0% 100%;
   }
@@ -685,10 +685,10 @@ nav .burger-button:hover {
   }
   #timeline-area .timelines .area-card-display .card-container .card .card-back {
     width: 90%;
-    transform: rotateY(180deg);
+    transform: rotateX(180deg);
   }
   #timeline-area .timelines .area-card-display .card-container:hover .card {
-    transform: rotateY(180deg);
+    transform: rotateX(180deg);
   }
   #timeline-area .bts-area {
     grid-template-rows: 20% 70%;
@@ -712,6 +712,9 @@ nav .burger-button:hover {
   }
 }
 @media screen and (max-width: 990px) {
+  #timeline-area {
+    grid-template-rows: 1fr 0.5fr 1fr 1fr 0.5fr 0.5fr 1fr;
+  }
   #timeline-area .north-east-area {
     grid-template-rows: 15% 50% 35%;
   }
@@ -737,7 +740,7 @@ nav .burger-button:hover {
     width: 100%;
   }
   #timeline-area .card {
-    transform: rotateY(180deg);
+    transform: rotateY(180deg) rotateZ(180deg);
   }
   #timeline-area .north-east-area {
     grid-template-rows: 30% 50%;

@@ -224,7 +224,7 @@
       url(../../images/Background-BAC.webp) center/cover;
   }
 
-  @media screen and (max-width: 1600px) {
+  @media screen and (max-width: 1500px) {
     grid-template-columns: 0% 100%;
     .blackline-area {
       display: none;
@@ -239,12 +239,12 @@
         .card {
           .card-back {
             width: 90%;
-            transform: rotateY(180deg);
+            transform: rotateX(180deg);
           }
         }
         &:hover {
           .card {
-            transform: rotateY(180deg);
+            transform: rotateX(180deg);
           }
         }
       }
@@ -278,6 +278,7 @@
   }
 
   @media screen and (max-width: 990px) {
+    grid-template-rows: 1fr 0.5fr 1fr 1fr 0.5fr 0.5fr 1fr;
     .north-east-area {
       grid-template-rows: 15% 50% 35%;
     }
@@ -311,7 +312,7 @@
   @media screen and (max-width: 650px) {
     width: 100%;
     .card {
-      transform: rotateY(180deg);
+      transform: rotateY(180deg) rotateZ(180deg);
     }
     .north-east-area {
       grid-template-rows: 30% 50%;
