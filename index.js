@@ -107,6 +107,22 @@ navItems.forEach((item, index) => {
   });
 });
 
+// Navigation dans la zone forces
+
+const titles = document.querySelectorAll(".strengths-headband h4");
+
+PrevText = document.getElementById("strength-1");
+titles.forEach((title, i) => {
+  i += 1;
+  title.addEventListener("click", () => {
+    PrevText.style.display = "none";
+    text = String("strength-" + i);
+    textStrength = document.getElementById(text);
+    textStrength.style.display = "block";
+    PrevText = textStrength;
+  });
+});
+
 // Reveal des coordonnées
 const textArea = document.querySelectorAll(".text-area");
 const cordP = document.querySelectorAll(".text-area p");
@@ -125,7 +141,6 @@ textArea.forEach((p, i) => {
 });
 
 // Complétion du formulaire
-
 const contactCont = document.querySelector("form");
 
 const nameInp = document.getElementById("name");

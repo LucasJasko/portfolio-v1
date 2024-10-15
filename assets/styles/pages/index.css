@@ -951,62 +951,50 @@ nav .burger-button:hover {
 }
 
 #strengths-area {
-  background-color: rgba(255, 255, 255, 0);
-  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-#strengths-area .strengths-headband {
-  z-index: 1;
-  position: absolute;
-  top: 0;
+#strengths-area .strengths-container {
+  margin: 60px 0;
+  max-width: 1200px;
+  background: rgba(255, 255, 255, 0);
+  -webkit-backdrop-filter: blur(2px);
+          backdrop-filter: blur(2px);
+  border: 1px solid #dcdcdc;
+  border-radius: 20px;
+  box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.393);
+  overflow: hidden;
+}
+#strengths-area .strengths-container .strengths-headband {
   width: 100%;
-  height: 100px;
-  background: linear-gradient(90deg, rgb(17, 17, 17), rgb(66, 66, 66));
+  height: 80px;
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
   box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.393);
+  border-bottom: 1px solid #dcdcdc;
 }
-#strengths-area .strengths-headband h4 {
+#strengths-area .strengths-container .strengths-headband h4 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 100%;
+  height: 100%;
   text-transform: uppercase;
-  font-size: 1.5rem;
+  font-size: 1rem;
   margin: 0;
   color: #dcdcdc;
 }
-#strengths-area .strengths-container {
-  z-index: 0;
-  display: flex;
-  justify-content: space-around;
-  height: 80%;
-  margin: 60px 0;
-  width: 95%;
-  text-align: center;
-}
-#strengths-area .strengths-container .strength-mobile-h4-alt {
-  display: none;
-}
-#strengths-area .strengths-container .strengths-item {
-  background: rgba(255, 255, 255, 0);
-  -webkit-backdrop-filter: blur(2px);
-          backdrop-filter: blur(2px);
-  width: 23%;
-  border-radius: 0 0 20px 20px;
+#strengths-area .strengths-container p {
   display: flex;
   justify-content: center;
   overflow-y: scroll;
   scrollbar-width: none;
-  border: 1px solid #dcdcdc;
-  border-top: none;
-  box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.393);
-}
-#strengths-area .strengths-container .strengths-item p {
+  display: none;
   color: #dcdcdc;
-  margin-top: 50px;
-  width: 80%;
+  margin: 20px;
   text-align: left;
   font-size: 1.3rem;
   line-height: 35px;
@@ -1053,13 +1041,6 @@ nav .burger-button:hover {
   }
   #strengths-area .strengths-container {
     z-index: 2;
-  }
-  #strengths-area .strengths-container .strength-mobile-h4-alt {
-    display: block;
-    color: #dcdcdc;
-    margin-bottom: 0;
-    font-size: 1.8rem;
-    text-transform: uppercase;
   }
   #strengths-area .strengths-container .strengths-item {
     height: 450px;
