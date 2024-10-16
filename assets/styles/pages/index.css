@@ -428,6 +428,9 @@ nav .burger-button:hover {
     text-align: center;
     margin: 50px 0;
   }
+  #career-cards-area .career-cards-area-title h2 {
+    font-size: 1.8rem;
+  }
   #career-cards-area .card-display {
     margin: 0 auto;
     height: 100%;
@@ -721,6 +724,9 @@ nav .burger-button:hover {
   #timeline-area .north-east-area {
     grid-template-rows: 15% 50% 35%;
   }
+  #timeline-area .north-east-area .north-east-img-area-container {
+    display: none;
+  }
 }
 @media screen and (max-width: 650px) {
   #timeline-area .timelines {
@@ -733,9 +739,6 @@ nav .burger-button:hover {
   }
   #timeline-area .timelines .north-east-area {
     grid-template-rows: 30% 70%;
-  }
-  #timeline-area .timelines .north-east-area .north-east-img-area-container {
-    display: none;
   }
   #timeline-area .north-east-area {
     grid-template-rows: 15% 50% 35%;
@@ -878,6 +881,9 @@ nav .burger-button:hover {
     margin: 0 20px;
     max-width: none;
     width: auto;
+  }
+  #skills-area .skills-text-container h3 {
+    font-size: 1.8rem;
   }
   #skills-area .skills-text-container p {
     margin: 0;
@@ -1080,6 +1086,7 @@ nav .burger-button:hover {
   }
   #interests-area .interests-container .area-text {
     opacity: 1;
+    overflow: visible;
   }
   #interests-area .interests-container .area-text h3 {
     font-size: 4rem;
@@ -1088,8 +1095,7 @@ nav .burger-button:hover {
     line-height: 35px;
     font-size: 1.5rem;
     height: 70%;
-    overflow-y: scroll;
-    scrollbar-width: none;
+    overflow-y: visible;
   }
   #interests-area .interests-container:hover img {
     filter: brightness(0.5) blur(4px);

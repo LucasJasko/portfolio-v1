@@ -66,6 +66,7 @@
       }
       .area-text {
         opacity: 1;
+        overflow: visible;
         h3 {
           font-size: 4rem;
         }
@@ -73,8 +74,7 @@
           line-height: 35px;
           font-size: 1.5rem;
           height: 70%;
-          overflow-y: scroll;
-          scrollbar-width: none;
+          overflow-y: visible;
         }
       }
       &:hover {

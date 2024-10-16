@@ -282,6 +282,9 @@
     margin: 0;
     .north-east-area {
       grid-template-rows: 15% 50% 35%;
+      .north-east-img-area-container {
+        display: none;
+      }
     }
   }
 
@@ -295,9 +298,6 @@
       }
       .north-east-area {
         grid-template-rows: 30% 70%;
-        .north-east-img-area-container {
-          display: none;
-        }
       }
     }
     .north-east-area {
