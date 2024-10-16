@@ -1074,9 +1074,13 @@ nav .burger-button:hover {
 }
 @media screen and (max-width: 1300px) {
   #interests-area {
-    height: 300vh;
     grid-template-columns: 100%;
     grid-template-rows: 100vh 100vh 100vh;
+    height: auto;
+    overflow: visible;
+  }
+  #interests-area .interests-container {
+    height: auto;
   }
   #interests-area .interests-container img {
     height: 100%;
@@ -1191,31 +1195,6 @@ nav .burger-button:hover {
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 20% 20% 45% 15%;
   grid-template-areas: "a a a" "b b b" "c c c" "d d d";
-}
-#contact-area .form-area form .not-available {
-  position: absolute;
-  background-color: rgba(0, 0, 0, 0.903);
-  height: 100%;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-#contact-area .form-area form .not-available p {
-  width: 80%;
-  font-size: 1.7rem;
-  text-align: center;
-  letter-spacing: 5px;
-}
-#contact-area .form-area form .not-available p a {
-  font-weight: bold;
-  font-style: oblique;
-  color: #dcdcdc;
-  text-decoration: none;
-  transition: 0.2s ease;
-}
-#contact-area .form-area form .not-available p a:hover {
-  color: lightblue;
 }
 #contact-area .form-area form fieldset {
   padding: 0;

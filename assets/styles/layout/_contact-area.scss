@@ -55,29 +55,6 @@
     form {
       margin: 30px;
       min-height: 600px;
-      .not-available {
-        position: absolute;
-        background-color: rgba(0, 0, 0, 0.903);
-        height: 100%;
-        width: 100%;
-        @include DisplayJustifyAlign;
-        p {
-          width: 80%;
-          font-size: 1.7rem;
-          text-align: center;
-          letter-spacing: 5px;
-          a {
-            font-weight: bold;
-            font-style: oblique;
-            color: $color2;
-            text-decoration: none;
-            transition: 0.2s ease;
-          }
-          a:hover {
-            color: lightblue;
-          }
-        }
-      }
       position: relative;
       overflow: hidden;
       max-height: 650px;

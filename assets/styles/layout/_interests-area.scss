@@ -54,10 +54,12 @@
   }
 
   @media screen and (max-width: 1300px) {
-    height: 300vh;
     grid-template-columns: 100%;
     grid-template-rows: 100vh 100vh 100vh;
+    height: auto;
+    overflow: visible;
     .interests-container {
+      height: auto;
       img {
         height: 100%;
         width: auto;
