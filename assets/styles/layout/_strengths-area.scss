@@ -2,21 +2,22 @@
   @include DisplayJustifyAlign;
 
   .strengths-container {
-    margin: 60px 0;
+    margin: 40px 0;
     max-width: 1200px;
+    min-height: 300px;
     background: rgba(255, 255, 255, 0);
     backdrop-filter: blur(2px);
     border: 1px solid $color2;
     border-radius: 20px;
     box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.393);
-    overflow: hidden;
     .strengths-headband {
       width: 100%;
       height: 80px;
       @include DisplayJustifyAlign;
       text-align: center;
-      box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.393);
       border-bottom: 1px solid $color2;
+      border-radius: 20px 20px 0 0;
+      overflow: hidden;
       h4 {
         @include DisplayJustifyAlign;
         width: 100%;
@@ -24,11 +25,17 @@
         text-transform: uppercase;
         font-size: 1rem;
         margin: 0;
+        transition: 0.2s ease;
         color: $color2;
+        cursor: pointer;
+        box-sizing: border-box;
+        &:hover {
+          color: $color1;
+          background-color: $color2;
+        }
       }
     }
     p {
-      display: flex;
       justify-content: center;
       overflow-y: scroll;
       scrollbar-width: none;
@@ -39,27 +46,17 @@
       font-size: 1.3rem;
       line-height: 35px;
     }
+    #strength-1 {
+      display: block;
+    }
   }
   @media screen and (max-width: 1200px) {
-    .strengths-headband {
-      background: linear-gradient(90deg, rgb(17, 17, 17), rgb(66, 66, 66));
-      width: 200px;
-      height: 96.4%;
-      top: 1.7%;
-      left: 2%;
-      display: flex;
-      justify-content: space-evenly;
-      flex-direction: column;
-      border: 1px solid $color2;
-      border-right: none;
-      border-radius: 20px 0 0 20px;
-    }
     .strengths-container {
       height: 90%;
       flex-direction: column;
       align-items: center;
       gap: 20px;
-      margin: 20px 0;
+      margin: 20px;
       .strengths-item {
         width: 95%;
         border-top: 1px solid $color2;
@@ -87,15 +84,6 @@
         height: 450px;
         p {
           margin: 20px;
-        }
-      }
-    }
-  }
-  @media screen and (max-width: 500px) {
-    .strengths-container {
-      .strengths-headband {
-        h4 {
-          font-size: 1.9rem;
         }
       }
     }

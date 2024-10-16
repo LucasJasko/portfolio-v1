@@ -1,8 +1,6 @@
 #intro-area {
-  width: 100vw;
   height: 100vh;
   @include DisplayJustifyAlign;
-  overflow: hidden;
 
   .intro-container {
     display: grid;
@@ -63,7 +61,7 @@
       background-color: $color2;
     }
   }
-  @media screen and (max-width: 1050px) {
+  @media screen and (max-width: 1200px) {
     .intro-container {
       display: flex;
       flex-direction: column;
@@ -86,6 +84,7 @@
       .intro-img {
         max-width: 40%;
         img {
+          max-height: 300px;
           margin: 20px;
         }
       }
@@ -97,6 +96,7 @@
       .intro-img {
         max-width: 50%;
         img {
+          max-height: 300px;
           margin: 0;
         }
       }

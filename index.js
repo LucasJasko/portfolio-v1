@@ -107,7 +107,7 @@ navItems.forEach((item, index) => {
   });
 });
 
-// Navigation dans la zone forces
+// Navigation dans la zone strengths
 
 const titles = document.querySelectorAll(".strengths-headband h4");
 

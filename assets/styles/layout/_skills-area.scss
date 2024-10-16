@@ -1,12 +1,10 @@
 #skills-area {
-  height: 100vh;
-  width: 95%;
+  max-width: 1200px;
   margin: 0 auto;
   background-color: rgba(255, 0, 0, 0);
   position: relative;
   display: grid;
   grid-template-columns: 50% 50%;
-  overflow: hidden;
 
   .skills-container {
     height: 100%;
@@ -28,13 +26,13 @@
       transition: 0.2s ease;
       position: absolute;
       transform: rotateZ(calc(((var(--position) - 1) * 60) * 1deg))
-        translateX(250px);
+        translateX(230px);
       .skills-bubble-container {
         transform: rotateZ(calc(((var(--position) - 1) * 60) * -1deg));
       }
       &:hover {
         transform: rotateZ(calc(((var(--position) - 1) * 60) * 1deg))
-          translateX(250px) scale(110%);
+          translateX(230px) scale(110%);
         border-color: green;
       }
     }
@@ -54,84 +52,46 @@
       box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.393);
     }
   }
-  .skills-text {
-    @include DisplayJustifyAlign;
-    .skills-text-container {
-      @include DisplayJustifyAlign;
-      flex-direction: column;
-      width: 80%;
-      max-width: 600px;
-      border-radius: 20px;
-      border: 1px solid $color2;
-      background-color: rgba(0, 0, 0, 0);
-      backdrop-filter: blur(10px);
-      box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.393);
-      h3 {
-        margin: 30px;
-        text-transform: uppercase;
-        font-size: 3rem;
-        font-weight: 700;
-        color: $color2;
-      }
-      p {
-        font-weight: 400;
-        text-align: left;
-        margin: 0 5%;
-        line-height: 40px;
-        font-size: 1.3rem;
-        overflow-y: scroll;
-        scrollbar-width: none;
-        padding: 10px;
-        color: $color2;
-      }
+  .skills-text-container {
+    max-width: 500px;
+    margin: 40px auto;
+    border-radius: 20px;
+    border: 1px solid $color2;
+    background-color: rgba(0, 0, 0, 0);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.393);
+    h3 {
+      text-align: center;
+      margin: 20px 0 0 0;
+      text-transform: uppercase;
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: $color2;
+    }
+    p {
+      font-weight: 400;
+      text-align: left;
+      line-height: 40px;
+      font-size: 1.3rem;
+      overflow-y: scroll;
+      scrollbar-width: none;
+      padding: 20px;
+      color: $color2;
     }
   }
-
-  @media screen and (max-width: 1200px) {
-    grid-template-columns: 100%;
-    grid-template-rows: 65% 35%;
-    height: 100vh;
-
-    .skills-bubble-img {
-      top: 32.5%;
-      left: 50%;
-    }
-
-    .skills-text {
-      .skills-text-container {
-        height: 90%;
-        width: 100%;
-        max-width: 90%;
-        overflow-y: scroll;
-        scrollbar-width: none;
-
-        h3 {
-          display: none;
-        }
-        p {
-          line-height: 30px;
-          height: 90%;
-        }
-      }
-    }
-  }
-  @media screen and (max-width: 1500px) {
+  @media screen and (max-width: 1400px) {
     .skills-text {
       width: 100%;
       .skills-text-container {
         height: 80%;
       }
     }
-  }
-  @media screen and (max-width: 1400px) {
     .skills-container {
       margin: auto;
       width: 90%;
-      height: 50%;
       display: flex;
       justify-content: space-evenly;
       flex-wrap: wrap;
-      gap: 10px;
       .skills-bubble {
         position: static;
         transform: rotateZ(0) translateX(0);
@@ -147,35 +107,44 @@
       display: none;
     }
   }
+  @media screen and (max-width: 1200px) {
+    height: auto;
+    display: block;
+    .skills-container {
+      margin: 40px auto;
+    }
+    .skills-bubble-img {
+      top: 35%;
+      left: 50%;
+    }
+    .skills-text-container {
+      margin: 0 20px;
+      max-width: none;
+      width: auto;
+      p {
+        margin: 0;
+        line-height: 30px;
+        height: 90%;
+      }
+    }
+  }
   @media screen and (max-height: 770px) {
     .skills-text {
       .skills-text-container {
-        height: 90%;
-        overflow-y: scroll;
-        scrollbar-width: none;
-        h3 {
-          display: none;
-        }
+        height: auto;
         p {
-          line-height: 30px;
-          height: 90%;
+          overflow-y: visible;
         }
       }
     }
   }
   @media screen and (max-width: 650px) {
-    height: auto;
-    grid-template-rows: 50% 50%;
     margin: 0;
     width: 100%;
     .skills-container {
-      margin: 0 auto;
-      width: 90%;
-      height: 100%;
       display: flex;
       justify-content: space-evenly;
       flex-wrap: wrap;
-      gap: 10px;
       .skills-bubble {
         position: static;
         transform: rotateZ(0) translateX(0);

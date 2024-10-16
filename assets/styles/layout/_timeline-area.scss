@@ -14,8 +14,7 @@
   background: $color2;
   overflow: hidden;
   border-radius: 50px;
-  width: 95%;
-  margin: 0 auto;
+  margin: 0 20px;
   box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.393);
 
   .blackline-area {
@@ -95,7 +94,7 @@
           box-shadow: 0px 0px 10px 0px;
           text-align: center;
           transform-style: preserve-3d;
-          transition: all 0.5s ease;
+          transition: 0.4s ease;
           line-height: 25px;
           .card-front {
             width: 80%;
@@ -129,7 +128,7 @@
         }
         &:hover {
           .card {
-            transform: rotateY(180deg) scale(120%);
+            transform: rotateY(180deg) scale(110%);
           }
         }
       }
@@ -229,22 +228,24 @@
     .blackline-area {
       display: none;
     }
-    .timelines .area-card-display {
-      display: grid;
-      grid-template-columns: 1fr;
-      grid-template-rows: 1fr 1fr 1fr;
-      gap: 20px;
-      .card-container {
-        max-width: 80%;
-        .card {
-          .card-back {
-            width: 90%;
-            transform: rotateX(180deg);
-          }
-        }
-        &:hover {
+    @media screen and (max-width: 1200px) {
+      .timelines .area-card-display {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+        gap: 20px;
+        .card-container {
+          max-width: 80%;
           .card {
-            transform: rotateX(180deg);
+            .card-back {
+              width: 90%;
+              transform: rotateX(180deg);
+            }
+          }
+          &:hover {
+            .card {
+              transform: rotateX(180deg);
+            }
           }
         }
       }
@@ -278,7 +279,7 @@
   }
 
   @media screen and (max-width: 990px) {
-    grid-template-rows: 1fr 0.5fr 1fr 1fr 0.5fr 0.5fr 1fr;
+    margin: 0;
     .north-east-area {
       grid-template-rows: 15% 50% 35%;
     }
@@ -289,6 +290,15 @@
       display: grid;
       grid-template-rows: 15% 70% 15%;
       height: 160vh;
+      .card {
+        transform: rotateY(180deg) rotateZ(180deg);
+      }
+      .north-east-area {
+        grid-template-rows: 30% 70%;
+        .north-east-img-area-container {
+          display: none;
+        }
+      }
     }
     .north-east-area {
       grid-template-rows: 15% 50% 35%;
@@ -305,19 +315,6 @@
         h3 {
           font-size: 0.8rem;
         }
-      }
-    }
-  }
-
-  @media screen and (max-width: 650px) {
-    width: 100%;
-    .card {
-      transform: rotateY(180deg) rotateZ(180deg);
-    }
-    .north-east-area {
-      grid-template-rows: 30% 50%;
-      .north-east-img-area-container {
-        display: none;
       }
     }
   }

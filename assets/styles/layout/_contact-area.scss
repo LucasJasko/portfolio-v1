@@ -1,8 +1,7 @@
 #contact-area {
   .coordinates-area {
-    width: fit-content;
+    max-width: 1200px;
     margin: auto;
-    height: 15vh;
     display: flex;
     .container {
       display: flex;
@@ -10,6 +9,7 @@
       align-items: flex-end;
       width: 30%;
       min-width: 550px;
+      margin: 60px auto 30px auto;
       .text-area {
         display: grid;
         transition: 0.2s ease;
@@ -51,9 +51,10 @@
     }
   }
   .form-area {
-    height: 85vh;
     @include DisplayJustifyAlign;
     form {
+      margin: 30px;
+      min-height: 600px;
       .not-available {
         position: absolute;
         background-color: rgba(0, 0, 0, 0.903);
@@ -207,20 +208,18 @@
   }
   @media screen and (max-width: 1200px) {
     .coordinates-area {
-      flex-direction: column;
+      display: block;
       .container {
-        padding: 10px;
+        margin: 30px auto;
       }
     }
   }
   @media screen and (max-width: 650px) {
     .coordinates-area {
-      height: 30vh;
       width: 100%;
       .container {
         min-width: 400px;
         padding: 0;
-        margin: auto;
         .text-area > p {
           font-size: 1rem;
         }

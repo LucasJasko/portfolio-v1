@@ -4,8 +4,7 @@
   grid-template-columns: 1fr 1fr 1fr;
   border-radius: 50px;
   overflow: hidden;
-  width: 95%;
-  margin: 0 auto;
+  margin: 0 20px;
   box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.393);
 
   .interests-container {
@@ -38,8 +37,7 @@
 
       p {
         text-align: left;
-        margin: auto;
-        width: 80%;
+        margin: 30px;
         font-size: 1.5rem;
         line-height: 40px;
       }
@@ -68,7 +66,6 @@
       }
       .area-text {
         opacity: 1;
-
         h3 {
           font-size: 4rem;
         }
@@ -90,5 +87,6 @@
   }
   @media screen and (max-width: 650px) {
     width: 100%;
+    margin: 0;
   }
 }

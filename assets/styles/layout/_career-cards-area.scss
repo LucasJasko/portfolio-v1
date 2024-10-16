@@ -115,15 +115,15 @@
     }
   }
   @media screen and (max-width: 1050px) {
-    height: 140vh;
+    height: auto;
     display: grid;
     grid-template-columns: 100%;
-    grid-template-rows: 10% 90%;
-    justify-content: center;
+    grid-template-rows: auto 1fr;
+    margin-bottom: 40px;
 
     .career-cards-area-title {
       text-align: center;
-      margin-bottom: 0;
+      margin: 50px 0;
     }
 
     .card-display {
