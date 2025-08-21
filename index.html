@@ -19,23 +19,18 @@
       <ul>
         <li class="navbar-timeline navbar-item">
           <a href="#timeline-area">Timeline</a>
-          <span class="bg-hover"></span>
         </li>
         <li class="navbar-skills navbar-item">
           <a href="#skills-area">Skills</a>
-          <span class="bg-hover"></span>
         </li>
         <li class="navbar-strengths navbar-item">
           <a href="#strengths-area">Strengths</a>
-          <span class="bg-hover"></span>
         </li>
         <li class="navbar-interests navbar-item">
           <a href="#interests-area">Interests</a>
-          <span class="bg-hover"></span>
         </li>
         <li class="navbar-contact navbar-item">
           <a href="#contact-area">Contact</a>
-          <span class="bg-hover"></span>
         </li>
       </ul>
       <div class="network-logo">
@@ -52,14 +47,18 @@
           <img src="./assets/images/moimaintenant.webp" alt="une photo de profil de Lucas Jaskowiak" />
         </div>
         <div class="intro-text">
-          <h1>Hello ! my name is <br />Lucas <span>Jaskowiak</span></h1>
+          <h1 class="anim-text-flow">
+            Hello, <br />
+            I am <span class="txt span1">Lucas <span class="span2">Jaskowiak</span></span>
+          </h1>
           <p class="p1">
-            I am a 26 years old french junior developper and this is my CV.
+            I'm a 26 years old french junior developper currently looking for a new full time mission.
             <br />
-            I hope my profil will fit to your expectations, feel free to contact me by the contact field at the end of this page.
+            I hope my profile will fit to your expectations. <br />
+            If so, feel free to contact me by the contact field at the
+            <a class="contact-link" href="#contact-area">end of this page</a>.
           </p>
           <br />
-          <p class="p2">This project has been realised all along my formation.</p>
         </div>
       </div>
     </header>
@@ -170,13 +169,13 @@
       </div>
       <div class="north-east-area timelines">
         <div class="north-east-title-area-container area-title">
-          <h3>Lille > Thionville</h3>
+          <h3>North - East</h3>
         </div>
         <div class="north-east-text-area-container">
           <p class="north-east-text-area">
             In July 2023, as my professional situation allowed, I decided to leave my native region to put an end to a 5-year long-distance relationship with my
-            partner who lives in Thionville. It was after a period of job hunting in the region that I found my first position at ECCL. I'm very proud to have
-            taken this step, as it perfectly reflects my state of mind from that moment on. It's a period of transition in my life, but above all a new
+            partner who lives in Thionville (Grand Est - France). After a period of job hunting in the region, I found my first position at ECCL. I'm very proud
+            to have taken this step, as it perfectly reflects my state of mind from that moment on. It's a period of transition in my life, but above all a new
             beginning.
           </p>
         </div>
@@ -385,14 +384,14 @@
           <div class="skills-bubble-container bubble-1"><h5>React</h5></div>
         </div>
         <div class="skills-bubble" style="--position: 2">
-          <div class="skills-bubble-container bubble-2"><h5>SASS</h5></div>
+          <div class="skills-bubble-container bubble-2"><h5>PHP</h5></div>
         </div>
         <div class="skills-bubble" style="--position: 3">
-          <div class="skills-bubble-container bubble-3"><h5>HTML</h5></div>
+          <div class="skills-bubble-container bubble-3"><h5>JAVA</h5></div>
         </div>
         <div class="skills-bubble" style="--position: 4">
           <div class="skills-bubble-container bubble-4">
-            <h5>CSS</h5>
+            <h5>Angular</h5>
           </div>
         </div>
         <div class="skills-bubble" style="--position: 5">
@@ -451,7 +450,7 @@
 
     <section id="interests-area">
       <div class="fitness-area-container interests-container">
-        <img class="fitness-area-bg area-bg" src="./assets/images/Background-Fitness.webp" alt="fitness workplace" />
+        <img class="fitness-area-bg area-bg" src="./assets/images/fitness.webp" alt="fitness workplace" />
         <div class="fitness-area-text area-text">
           <h3>Fitness</h3>
           <p>
@@ -462,7 +461,7 @@
         </div>
       </div>
       <div class="mao-area-container interests-container">
-        <img class="mao-area-bg area-bg" src="./assets/images/Background-MAO.webp" alt="mao workspace" />
+        <img class="mao-area-bg area-bg" src="./assets/images/music.webp" alt="mao workspace" />
         <div class="mao-area-text area-text">
           <h3>CAM</h3>
           <p>
@@ -474,7 +473,7 @@
         </div>
       </div>
       <div class="gaming-area-container interests-container">
-        <img class="gaming-area-bg area-bg" src="./assets/images/Background-Gaming.webp" alt="gaming workspace" />
+        <img class="gaming-area-bg area-bg" src="./assets/images/gaming.webp" alt="gaming workspace" />
         <div class="gaming-area-text area-text">
           <h3>Gaming</h3>
           <p>
@@ -487,54 +486,57 @@
       </div>
     </section>
     <footer id="contact-area">
-      <div class="coordinates-area">
-        <div class="telephone-container container">
-          <div class="telephone-text-area text-area">
-            <div class="telephone-icon-container icon-container">
-              <span><i class="fa-solid fa-phone"></i></span>
+      <div>
+        <div class="coordinates-area">
+          <div class="telephone-container container">
+            <div class="telephone-text-area text-area">
+              <div class="telephone-icon-container icon-container">
+                <span><i class="fa-solid fa-phone"></i></span>
+              </div>
+              <p>Reveal</p>
             </div>
-            <p>Reveal</p>
+          </div>
+          <div class="email-container container">
+            <div class="email-text-area text-area">
+              <div class="email-icon-container icon-container">
+                <span><i class="fa-solid fa-envelope"></i></span>
+              </div>
+              <p>Reveal</p>
+            </div>
           </div>
         </div>
-        <div class="email-container container">
-          <div class="email-text-area text-area">
-            <div class="email-icon-container icon-container">
-              <span><i class="fa-solid fa-envelope"></i></span>
-            </div>
-            <p>Reveal</p>
-          </div>
+        <div class="form-area">
+          <!-- NE JAMAIS UTILISER GET POUR ENVOYER DES MOTS DE PASSE -->
+          <form action="/doc.txt" method="post" target="_blank">
+            <fieldset class="form-part form-part-1">
+              <legend>My profile got your interest ?</legend>
+              <input type="text" id="name" placeholder="Name" />
+              <input type="email" id="email" placeholder="email" />
+              <input type="tel" id="telephone" placeholder="telephone" />
+            </fieldset>
+            <fieldset class="form-part form-part-2">
+              <legend>Are you a...</legend>
+              <div class="form-part-2-container">
+                <input type="radio" id="school" name="type" />
+                <label for="school">school</label>
+                <input type="radio" id="recruiter" name="type" />
+                <label for="recruiter">recruiter</label>
+                <input type="radio" id="particular" name="type" />
+                <label for="particular">particular</label>
+              </div>
+            </fieldset>
+            <fieldset class="form-part form-part-3">
+              <legend>What can I do for you?</legend>
+              <textarea id="description" placeholder="I would love to discuss with you"></textarea>
+            </fieldset>
+            <fieldset class="form-part form-part-4">
+              <input type="submit" value="send" id="submit" />
+            </fieldset>
+          </form>
         </div>
-      </div>
-      <div class="form-area">
-        <!-- NE JAMAIS UTILISER GET POUR ENVOYER DES MOTS DE PASSE -->
-        <form action="/doc.txt" method="post" target="_blank">
-          <fieldset class="form-part form-part-1">
-            <legend>My profile got your interest ?</legend>
-            <input type="text" id="name" placeholder="Name" />
-            <input type="email" id="email" placeholder="email" />
-            <input type="tel" id="telephone" placeholder="telephone" />
-          </fieldset>
-          <fieldset class="form-part form-part-2">
-            <legend>Are you a...</legend>
-            <div class="form-part-2-container">
-              <input type="radio" id="school" name="type" />
-              <label for="school">school</label>
-              <input type="radio" id="recruiter" name="type" />
-              <label for="recruiter">recruiter</label>
-              <input type="radio" id="particular" name="type" />
-              <label for="particular">particular</label>
-            </div>
-          </fieldset>
-          <fieldset class="form-part form-part-3">
-            <legend>What can I do for you?</legend>
-            <textarea id="description" placeholder="What can I do for you?"></textarea>
-          </fieldset>
-          <fieldset class="form-part form-part-4">
-            <input type="submit" value="send" id="submit" />
-          </fieldset>
-        </form>
       </div>
     </footer>
   </body>
   <script src="index.js"></script>
+  <script src="background.js"></script>
 </html>

@@ -1,17 +1,26 @@
 // Paramétrage des beams du background
-const beamMaker = () => {
-  const beam = document.createElement("span");
-  beam.classList.add("beam");
-  document.getElementById("beam-display").appendChild(beam);
+// const beamMaker = () => {
+//   const beam = document.createElement("span");
+//   beam.classList.add("beam");
+//   document.getElementById("beam-display").appendChild(beam);
 
-  beam.style.setProperty("--beamt", Math.random() * 100 + "%");
-  beam.style.setProperty("--beaml", Math.random() * 100 + "%");
+//   beam.style.setProperty("--beamt", Math.random() * 100 + "%");
+//   beam.style.setProperty("--beaml", Math.random() * 100 + "%");
 
-  setTimeout(() => {
-    beam.remove();
-  }, 6000);
-};
-setInterval(beamMaker, 3000);
+//   setTimeout(() => {
+//     beam.remove();
+//   }, 6000);
+// };
+// setInterval(beamMaker, 3000);
+
+// Lettrage coloré du titre
+let letters = document.querySelector(".txt").textContent;
+const letterArray = letters.split("");
+document.querySelector(".txt").textContent = "";
+letterArray.forEach((element, i) => {
+  span = "<span>" + element + "</span>";
+  document.querySelector(".txt").innerHTML += span;
+});
 
 // Configuration du point rouge de localisation et du fix de la timeline
 const blacklineArea = document.querySelector(".blackline-area");
@@ -19,14 +28,12 @@ const timeline = document.getElementById("timeline-area");
 let ScrollTrigger = true;
 window.addEventListener("scroll", () => {
   scrollTop = window.scrollY / document.body.offsetHeight;
-  scrollLvl =
-    (window.scrollY + window.innerHeight) / document.body.offsetHeight;
+  scrollLvl = (window.scrollY + window.innerHeight) / document.body.offsetHeight;
 
-  if (scrollTop >= 0.166 && scrollLvl < 0.666) {
+  if (timeline.getBoundingClientRect().top <= 0) {
     blacklineArea.style.position = "fixed";
-    blacklineArea.style.width = "15%";
+    blacklineArea.style.width = "255px";
     blacklineArea.style.top = "0";
-    blacklineArea.style.left = "45px";
     if (ScrollTrigger) {
       ScrollTrigger = false;
       const PositionDot = document.createElement("span");
@@ -36,10 +43,9 @@ window.addEventListener("scroll", () => {
   }
   const PositionDot = document.querySelector(".position-dot");
   if (PositionDot) {
-    PositionDot.style.top =
-      (window.scrollY / timeline.clientHeight - 0.25) * 100 + "%";
+    PositionDot.style.top = (window.scrollY / timeline.clientHeight - 0.25) * 100 + "%";
   }
-  if (scrollTop < 0.166) {
+  if (timeline.getBoundingClientRect().top > 0) {
     blacklineArea.style.position = "static";
     blacklineArea.style.width = "100%";
     ScrollTrigger = true;
@@ -48,11 +54,10 @@ window.addEventListener("scroll", () => {
       PositionDot.remove();
     }
   }
-  if (scrollLvl > 0.666) {
+  if (timeline.getBoundingClientRect().bottom <= window.innerHeight) {
     blacklineArea.style.position = "absolute";
-    blacklineArea.style.width = "100%";
+    blacklineArea.style.width = "255px";
     blacklineArea.style.top = "auto";
-    blacklineArea.style.left = "0";
     blacklineArea.style.bottom = "0";
   }
 });
@@ -86,37 +91,28 @@ burgerButton.addEventListener("click", () => {
 });
 navItems.forEach((item) => {
   item.addEventListener("click", () => {
-    if (
-      window.innerWidth <= 730 &&
-      navBar.style.transform == "translateX(0px)"
-    ) {
+    if (window.innerWidth <= 730 && navBar.style.transform == "translateX(0px)") {
       console.log("hello");
       navBar.style.transform = "translateX(-100%)";
     }
   });
 });
 
-navItems.forEach((item, index) => {
-  item.addEventListener("mouseover", () => {
-    navBgs[index].style.transform =
-      "translateY(-40%) translateX(0) rotateZ(45deg)";
-  });
-  item.addEventListener("mouseout", () => {
-    navBgs[index].style.transform =
-      "translateY(50%) translateX(-180%) rotateZ(45deg)";
-  });
-});
-
 // Navigation dans la zone strengths
-
 const titles = document.querySelectorAll(".strengths-headband h4");
+let activeTitle = titles[0];
+activeTitle.classList.add("strengths-headband-active");
 
 PrevText = document.getElementById("strength-1");
 titles.forEach((title, i) => {
-  i += 1;
   title.addEventListener("click", () => {
+    activeTitle.classList.remove("strengths-headband-active");
+
+    activeTitle = titles[i];
+    activeTitle.classList.add("strengths-headband-active");
+
     PrevText.style.display = "none";
-    text = String("strength-" + i);
+    text = String("strength-" + (i + 1));
     textStrength = document.getElementById(text);
     textStrength.style.display = "block";
     PrevText = textStrength;
@@ -202,7 +198,7 @@ submInp.addEventListener("click", (e) => {
       message,
     };
     console.log(data);
-    for (objects in data) data[objects] = null;
+
     nameInp.value = null;
     emailInp.value = null;
     telInp.value = null;
@@ -212,6 +208,7 @@ submInp.addEventListener("click", (e) => {
     telephone = null;
     choice = null;
     message = null;
+
     setTimeout(() => {
       contactCont.classList.remove("valid");
     }, 2000);

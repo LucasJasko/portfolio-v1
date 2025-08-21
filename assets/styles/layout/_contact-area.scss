@@ -1,13 +1,20 @@
 #contact-area {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  > div {
+    width: 100%;
+  }
   .coordinates-area {
-    max-width: 1200px;
+    max-width: 1700px;
     margin: auto;
     display: flex;
     .container {
       display: flex;
       justify-content: center;
       align-items: flex-end;
-      width: 30%;
+      width: 40%;
       min-width: 550px;
       margin: 60px auto 30px auto;
       .text-area {
@@ -15,7 +22,7 @@
         transition: 0.2s ease;
         grid-template-columns: 10% 90%;
         width: 85%;
-        border-radius: 40px;
+        border-radius: 10px;
         color: $color1;
         background: $color2;
         border: 1px solid $color2;
@@ -53,19 +60,20 @@
   .form-area {
     @include DisplayJustifyAlign;
     form {
+      padding: 30px 0;
+      border: 1px solid $color2;
       margin: 30px;
       min-height: 600px;
       position: relative;
       overflow: hidden;
       max-height: 650px;
       width: 80%;
-      max-width: 1100px;
-      background-color: rgba(255, 255, 255, 0);
+      max-width: 1700px;
+      background-color: rgba(0, 0, 0, 0.295);
       backdrop-filter: blur(2px);
       color: $color2;
-      border: 1px solid $color2;
       transition: 0.5s ease;
-      border-radius: 50px;
+      border-radius: 10px;
       height: 100%;
       display: grid;
       grid-template-columns: 1fr 1fr 1fr;
@@ -82,12 +90,12 @@
         legend {
           text-align: center;
           font-size: 1.3rem;
-          font-weight: 600;
+          font-weight: 400;
         }
         input {
           padding: 10px;
           border: 1px solid $color2;
-          border-radius: 40px;
+          border-radius: 10px;
           font-size: 1.1rem;
         }
       }
@@ -105,8 +113,7 @@
       .form-part-2 {
         grid-area: b;
         .form-part-2-container {
-          border: 1px solid $color2;
-          border-radius: 40px;
+          border-radius: 10px;
           background-color: rgb(255, 255, 255);
           font-size: 1.1rem;
           min-width: 300px;
@@ -138,8 +145,7 @@
           height: 70%;
           width: 80%;
           padding: 25px;
-          border: 1px solid $color2;
-          border-radius: 40px;
+          border-radius: 10px;
           font-size: 1.1rem;
           resize: none;
         }
@@ -195,7 +201,7 @@
     .coordinates-area {
       width: 100%;
       .container {
-        min-width: 400px;
+        min-width: 100%;
         padding: 0;
         .text-area > p {
           font-size: 1rem;
@@ -203,8 +209,6 @@
       }
     }
     .form-area {
-      height: 80vh;
-      margin-bottom: 30px;
       form {
         width: 90%;
         grid-template-rows: auto auto auto auto;

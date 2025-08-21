@@ -3,8 +3,9 @@
   position: fixed;
   width: 100%;
   height: 100%;
-  filter: brightness(0.7);
-  background-image: repeating-linear-gradient(
+  filter: brightness(0.5);
+  background-color: rgb(29, 29, 29);
+  /* background-image: repeating-linear-gradient(
       45deg,
       hsla(207, 0%, 63%, 0.05) 0px,
       hsla(207, 0%, 63%, 0.05) 1px,
@@ -48,7 +49,34 @@
       transparent 12px,
       transparent 32px
     ),
-    linear-gradient(90deg, rgb(17, 17, 17), rgb(66, 66, 66));
+    linear-gradient(90deg, rgb(17, 17, 17), rgb(66, 66, 66)); */
+}
+
+.bubble {
+  position: absolute;
+  border-radius: 1000px;
+  transform: translateX(-50%) translateY(-50%);
+  top: 100%;
+  opacity: 0;
+  animation: 30s move ease-out;
+}
+
+@keyframes move {
+  10% {
+    opacity: 1;
+  }
+  30% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  80% {
+    opacity: 0;
+  }
+  100% {
+    top: 0%;
+  }
 }
 
 .beam {

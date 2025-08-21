@@ -23,10 +23,81 @@ body {
   position: fixed;
   width: 100%;
   height: 100%;
-  filter: brightness(0.7);
-  background-image: repeating-linear-gradient(45deg, hsla(207, 0%, 63%, 0.05) 0px, hsla(207, 0%, 63%, 0.05) 1px, transparent 1px, transparent 11px, hsla(207, 0%, 63%, 0.05) 11px, hsla(207, 0%, 63%, 0.05) 12px, transparent 12px, transparent 32px), repeating-linear-gradient(0deg, hsla(207, 0%, 63%, 0.05) 0px, hsla(207, 0%, 63%, 0.05) 1px, transparent 1px, transparent 11px, hsla(207, 0%, 63%, 0.05) 11px, hsla(207, 0%, 63%, 0.05) 12px, transparent 12px, transparent 32px), repeating-linear-gradient(135deg, hsla(207, 0%, 63%, 0.05) 0px, hsla(207, 0%, 63%, 0.05) 1px, transparent 1px, transparent 11px, hsla(207, 0%, 63%, 0.05) 11px, hsla(207, 0%, 63%, 0.05) 12px, transparent 12px, transparent 32px), repeating-linear-gradient(90deg, hsla(207, 0%, 63%, 0.05) 0px, hsla(207, 0%, 63%, 0.05) 1px, transparent 1px, transparent 11px, hsla(207, 0%, 63%, 0.05) 11px, hsla(207, 0%, 63%, 0.05) 12px, transparent 12px, transparent 32px), linear-gradient(90deg, rgb(17, 17, 17), rgb(66, 66, 66));
+  filter: brightness(0.5);
+  background-color: rgb(29, 29, 29);
+  /* background-image: repeating-linear-gradient(
+      45deg,
+      hsla(207, 0%, 63%, 0.05) 0px,
+      hsla(207, 0%, 63%, 0.05) 1px,
+      transparent 1px,
+      transparent 11px,
+      hsla(207, 0%, 63%, 0.05) 11px,
+      hsla(207, 0%, 63%, 0.05) 12px,
+      transparent 12px,
+      transparent 32px
+    ),
+    repeating-linear-gradient(
+      0deg,
+      hsla(207, 0%, 63%, 0.05) 0px,
+      hsla(207, 0%, 63%, 0.05) 1px,
+      transparent 1px,
+      transparent 11px,
+      hsla(207, 0%, 63%, 0.05) 11px,
+      hsla(207, 0%, 63%, 0.05) 12px,
+      transparent 12px,
+      transparent 32px
+    ),
+    repeating-linear-gradient(
+      135deg,
+      hsla(207, 0%, 63%, 0.05) 0px,
+      hsla(207, 0%, 63%, 0.05) 1px,
+      transparent 1px,
+      transparent 11px,
+      hsla(207, 0%, 63%, 0.05) 11px,
+      hsla(207, 0%, 63%, 0.05) 12px,
+      transparent 12px,
+      transparent 32px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      hsla(207, 0%, 63%, 0.05) 0px,
+      hsla(207, 0%, 63%, 0.05) 1px,
+      transparent 1px,
+      transparent 11px,
+      hsla(207, 0%, 63%, 0.05) 11px,
+      hsla(207, 0%, 63%, 0.05) 12px,
+      transparent 12px,
+      transparent 32px
+    ),
+    linear-gradient(90deg, rgb(17, 17, 17), rgb(66, 66, 66)); */
 }
 
+.bubble {
+  position: absolute;
+  border-radius: 1000px;
+  transform: translateX(-50%) translateY(-50%);
+  top: 100%;
+  opacity: 0;
+  animation: 30s move ease-out;
+}
+
+@keyframes move {
+  10% {
+    opacity: 1;
+  }
+  30% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  80% {
+    opacity: 0;
+  }
+  100% {
+    top: 0%;
+  }
+}
 .beam {
   position: absolute;
   top: var(--beamt);
@@ -60,15 +131,15 @@ nav {
   width: 100%;
   position: fixed;
   z-index: 4;
-  background-color: rgba(0, 0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.425);
   -webkit-backdrop-filter: blur(10px);
           backdrop-filter: blur(10px);
   transition: 0.2s ease;
-  border-bottom: 1px solid #dcdcdc;
+  border-bottom: 1px solid #d1d1d1;
   box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.393);
 }
 nav ul {
-  max-width: 1100px;
+  max-width: 1700px;
   margin: 0 auto;
   padding: 0;
   display: flex;
@@ -80,19 +151,28 @@ nav ul {
 nav ul li {
   position: relative;
   list-style: none;
+  border-top: 1px solid transparent;
+  transition: 0.2s ease;
+  min-width: 20%;
+  text-align: center;
+  cursor: pointer;
 }
 nav ul li a {
   display: inline-block;
-  color: #dcdcdc;
+  color: #d1d1d1;
   text-decoration: none;
   text-transform: uppercase;
-  font-size: 1rem;
-  font-weight: 400;
+  font-size: 1.1rem;
   transition: 0.3s;
-  padding: 15px;
-  z-index: 1;
-  font-weight: 700;
-  text-shadow: 0 0 10px black;
+  padding: 25px 15px;
+  font-weight: 400;
+}
+nav ul li:hover {
+  border-top: 1px solid rgb(133, 200, 223);
+}
+nav ul li:hover a {
+  font-weight: 600;
+  color: rgb(133, 200, 223);
 }
 nav ul li .bg-hover {
   position: absolute;
@@ -101,8 +181,8 @@ nav ul li .bg-hover {
   height: 480%;
   width: 100%;
   transform: translateY(50%) translateX(-180%) rotateZ(45deg);
-  border-left: 1px solid #dcdcdc;
-  border-right: 1px solid #dcdcdc;
+  border-left: 1px solid #d1d1d1;
+  border-right: 1px solid #d1d1d1;
   transition: 0.2s;
   z-index: -1;
 }
@@ -118,17 +198,18 @@ nav .network-logo {
 }
 nav .network-logo a {
   display: inline-block;
-  padding: 10px 20px;
+  padding: 20px 20px;
   font-size: 1.5rem;
-  color: #dcdcdc;
+  color: #d1d1d1;
   text-decoration: none;
   transition: 0.2s;
 }
 nav .network-logo a:hover {
-  color: #8b8b8b;
+  color: rgb(133, 200, 223);
 }
 nav .burger-button {
-  color: #dcdcdc;
+  cursor: pointer;
+  color: #d1d1d1;
   position: absolute;
   top: 10px;
   right: -60px;
@@ -138,7 +219,7 @@ nav .burger-button {
   transition: 0.2s;
 }
 nav .burger-button:hover {
-  color: #8b8b8b;
+  color: rgb(133, 200, 223);
 }
 @media screen and (max-width: 1310px) {
   nav ul {
@@ -164,7 +245,7 @@ nav .burger-button:hover {
     height: 100vh;
     width: 50%;
     border-bottom: none;
-    border-right: 1px solid #dcdcdc;
+    border-right: 1px solid #d1d1d1;
     transform: translateX(-100%);
   }
   nav ul {
@@ -172,6 +253,7 @@ nav .burger-button:hover {
     height: 50%;
   }
   nav ul li {
+    border-top: none;
     width: 100%;
     text-align: center;
   }
@@ -180,6 +262,14 @@ nav .burger-button:hover {
   }
   nav ul li .bg-hover {
     display: none;
+  }
+  nav ul li:hover {
+    border-top: none;
+    border-left: 1px solid rgb(133, 200, 223);
+  }
+  nav ul li:hover a {
+    font-weight: 600;
+    color: rgb(133, 200, 223);
   }
   nav .network-logo {
     height: 10%;
@@ -194,6 +284,8 @@ nav .burger-button:hover {
 
 #intro-area {
   height: 100vh;
+  max-width: 1700px;
+  margin: 0 auto;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -202,8 +294,8 @@ nav .burger-button:hover {
   display: grid;
   grid-template-columns: 25% 75%;
   min-height: 335px;
-  width: 75%;
-  max-width: 1500px;
+  width: 100%;
+  max-width: 1700px;
   text-shadow: 0 0 2px rgba(0, 0, 0, 0.731);
 }
 #intro-area .intro-container .intro-img {
@@ -215,7 +307,7 @@ nav .burger-button:hover {
   max-width: 80%;
   margin: 0 40px 0 auto;
   border-radius: 10px;
-  box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.393);
+  box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.13);
   filter: brightness(0.9);
 }
 #intro-area .intro-text {
@@ -223,24 +315,36 @@ nav .burger-button:hover {
   justify-content: center;
   position: relative;
   flex-direction: column;
-  color: #dcdcdc;
+  color: #d1d1d1;
   overflow: hidden;
   padding-left: 30px;
 }
 #intro-area .intro-text h1 {
   margin: 0 0 30px 0;
   font-size: 3.4rem;
+  font-weight: 200;
   text-shadow: 0 0 0 rgb(17, 17, 17);
 }
-#intro-area .intro-text h1 span {
+#intro-area .intro-text h1 .span1 {
+  text-rendering: optimizeLegibility;
+  font-weight: 400;
   font-size: 4.2rem;
-  text-transform: uppercase;
   letter-spacing: 3px;
-  color: #dcdcdc;
+}
+#intro-area .intro-text h1 .span1 .span2 {
+  text-transform: uppercase;
+  font-weight: 600;
 }
 #intro-area .intro-text p {
+  font-weight: 200;
   font-size: 1.5rem;
+  line-height: 40px;
   margin: 0;
+}
+#intro-area .intro-text p .contact-link {
+  font-weight: 400;
+  text-decoration: none;
+  color: lightblue;
 }
 #intro-area .intro-text .p2 {
   color: rgb(179, 179, 179);
@@ -253,7 +357,7 @@ nav .burger-button:hover {
   left: 0;
   width: 2px;
   height: 100%;
-  background-color: #dcdcdc;
+  background-color: #d1d1d1;
 }
 @media screen and (max-width: 1200px) {
   #intro-area .intro-container {
@@ -311,8 +415,503 @@ nav .burger-button:hover {
   }
 }
 
+/*
+ * Animation module with all animation code
+ */
+.anim-text-flow,
+.anim-text-flow-hover:hover {
+  /*
+   * Animation variables
+   */
+  /*
+   * Elements settings
+   */
+  /*
+   * Keyframe loop
+   */
+  /*
+   * Element animation delay loop
+   */
+}
+.anim-text-flow span,
+.anim-text-flow-hover:hover span {
+  animation-name: anim-text-flow-keys;
+  animation-duration: 50s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-fill-mode: forwards;
+}
+@keyframes anim-text-flow-keys {
+  0% {
+    color: hsl(43, 60%, 60%);
+  }
+  5% {
+    color: hsl(273, 60%, 60%);
+  }
+  10% {
+    color: hsl(30, 60%, 60%);
+  }
+  15% {
+    color: hsl(226, 60%, 60%);
+  }
+  20% {
+    color: hsl(126, 60%, 60%);
+  }
+  25% {
+    color: hsl(222, 60%, 60%);
+  }
+  30% {
+    color: hsl(248, 60%, 60%);
+  }
+  35% {
+    color: hsl(359, 60%, 60%);
+  }
+  40% {
+    color: hsl(330, 60%, 60%);
+  }
+  45% {
+    color: hsl(8, 60%, 60%);
+  }
+  50% {
+    color: hsl(285, 60%, 60%);
+  }
+  55% {
+    color: hsl(111, 60%, 60%);
+  }
+  60% {
+    color: hsl(273, 60%, 60%);
+  }
+  65% {
+    color: hsl(149, 60%, 60%);
+  }
+  70% {
+    color: hsl(112, 60%, 60%);
+  }
+  75% {
+    color: hsl(8, 60%, 60%);
+  }
+  80% {
+    color: hsl(293, 60%, 60%);
+  }
+  85% {
+    color: hsl(123, 60%, 60%);
+  }
+  90% {
+    color: hsl(76, 60%, 60%);
+  }
+  95% {
+    color: hsl(2, 60%, 60%);
+  }
+  100% {
+    color: hsl(342, 60%, 60%);
+  }
+}
+.anim-text-flow span:nth-of-type(1),
+.anim-text-flow-hover:hover span:nth-of-type(1) {
+  animation-delay: -19.8s;
+}
+.anim-text-flow span:nth-of-type(2),
+.anim-text-flow-hover:hover span:nth-of-type(2) {
+  animation-delay: -19.6s;
+}
+.anim-text-flow span:nth-of-type(3),
+.anim-text-flow-hover:hover span:nth-of-type(3) {
+  animation-delay: -19.4s;
+}
+.anim-text-flow span:nth-of-type(4),
+.anim-text-flow-hover:hover span:nth-of-type(4) {
+  animation-delay: -19.2s;
+}
+.anim-text-flow span:nth-of-type(5),
+.anim-text-flow-hover:hover span:nth-of-type(5) {
+  animation-delay: -19s;
+}
+.anim-text-flow span:nth-of-type(6),
+.anim-text-flow-hover:hover span:nth-of-type(6) {
+  animation-delay: -18.8s;
+}
+.anim-text-flow span:nth-of-type(7),
+.anim-text-flow-hover:hover span:nth-of-type(7) {
+  animation-delay: -18.6s;
+}
+.anim-text-flow span:nth-of-type(8),
+.anim-text-flow-hover:hover span:nth-of-type(8) {
+  animation-delay: -18.4s;
+}
+.anim-text-flow span:nth-of-type(9),
+.anim-text-flow-hover:hover span:nth-of-type(9) {
+  animation-delay: -18.2s;
+}
+.anim-text-flow span:nth-of-type(10),
+.anim-text-flow-hover:hover span:nth-of-type(10) {
+  animation-delay: -18s;
+}
+.anim-text-flow span:nth-of-type(11),
+.anim-text-flow-hover:hover span:nth-of-type(11) {
+  animation-delay: -17.8s;
+}
+.anim-text-flow span:nth-of-type(12),
+.anim-text-flow-hover:hover span:nth-of-type(12) {
+  animation-delay: -17.6s;
+}
+.anim-text-flow span:nth-of-type(13),
+.anim-text-flow-hover:hover span:nth-of-type(13) {
+  animation-delay: -17.4s;
+}
+.anim-text-flow span:nth-of-type(14),
+.anim-text-flow-hover:hover span:nth-of-type(14) {
+  animation-delay: -17.2s;
+}
+.anim-text-flow span:nth-of-type(15),
+.anim-text-flow-hover:hover span:nth-of-type(15) {
+  animation-delay: -17s;
+}
+.anim-text-flow span:nth-of-type(16),
+.anim-text-flow-hover:hover span:nth-of-type(16) {
+  animation-delay: -16.8s;
+}
+.anim-text-flow span:nth-of-type(17),
+.anim-text-flow-hover:hover span:nth-of-type(17) {
+  animation-delay: -16.6s;
+}
+.anim-text-flow span:nth-of-type(18),
+.anim-text-flow-hover:hover span:nth-of-type(18) {
+  animation-delay: -16.4s;
+}
+.anim-text-flow span:nth-of-type(19),
+.anim-text-flow-hover:hover span:nth-of-type(19) {
+  animation-delay: -16.2s;
+}
+.anim-text-flow span:nth-of-type(20),
+.anim-text-flow-hover:hover span:nth-of-type(20) {
+  animation-delay: -16s;
+}
+.anim-text-flow span:nth-of-type(21),
+.anim-text-flow-hover:hover span:nth-of-type(21) {
+  animation-delay: -15.8s;
+}
+.anim-text-flow span:nth-of-type(22),
+.anim-text-flow-hover:hover span:nth-of-type(22) {
+  animation-delay: -15.6s;
+}
+.anim-text-flow span:nth-of-type(23),
+.anim-text-flow-hover:hover span:nth-of-type(23) {
+  animation-delay: -15.4s;
+}
+.anim-text-flow span:nth-of-type(24),
+.anim-text-flow-hover:hover span:nth-of-type(24) {
+  animation-delay: -15.2s;
+}
+.anim-text-flow span:nth-of-type(25),
+.anim-text-flow-hover:hover span:nth-of-type(25) {
+  animation-delay: -15s;
+}
+.anim-text-flow span:nth-of-type(26),
+.anim-text-flow-hover:hover span:nth-of-type(26) {
+  animation-delay: -14.8s;
+}
+.anim-text-flow span:nth-of-type(27),
+.anim-text-flow-hover:hover span:nth-of-type(27) {
+  animation-delay: -14.6s;
+}
+.anim-text-flow span:nth-of-type(28),
+.anim-text-flow-hover:hover span:nth-of-type(28) {
+  animation-delay: -14.4s;
+}
+.anim-text-flow span:nth-of-type(29),
+.anim-text-flow-hover:hover span:nth-of-type(29) {
+  animation-delay: -14.2s;
+}
+.anim-text-flow span:nth-of-type(30),
+.anim-text-flow-hover:hover span:nth-of-type(30) {
+  animation-delay: -14s;
+}
+.anim-text-flow span:nth-of-type(31),
+.anim-text-flow-hover:hover span:nth-of-type(31) {
+  animation-delay: -13.8s;
+}
+.anim-text-flow span:nth-of-type(32),
+.anim-text-flow-hover:hover span:nth-of-type(32) {
+  animation-delay: -13.6s;
+}
+.anim-text-flow span:nth-of-type(33),
+.anim-text-flow-hover:hover span:nth-of-type(33) {
+  animation-delay: -13.4s;
+}
+.anim-text-flow span:nth-of-type(34),
+.anim-text-flow-hover:hover span:nth-of-type(34) {
+  animation-delay: -13.2s;
+}
+.anim-text-flow span:nth-of-type(35),
+.anim-text-flow-hover:hover span:nth-of-type(35) {
+  animation-delay: -13s;
+}
+.anim-text-flow span:nth-of-type(36),
+.anim-text-flow-hover:hover span:nth-of-type(36) {
+  animation-delay: -12.8s;
+}
+.anim-text-flow span:nth-of-type(37),
+.anim-text-flow-hover:hover span:nth-of-type(37) {
+  animation-delay: -12.6s;
+}
+.anim-text-flow span:nth-of-type(38),
+.anim-text-flow-hover:hover span:nth-of-type(38) {
+  animation-delay: -12.4s;
+}
+.anim-text-flow span:nth-of-type(39),
+.anim-text-flow-hover:hover span:nth-of-type(39) {
+  animation-delay: -12.2s;
+}
+.anim-text-flow span:nth-of-type(40),
+.anim-text-flow-hover:hover span:nth-of-type(40) {
+  animation-delay: -12s;
+}
+.anim-text-flow span:nth-of-type(41),
+.anim-text-flow-hover:hover span:nth-of-type(41) {
+  animation-delay: -11.8s;
+}
+.anim-text-flow span:nth-of-type(42),
+.anim-text-flow-hover:hover span:nth-of-type(42) {
+  animation-delay: -11.6s;
+}
+.anim-text-flow span:nth-of-type(43),
+.anim-text-flow-hover:hover span:nth-of-type(43) {
+  animation-delay: -11.4s;
+}
+.anim-text-flow span:nth-of-type(44),
+.anim-text-flow-hover:hover span:nth-of-type(44) {
+  animation-delay: -11.2s;
+}
+.anim-text-flow span:nth-of-type(45),
+.anim-text-flow-hover:hover span:nth-of-type(45) {
+  animation-delay: -11s;
+}
+.anim-text-flow span:nth-of-type(46),
+.anim-text-flow-hover:hover span:nth-of-type(46) {
+  animation-delay: -10.8s;
+}
+.anim-text-flow span:nth-of-type(47),
+.anim-text-flow-hover:hover span:nth-of-type(47) {
+  animation-delay: -10.6s;
+}
+.anim-text-flow span:nth-of-type(48),
+.anim-text-flow-hover:hover span:nth-of-type(48) {
+  animation-delay: -10.4s;
+}
+.anim-text-flow span:nth-of-type(49),
+.anim-text-flow-hover:hover span:nth-of-type(49) {
+  animation-delay: -10.2s;
+}
+.anim-text-flow span:nth-of-type(50),
+.anim-text-flow-hover:hover span:nth-of-type(50) {
+  animation-delay: -10s;
+}
+.anim-text-flow span:nth-of-type(51),
+.anim-text-flow-hover:hover span:nth-of-type(51) {
+  animation-delay: -9.8s;
+}
+.anim-text-flow span:nth-of-type(52),
+.anim-text-flow-hover:hover span:nth-of-type(52) {
+  animation-delay: -9.6s;
+}
+.anim-text-flow span:nth-of-type(53),
+.anim-text-flow-hover:hover span:nth-of-type(53) {
+  animation-delay: -9.4s;
+}
+.anim-text-flow span:nth-of-type(54),
+.anim-text-flow-hover:hover span:nth-of-type(54) {
+  animation-delay: -9.2s;
+}
+.anim-text-flow span:nth-of-type(55),
+.anim-text-flow-hover:hover span:nth-of-type(55) {
+  animation-delay: -9s;
+}
+.anim-text-flow span:nth-of-type(56),
+.anim-text-flow-hover:hover span:nth-of-type(56) {
+  animation-delay: -8.8s;
+}
+.anim-text-flow span:nth-of-type(57),
+.anim-text-flow-hover:hover span:nth-of-type(57) {
+  animation-delay: -8.6s;
+}
+.anim-text-flow span:nth-of-type(58),
+.anim-text-flow-hover:hover span:nth-of-type(58) {
+  animation-delay: -8.4s;
+}
+.anim-text-flow span:nth-of-type(59),
+.anim-text-flow-hover:hover span:nth-of-type(59) {
+  animation-delay: -8.2s;
+}
+.anim-text-flow span:nth-of-type(60),
+.anim-text-flow-hover:hover span:nth-of-type(60) {
+  animation-delay: -8s;
+}
+.anim-text-flow span:nth-of-type(61),
+.anim-text-flow-hover:hover span:nth-of-type(61) {
+  animation-delay: -7.8s;
+}
+.anim-text-flow span:nth-of-type(62),
+.anim-text-flow-hover:hover span:nth-of-type(62) {
+  animation-delay: -7.6s;
+}
+.anim-text-flow span:nth-of-type(63),
+.anim-text-flow-hover:hover span:nth-of-type(63) {
+  animation-delay: -7.4s;
+}
+.anim-text-flow span:nth-of-type(64),
+.anim-text-flow-hover:hover span:nth-of-type(64) {
+  animation-delay: -7.2s;
+}
+.anim-text-flow span:nth-of-type(65),
+.anim-text-flow-hover:hover span:nth-of-type(65) {
+  animation-delay: -7s;
+}
+.anim-text-flow span:nth-of-type(66),
+.anim-text-flow-hover:hover span:nth-of-type(66) {
+  animation-delay: -6.8s;
+}
+.anim-text-flow span:nth-of-type(67),
+.anim-text-flow-hover:hover span:nth-of-type(67) {
+  animation-delay: -6.6s;
+}
+.anim-text-flow span:nth-of-type(68),
+.anim-text-flow-hover:hover span:nth-of-type(68) {
+  animation-delay: -6.4s;
+}
+.anim-text-flow span:nth-of-type(69),
+.anim-text-flow-hover:hover span:nth-of-type(69) {
+  animation-delay: -6.2s;
+}
+.anim-text-flow span:nth-of-type(70),
+.anim-text-flow-hover:hover span:nth-of-type(70) {
+  animation-delay: -6s;
+}
+.anim-text-flow span:nth-of-type(71),
+.anim-text-flow-hover:hover span:nth-of-type(71) {
+  animation-delay: -5.8s;
+}
+.anim-text-flow span:nth-of-type(72),
+.anim-text-flow-hover:hover span:nth-of-type(72) {
+  animation-delay: -5.6s;
+}
+.anim-text-flow span:nth-of-type(73),
+.anim-text-flow-hover:hover span:nth-of-type(73) {
+  animation-delay: -5.4s;
+}
+.anim-text-flow span:nth-of-type(74),
+.anim-text-flow-hover:hover span:nth-of-type(74) {
+  animation-delay: -5.2s;
+}
+.anim-text-flow span:nth-of-type(75),
+.anim-text-flow-hover:hover span:nth-of-type(75) {
+  animation-delay: -5s;
+}
+.anim-text-flow span:nth-of-type(76),
+.anim-text-flow-hover:hover span:nth-of-type(76) {
+  animation-delay: -4.8s;
+}
+.anim-text-flow span:nth-of-type(77),
+.anim-text-flow-hover:hover span:nth-of-type(77) {
+  animation-delay: -4.6s;
+}
+.anim-text-flow span:nth-of-type(78),
+.anim-text-flow-hover:hover span:nth-of-type(78) {
+  animation-delay: -4.4s;
+}
+.anim-text-flow span:nth-of-type(79),
+.anim-text-flow-hover:hover span:nth-of-type(79) {
+  animation-delay: -4.2s;
+}
+.anim-text-flow span:nth-of-type(80),
+.anim-text-flow-hover:hover span:nth-of-type(80) {
+  animation-delay: -4s;
+}
+.anim-text-flow span:nth-of-type(81),
+.anim-text-flow-hover:hover span:nth-of-type(81) {
+  animation-delay: -3.8s;
+}
+.anim-text-flow span:nth-of-type(82),
+.anim-text-flow-hover:hover span:nth-of-type(82) {
+  animation-delay: -3.6s;
+}
+.anim-text-flow span:nth-of-type(83),
+.anim-text-flow-hover:hover span:nth-of-type(83) {
+  animation-delay: -3.4s;
+}
+.anim-text-flow span:nth-of-type(84),
+.anim-text-flow-hover:hover span:nth-of-type(84) {
+  animation-delay: -3.2s;
+}
+.anim-text-flow span:nth-of-type(85),
+.anim-text-flow-hover:hover span:nth-of-type(85) {
+  animation-delay: -3s;
+}
+.anim-text-flow span:nth-of-type(86),
+.anim-text-flow-hover:hover span:nth-of-type(86) {
+  animation-delay: -2.8s;
+}
+.anim-text-flow span:nth-of-type(87),
+.anim-text-flow-hover:hover span:nth-of-type(87) {
+  animation-delay: -2.6s;
+}
+.anim-text-flow span:nth-of-type(88),
+.anim-text-flow-hover:hover span:nth-of-type(88) {
+  animation-delay: -2.4s;
+}
+.anim-text-flow span:nth-of-type(89),
+.anim-text-flow-hover:hover span:nth-of-type(89) {
+  animation-delay: -2.2s;
+}
+.anim-text-flow span:nth-of-type(90),
+.anim-text-flow-hover:hover span:nth-of-type(90) {
+  animation-delay: -2s;
+}
+.anim-text-flow span:nth-of-type(91),
+.anim-text-flow-hover:hover span:nth-of-type(91) {
+  animation-delay: -1.8s;
+}
+.anim-text-flow span:nth-of-type(92),
+.anim-text-flow-hover:hover span:nth-of-type(92) {
+  animation-delay: -1.6s;
+}
+.anim-text-flow span:nth-of-type(93),
+.anim-text-flow-hover:hover span:nth-of-type(93) {
+  animation-delay: -1.4s;
+}
+.anim-text-flow span:nth-of-type(94),
+.anim-text-flow-hover:hover span:nth-of-type(94) {
+  animation-delay: -1.2s;
+}
+.anim-text-flow span:nth-of-type(95),
+.anim-text-flow-hover:hover span:nth-of-type(95) {
+  animation-delay: -1s;
+}
+.anim-text-flow span:nth-of-type(96),
+.anim-text-flow-hover:hover span:nth-of-type(96) {
+  animation-delay: -0.8s;
+}
+.anim-text-flow span:nth-of-type(97),
+.anim-text-flow-hover:hover span:nth-of-type(97) {
+  animation-delay: -0.6s;
+}
+.anim-text-flow span:nth-of-type(98),
+.anim-text-flow-hover:hover span:nth-of-type(98) {
+  animation-delay: -0.4s;
+}
+.anim-text-flow span:nth-of-type(99),
+.anim-text-flow-hover:hover span:nth-of-type(99) {
+  animation-delay: -0.2s;
+}
+.anim-text-flow span:nth-of-type(100),
+.anim-text-flow-hover:hover span:nth-of-type(100) {
+  animation-delay: 0s;
+}
+
 #career-cards-area {
   height: 100vh;
+  max-height: 1000px;
+  max-width: 1700px;
+  margin: 0 auto;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -322,7 +921,7 @@ nav .burger-button:hover {
   margin-bottom: 50px;
 }
 #career-cards-area .career-cards-area-title h2 {
-  color: #dcdcdc;
+  color: #d1d1d1;
   margin: 0;
   font-size: 3rem;
   text-transform: uppercase;
@@ -336,8 +935,8 @@ nav .burger-button:hover {
   gap: 20px;
 }
 #career-cards-area .card-display .box {
+  cursor: pointer;
   border-radius: 20px;
-  box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.393);
   height: 100%;
   width: 110px;
   position: relative;
@@ -386,7 +985,7 @@ nav .burger-button:hover {
   position: absolute;
   bottom: 0;
   transition: 0.3s ease;
-  color: #dcdcdc;
+  color: #d1d1d1;
   letter-spacing: 2px;
   opacity: 0;
   transform: translateY(0px);
@@ -462,16 +1061,16 @@ nav .burger-button:hover {
 }
 
 #timeline-area {
+  max-width: 1700px;
+  margin: 0 auto 50px;
   display: grid;
   grid-template-columns: 15% 85%;
   grid-template-rows: 1fr 1fr 1fr 1fr 0.5fr 0.5fr 1fr;
   grid-template-areas: "a b" "a c" "a d" "a e" "a f" "a g" "a h";
   position: relative;
-  background: #dcdcdc;
+  background: #d1d1d1;
   overflow: hidden;
-  border-radius: 50px;
-  margin: 0 20px;
-  box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.393);
+  border-radius: 10px;
 }
 #timeline-area .blackline-area {
   grid-area: a;
@@ -529,7 +1128,7 @@ nav .burger-button:hover {
 }
 #timeline-area .timelines .area-title h3 {
   text-align: center;
-  color: #dcdcdc;
+  color: #d1d1d1;
   font-size: 2.5rem;
   text-transform: uppercase;
   letter-spacing: 5px;
@@ -544,13 +1143,14 @@ nav .burger-button:hover {
   margin: 0 auto;
   width: 100%;
   max-width: 350px;
+  cursor: pointer;
 }
 #timeline-area .timelines .area-card-display .card-container .card {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100%;
-  background: linear-gradient(315deg, rgba(207, 207, 207, 0.8) 0%, rgb(242, 242, 242) 15%, rgba(235, 232, 232, 0.8) 35%, rgba(215, 215, 215, 0.9) 50%, rgba(222, 222, 222, 0.8) 65%, rgba(242, 242, 242, 0.9) 85%, rgba(207, 207, 207, 0.8) 100%);
+  background: linear-gradient(315deg, rgb(207, 207, 207) 0%, rgb(206, 206, 206) 15%, rgb(219, 217, 217) 35%, rgb(189, 188, 188) 50%, rgb(192, 191, 191), rgb(199, 197, 197) 85%, rgb(207, 207, 207) 100%);
   position: relative;
   border-radius: 10px;
   box-shadow: 0px 0px 10px 0px;
@@ -590,7 +1190,7 @@ nav .burger-button:hover {
   display: none;
 }
 #timeline-area .timelines .area-card-display .card-container:hover .card {
-  transform: rotateY(180deg) scale(110%);
+  transform: rotateY(180deg);
 }
 #timeline-area .timelines .area-button {
   width: 100%;
@@ -604,9 +1204,9 @@ nav .burger-button:hover {
   align-items: center;
   height: 50px;
   width: 200px;
-  background-color: #dcdcdc;
+  background-color: #d1d1d1;
   color: rgb(17, 17, 17);
-  border-radius: 8px;
+  border-radius: 10px;
   text-decoration: none;
   text-transform: uppercase;
   font-size: 1rem;
@@ -616,7 +1216,7 @@ nav .burger-button:hover {
 #timeline-area .timelines .area-button a:hover {
   background-color: rgb(17, 17, 17);
   transform: scale(110%);
-  color: #dcdcdc;
+  color: #d1d1d1;
 }
 #timeline-area .eccl-area {
   grid-area: b;
@@ -631,8 +1231,11 @@ nav .burger-button:hover {
   text-align: center;
   margin: auto;
   width: 90%;
-  color: #dcdcdc;
+  color: #d1d1d1;
   font-size: 1.5rem;
+}
+#timeline-area .north-east-area .north-east-text-area-container .north-east-text-area {
+  line-height: 40px;
 }
 #timeline-area .north-east-area .north-east-img-area-container {
   display: flex;
@@ -641,8 +1244,8 @@ nav .burger-button:hover {
 }
 #timeline-area .north-east-area .north-east-img-area-container img {
   filter: brightness(0.9);
-  border-radius: 20px;
-  height: 85%;
+  border-radius: 10px;
+  height: 70%;
 }
 #timeline-area .alive-area {
   grid-area: d;
@@ -752,8 +1355,9 @@ nav .burger-button:hover {
 }
 
 #skills-area {
-  max-width: 1200px;
-  margin: 0 auto;
+  max-width: 1700px;
+  min-height: 700px;
+  margin: 0 auto 50px;
   background-color: rgba(255, 0, 0, 0);
   position: relative;
   display: grid;
@@ -768,8 +1372,9 @@ nav .burger-button:hover {
   position: relative;
 }
 #skills-area .skills-container .skills-bubble {
-  color: #dcdcdc;
-  background-color: rgba(0, 0, 0, 0);
+  cursor: pointer;
+  color: #d1d1d1;
+  background-color: rgba(0, 0, 0, 0.185);
   -webkit-backdrop-filter: blur(10px);
           backdrop-filter: blur(10px);
   font-size: 1.3rem;
@@ -777,7 +1382,6 @@ nav .burger-button:hover {
   width: 150px;
   border: 1px solid rgb(156, 156, 156);
   border-radius: 100px;
-  box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.393);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -790,8 +1394,9 @@ nav .burger-button:hover {
   transform: rotateZ(calc((var(--position) - 1) * 60 * -1deg));
 }
 #skills-area .skills-container .skills-bubble:hover {
-  transform: rotateZ(calc((var(--position) - 1) * 60 * 1deg)) translateX(230px) scale(110%);
-  border-color: green;
+  transform: rotateZ(calc((var(--position) - 1) * 60 * 1deg)) translateX(230px) scale(105%);
+  border-color: lightblue;
+  color: lightblue;
 }
 #skills-area .skills-bubble-img {
   position: absolute;
@@ -810,14 +1415,13 @@ nav .burger-button:hover {
   box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.393);
 }
 #skills-area .skills-text-container {
-  max-width: 500px;
+  max-width: 100%;
   margin: 40px auto;
-  border-radius: 20px;
-  border: 1px solid #dcdcdc;
-  background-color: rgba(0, 0, 0, 0);
+  border-radius: 10px;
+  border: 1px solid #d1d1d1;
+  background-color: rgba(0, 0, 0, 0.185);
   -webkit-backdrop-filter: blur(10px);
           backdrop-filter: blur(10px);
-  box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.393);
 }
 #skills-area .skills-text-container h3 {
   text-align: center;
@@ -825,7 +1429,7 @@ nav .burger-button:hover {
   text-transform: uppercase;
   font-size: 2.5rem;
   font-weight: 700;
-  color: #dcdcdc;
+  color: #d1d1d1;
 }
 #skills-area .skills-text-container p {
   font-weight: 400;
@@ -835,7 +1439,7 @@ nav .burger-button:hover {
   overflow-y: scroll;
   scrollbar-width: none;
   padding: 20px;
-  color: #dcdcdc;
+  color: #d1d1d1;
 }
 @media screen and (max-width: 1400px) {
   #skills-area .skills-text {
@@ -929,17 +1533,17 @@ nav .burger-button:hover {
   display: flex;
   justify-content: center;
   align-items: center;
+  margin: 0 auto 50px;
 }
 #strengths-area .strengths-container {
   margin: 40px 0;
-  max-width: 1200px;
+  max-width: 1700px;
   min-height: 300px;
-  background: rgba(255, 255, 255, 0);
+  background-color: rgba(0, 0, 0, 0.185);
   -webkit-backdrop-filter: blur(2px);
           backdrop-filter: blur(2px);
-  border: 1px solid #dcdcdc;
-  border-radius: 20px;
-  box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.393);
+  border: 1px solid #d1d1d1;
+  border-radius: 10px;
 }
 #strengths-area .strengths-container .strengths-headband {
   width: 100%;
@@ -948,8 +1552,8 @@ nav .burger-button:hover {
   justify-content: center;
   align-items: center;
   text-align: center;
-  border-bottom: 1px solid #dcdcdc;
-  border-radius: 20px 20px 0 0;
+  border-bottom: 1px solid #d1d1d1;
+  border-radius: 10px 10px 0 0;
   overflow: hidden;
 }
 #strengths-area .strengths-container .strengths-headband h4 {
@@ -962,20 +1566,24 @@ nav .burger-button:hover {
   font-size: 1rem;
   margin: 0;
   transition: 0.2s ease;
-  color: #dcdcdc;
+  color: #d1d1d1;
   cursor: pointer;
   box-sizing: border-box;
 }
 #strengths-area .strengths-container .strengths-headband h4:hover {
   color: rgb(17, 17, 17);
-  background-color: #dcdcdc;
+  background-color: #d1d1d1;
+}
+#strengths-area .strengths-container .strengths-headband .strengths-headband-active {
+  color: rgb(17, 17, 17);
+  background-color: #d1d1d1;
 }
 #strengths-area .strengths-container p {
   justify-content: center;
   overflow-y: scroll;
   scrollbar-width: none;
   display: none;
-  color: #dcdcdc;
+  color: #d1d1d1;
   margin: 20px;
   text-align: left;
   font-size: 1.3rem;
@@ -994,7 +1602,7 @@ nav .burger-button:hover {
   }
   #strengths-area .strengths-container .strengths-item {
     width: 95%;
-    border-top: 1px solid #dcdcdc;
+    border-top: 1px solid #d1d1d1;
     border-radius: 20px;
   }
   #strengths-area .strengths-container .strengths-item p {
@@ -1024,19 +1632,21 @@ nav .burger-button:hover {
 
 #interests-area {
   height: 100vh;
+  max-height: 1000px;
+  max-width: 1700px;
+  margin: 0 auto;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  border-radius: 50px;
+  border-radius: 10px;
   overflow: hidden;
-  margin: 0 20px;
-  box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.393);
 }
 #interests-area .interests-container {
   position: relative;
   overflow: hidden;
+  cursor: pointer;
 }
 #interests-area .interests-container img {
-  transition: 0.5s ease;
+  transition: 0.3s ease;
   filter: brightness(1);
   height: 100%;
   width: auto;
@@ -1045,11 +1655,10 @@ nav .burger-button:hover {
 #interests-area .interests-container .area-text {
   font-size: 2rem;
   opacity: 0;
-  color: #dcdcdc;
-  transition: 0.5s ease;
+  color: #d1d1d1;
+  transition: 0.3s ease;
   position: absolute;
   width: 100%;
-  height: 100%;
   top: 0;
   left: 0;
   text-align: center;
@@ -1062,12 +1671,12 @@ nav .burger-button:hover {
 #interests-area .interests-container .area-text p {
   text-align: left;
   margin: 30px;
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   line-height: 40px;
 }
 #interests-area .interests-container:hover img {
   filter: brightness(0.5) blur(4px);
-  transform: translateX(-30%) scale(100%);
+  transform: translateX(-30%) scale(105%);
 }
 #interests-area .interests-container:hover .area-text {
   opacity: 1;
@@ -1077,6 +1686,7 @@ nav .burger-button:hover {
     grid-template-columns: 100%;
     grid-template-rows: 100vh 100vh 100vh;
     height: auto;
+    max-height: none;
     overflow: visible;
   }
   #interests-area .interests-container {
@@ -1113,8 +1723,17 @@ nav .burger-button:hover {
   }
 }
 
+#contact-area {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#contact-area > div {
+  width: 100%;
+}
 #contact-area .coordinates-area {
-  max-width: 1200px;
+  max-width: 1700px;
   margin: auto;
   display: flex;
 }
@@ -1122,7 +1741,7 @@ nav .burger-button:hover {
   display: flex;
   justify-content: center;
   align-items: flex-end;
-  width: 30%;
+  width: 40%;
   min-width: 550px;
   margin: 60px auto 30px auto;
 }
@@ -1131,10 +1750,10 @@ nav .burger-button:hover {
   transition: 0.2s ease;
   grid-template-columns: 10% 90%;
   width: 85%;
-  border-radius: 40px;
+  border-radius: 10px;
   color: rgb(17, 17, 17);
-  background: #dcdcdc;
-  border: 1px solid #dcdcdc;
+  background: #d1d1d1;
+  border: 1px solid #d1d1d1;
   font-size: 1.5rem;
   cursor: pointer;
 }
@@ -1145,7 +1764,7 @@ nav .burger-button:hover {
   color: rgb(17, 17, 17);
   border-radius: 30px;
   margin: 10px;
-  background-color: #dcdcdc;
+  background-color: #d1d1d1;
   height: 50px;
   width: 50px;
   font-weight: 900;
@@ -1167,7 +1786,7 @@ nav .burger-button:hover {
   align-items: center;
 }
 #contact-area .coordinates-area .container .text-area:hover {
-  color: #dcdcdc;
+  color: #d1d1d1;
   background: rgb(17, 17, 17);
 }
 #contact-area .form-area {
@@ -1176,20 +1795,21 @@ nav .burger-button:hover {
   align-items: center;
 }
 #contact-area .form-area form {
+  padding: 30px 0;
+  border: 1px solid #d1d1d1;
   margin: 30px;
   min-height: 600px;
   position: relative;
   overflow: hidden;
   max-height: 650px;
   width: 80%;
-  max-width: 1100px;
-  background-color: rgba(255, 255, 255, 0);
+  max-width: 1700px;
+  background-color: rgba(0, 0, 0, 0.295);
   -webkit-backdrop-filter: blur(2px);
           backdrop-filter: blur(2px);
-  color: #dcdcdc;
-  border: 1px solid #dcdcdc;
+  color: #d1d1d1;
   transition: 0.5s ease;
-  border-radius: 50px;
+  border-radius: 10px;
   height: 100%;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -1206,12 +1826,12 @@ nav .burger-button:hover {
 #contact-area .form-area form fieldset legend {
   text-align: center;
   font-size: 1.3rem;
-  font-weight: 600;
+  font-weight: 400;
 }
 #contact-area .form-area form fieldset input {
   padding: 10px;
-  border: 1px solid #dcdcdc;
-  border-radius: 40px;
+  border: 1px solid #d1d1d1;
+  border-radius: 10px;
   font-size: 1.1rem;
 }
 #contact-area .form-area form .form-part-1 {
@@ -1229,8 +1849,7 @@ nav .burger-button:hover {
   grid-area: b;
 }
 #contact-area .form-area form .form-part-2 .form-part-2-container {
-  border: 1px solid #dcdcdc;
-  border-radius: 40px;
+  border-radius: 10px;
   background-color: rgb(255, 255, 255);
   font-size: 1.1rem;
   min-width: 300px;
@@ -1252,7 +1871,7 @@ nav .burger-button:hover {
   display: none;
 }
 #contact-area .form-area form .form-part-2 .form-part-2-container input:checked + label {
-  color: #dcdcdc;
+  color: #d1d1d1;
   background-color: rgb(17, 17, 17);
 }
 #contact-area .form-area form .form-part-3 {
@@ -1262,8 +1881,7 @@ nav .burger-button:hover {
   height: 70%;
   width: 80%;
   padding: 25px;
-  border: 1px solid #dcdcdc;
-  border-radius: 40px;
+  border-radius: 10px;
   font-size: 1.1rem;
   resize: none;
 }
@@ -1278,7 +1896,7 @@ nav .burger-button:hover {
   cursor: pointer;
 }
 #contact-area .form-area form .form-part-4 input:hover {
-  color: #dcdcdc;
+  color: #d1d1d1;
   background-color: rgb(17, 17, 17);
 }
 #contact-area .valid {
@@ -1289,7 +1907,7 @@ nav .burger-button:hover {
     border: 1px solid green;
   }
   100% {
-    border: 1px solid #dcdcdc;
+    border: 1px solid #d1d1d1;
   }
 }
 #contact-area .notvalid {
@@ -1300,7 +1918,7 @@ nav .burger-button:hover {
     border: 1px solid red;
   }
   100% {
-    border: 1px solid #dcdcdc;
+    border: 1px solid #d1d1d1;
   }
 }
 @media screen and (max-width: 1200px) {
@@ -1316,15 +1934,11 @@ nav .burger-button:hover {
     width: 100%;
   }
   #contact-area .coordinates-area .container {
-    min-width: 400px;
+    min-width: 100%;
     padding: 0;
   }
   #contact-area .coordinates-area .container .text-area > p {
     font-size: 1rem;
-  }
-  #contact-area .form-area {
-    height: 80vh;
-    margin-bottom: 30px;
   }
   #contact-area .form-area form {
     width: 90%;

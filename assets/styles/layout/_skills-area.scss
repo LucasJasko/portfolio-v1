@@ -1,6 +1,7 @@
 #skills-area {
-  max-width: 1200px;
-  margin: 0 auto;
+  max-width: 1700px;
+  min-height: 700px;
+  margin: 0 auto 50px;
   background-color: rgba(255, 0, 0, 0);
   position: relative;
   display: grid;
@@ -12,28 +13,27 @@
     @include DisplayJustifyAlign;
     position: relative;
     .skills-bubble {
+      cursor: pointer;
       color: $color2;
-      background-color: rgba(0, 0, 0, 0);
+      background-color: rgba(0, 0, 0, 0.185);
       backdrop-filter: blur(10px);
       font-size: 1.3rem;
       height: 150px;
       width: 150px;
       border: 1px solid rgb(156, 156, 156);
       border-radius: 100px;
-      box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.393);
       @include DisplayJustifyAlign;
       text-transform: uppercase;
       transition: 0.2s ease;
       position: absolute;
-      transform: rotateZ(calc(((var(--position) - 1) * 60) * 1deg))
-        translateX(230px);
+      transform: rotateZ(calc(((var(--position) - 1) * 60) * 1deg)) translateX(230px);
       .skills-bubble-container {
         transform: rotateZ(calc(((var(--position) - 1) * 60) * -1deg));
       }
       &:hover {
-        transform: rotateZ(calc(((var(--position) - 1) * 60) * 1deg))
-          translateX(230px) scale(110%);
-        border-color: green;
+        transform: rotateZ(calc(((var(--position) - 1) * 60) * 1deg)) translateX(230px) scale(105%);
+        border-color: lightblue;
+        color: lightblue;
       }
     }
   }
@@ -53,13 +53,12 @@
     }
   }
   .skills-text-container {
-    max-width: 500px;
+    max-width: 100%;
     margin: 40px auto;
-    border-radius: 20px;
+    border-radius: 10px;
     border: 1px solid $color2;
-    background-color: rgba(0, 0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.185);
     backdrop-filter: blur(10px);
-    box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.393);
     h3 {
       text-align: center;
       margin: 20px 0 0 0;

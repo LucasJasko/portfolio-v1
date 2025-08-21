@@ -1,4 +1,6 @@
 #timeline-area {
+  max-width: 1700px;
+  margin: 0 auto 50px;
   display: grid;
   grid-template-columns: 15% 85%;
   grid-template-rows: 1fr 1fr 1fr 1fr 0.5fr 0.5fr 1fr;
@@ -13,9 +15,7 @@
   position: relative;
   background: $color2;
   overflow: hidden;
-  border-radius: 50px;
-  margin: 0 20px;
-  box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.393);
+  border-radius: 10px;
 
   .blackline-area {
     grid-area: a;
@@ -85,6 +85,7 @@
         margin: 0 auto;
         width: 100%;
         max-width: 350px;
+        cursor: pointer;
         .card {
           @include DisplayJustifyAlign;
           height: 100%;
@@ -128,7 +129,7 @@
         }
         &:hover {
           .card {
-            transform: rotateY(180deg) scale(110%);
+            transform: rotateY(180deg);
           }
         }
       }
@@ -142,7 +143,7 @@
         width: 200px;
         background-color: $color2;
         color: $color1;
-        border-radius: 8px;
+        border-radius: 10px;
         text-decoration: none;
         text-transform: uppercase;
         font-size: 1rem;
@@ -159,14 +160,12 @@
 
   .eccl-area {
     grid-area: b;
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)),
-      url(../../images/Background-ECCL.webp) center/cover;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), url(../../images/Background-ECCL.webp) center/cover;
   }
 
   .north-east-area {
     grid-area: c;
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)),
-      url(../../images/Background-North-East.webp) center/cover;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), url(../../images/Background-North-East.webp) center/cover;
     grid-template-rows: 15% 25% 60%;
     .north-east-text-area-container {
       text-align: center;
@@ -174,35 +173,35 @@
       width: 90%;
       color: $color2;
       font-size: 1.5rem;
+      .north-east-text-area {
+        line-height: 40px;
+      }
     }
     .north-east-img-area-container {
       @include DisplayJustifyAlign;
 
       img {
         filter: brightness(0.9);
-        border-radius: 20px;
-        height: 85%;
+        border-radius: 10px;
+        height: 70%;
       }
     }
   }
 
   .alive-area {
     grid-area: d;
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)),
-      url(../../images/Background-ALIVE.webp) center/cover;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), url(../../images/Background-ALIVE.webp) center/cover;
   }
 
   .ikea-area {
     grid-area: e;
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)),
-      url(../../images/Background-IKEA.webp) center/cover;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), url(../../images/Background-IKEA.webp) center/cover;
   }
 
   .bts-area {
     grid-area: f;
     height: 50vh;
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)),
-      url(../../images/Background-BTS.webp) center/cover;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), url(../../images/Background-BTS.webp) center/cover;
     .bts-area-title {
       h3 {
         font-size: 1.5rem;
@@ -213,14 +212,12 @@
   .freelance-area {
     grid-area: g;
     height: 50vh;
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)),
-      url(../../images/Background-Freelance.webp) center/cover;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), url(../../images/Background-Freelance.webp) center/cover;
   }
 
   .bac-area {
     grid-area: h;
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)),
-      url(../../images/Background-BAC.webp) center/cover;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), url(../../images/Background-BAC.webp) center/cover;
   }
 
   @media screen and (max-width: 1500px) {
