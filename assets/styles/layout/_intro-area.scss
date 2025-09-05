@@ -14,12 +14,35 @@
 
     .intro-img {
       @include DisplayJustifyAlign;
+      flex-direction: column;
+      position: relative;
       img {
         max-width: 80%;
         margin: 0 40px 0 auto;
         border-radius: 10px;
         box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.13);
         filter: brightness(0.9);
+      }
+    }
+    .resume-link-container {
+      position: absolute;
+      transform: translateX(-50%);
+      left: 50%;
+      width: 100%;
+      bottom: 20px;
+      text-align: center;
+      .resume-link {
+        border-radius: 10px;
+        background-color: rgba(0, 0, 0, 0.507);
+        color: rgb(240, 240, 240);
+        text-decoration: none;
+        border: 1px solid rgb(240, 240, 240);
+        padding: 10px 20px;
+        transition: 0.2s ease;
+        &:hover {
+          color: black;
+          background-color: rgb(240, 240, 240);
+        }
       }
     }
   }
@@ -102,6 +125,9 @@
         img {
           max-height: 300px;
           margin: 20px;
+        }
+        .resume-link-container {
+          width: 100vw;
         }
       }
     }

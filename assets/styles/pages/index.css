@@ -302,6 +302,8 @@ nav .burger-button:hover {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
+  position: relative;
 }
 #intro-area .intro-container .intro-img img {
   max-width: 80%;
@@ -309,6 +311,27 @@ nav .burger-button:hover {
   border-radius: 10px;
   box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.13);
   filter: brightness(0.9);
+}
+#intro-area .intro-container .resume-link-container {
+  position: absolute;
+  transform: translateX(-50%);
+  left: 50%;
+  width: 100%;
+  bottom: 20px;
+  text-align: center;
+}
+#intro-area .intro-container .resume-link-container .resume-link {
+  border-radius: 10px;
+  background-color: rgba(0, 0, 0, 0.507);
+  color: rgb(240, 240, 240);
+  text-decoration: none;
+  border: 1px solid rgb(240, 240, 240);
+  padding: 10px 20px;
+  transition: 0.2s ease;
+}
+#intro-area .intro-container .resume-link-container .resume-link:hover {
+  color: black;
+  background-color: rgb(240, 240, 240);
 }
 #intro-area .intro-text {
   display: flex;
@@ -387,6 +410,9 @@ nav .burger-button:hover {
     max-height: 300px;
     margin: 20px;
   }
+  #intro-area .intro-container .intro-img .resume-link-container {
+    width: 100vw;
+  }
 }
 @media screen and (max-width: 650px) {
   #intro-area .intro-container {
@@ -443,67 +469,67 @@ nav .burger-button:hover {
 }
 @keyframes anim-text-flow-keys {
   0% {
-    color: hsl(43, 60%, 60%);
+    color: hsl(156, 60%, 60%);
   }
   5% {
-    color: hsl(273, 60%, 60%);
+    color: hsl(67, 60%, 60%);
   }
   10% {
-    color: hsl(30, 60%, 60%);
+    color: hsl(337, 60%, 60%);
   }
   15% {
-    color: hsl(226, 60%, 60%);
+    color: hsl(250, 60%, 60%);
   }
   20% {
-    color: hsl(126, 60%, 60%);
+    color: hsl(354, 60%, 60%);
   }
   25% {
-    color: hsl(222, 60%, 60%);
+    color: hsl(148, 60%, 60%);
   }
   30% {
-    color: hsl(248, 60%, 60%);
-  }
-  35% {
-    color: hsl(359, 60%, 60%);
-  }
-  40% {
-    color: hsl(330, 60%, 60%);
-  }
-  45% {
-    color: hsl(8, 60%, 60%);
-  }
-  50% {
-    color: hsl(285, 60%, 60%);
-  }
-  55% {
-    color: hsl(111, 60%, 60%);
-  }
-  60% {
-    color: hsl(273, 60%, 60%);
-  }
-  65% {
-    color: hsl(149, 60%, 60%);
-  }
-  70% {
-    color: hsl(112, 60%, 60%);
-  }
-  75% {
-    color: hsl(8, 60%, 60%);
-  }
-  80% {
-    color: hsl(293, 60%, 60%);
-  }
-  85% {
-    color: hsl(123, 60%, 60%);
-  }
-  90% {
     color: hsl(76, 60%, 60%);
   }
+  35% {
+    color: hsl(130, 60%, 60%);
+  }
+  40% {
+    color: hsl(202, 60%, 60%);
+  }
+  45% {
+    color: hsl(327, 60%, 60%);
+  }
+  50% {
+    color: hsl(206, 60%, 60%);
+  }
+  55% {
+    color: hsl(156, 60%, 60%);
+  }
+  60% {
+    color: hsl(70, 60%, 60%);
+  }
+  65% {
+    color: hsl(195, 60%, 60%);
+  }
+  70% {
+    color: hsl(271, 60%, 60%);
+  }
+  75% {
+    color: hsl(276, 60%, 60%);
+  }
+  80% {
+    color: hsl(143, 60%, 60%);
+  }
+  85% {
+    color: hsl(147, 60%, 60%);
+  }
+  90% {
+    color: hsl(351, 60%, 60%);
+  }
   95% {
-    color: hsl(2, 60%, 60%);
+    color: hsl(266, 60%, 60%);
   }
   100% {
-    color: hsl(342, 60%, 60%);
+    color: hsl(32, 60%, 60%);
   }
 }
 .anim-text-flow span:nth-of-type(1),

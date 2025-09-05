@@ -1,6 +1,6 @@
 let isScrolled = false;
 
-window.addEventListener("scroll", () => {
+setTimeout(() => {
   if (!isScrolled) {
     isScrolled = true;
 
@@ -53,4 +53,4 @@ window.addEventListener("scroll", () => {
     //   }, i * 1000);
     // }
   }
-});
+}, 2000);
