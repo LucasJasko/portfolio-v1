@@ -367,7 +367,6 @@ contactForm.addEventListener("submit", (e) => {
   }
 
   var formData = new FormData(contactForm);
-  console.log(formData);
 
   fetch("https://formspree.io/f/xrbadzaz", {
     method: "POST",
@@ -378,16 +377,16 @@ contactForm.addEventListener("submit", (e) => {
   })
     .then((response) => {
       if (response.ok) {
+        document.querySelector("#name").value = "";
+        document.querySelector("#email").value = "";
+        document.querySelector("#telephone").value = "";
+        document.querySelector("#description").value = "";
         return (errorMessage.textContent = "Message envoyé. Merci pour votre intérêt !");
       }
       throw new Error("Erreur réseau ou réponse non valide.");
     })
     .then(() => {
-      document.querySelector("#name").textContent = "";
-      document.querySelector("#email").textContent = "";
-      document.querySelector("#telephone").textContent = "";
       // document.querySelector(".form-part-2-container").checkVisibility = "3px solid transparent";
-      document.querySelector("#description").textContent = "";
     })
     .catch((error) => {
       console.error("Erreur:", error);
