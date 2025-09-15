@@ -1,18 +1,20 @@
 #career-cards-area {
   height: 100vh;
   max-height: 1000px;
-  max-width: 1700px;
+
   margin: 0 auto;
   @include DisplayJustifyAlign;
   flex-direction: column;
+  background-color: var(--text-color);
 
   .career-cards-area-title {
     margin-bottom: 50px;
 
     h2 {
-      color: $color2;
+      color: var(--background-color);
       margin: 0;
       font-size: 3rem;
+      font-weight: 700;
       text-transform: uppercase;
     }
   }
@@ -26,7 +28,7 @@
 
     .box {
       cursor: pointer;
-      border-radius: 20px;
+      border-radius: 30px;
       height: 100%;
       width: 110px;
       position: relative;
@@ -66,7 +68,7 @@
       bottom: 0;
       left: 0;
       right: 0;
-      border-radius: 20px;
+      border-radius: 30px;
     }
 
     .year,
@@ -78,7 +80,7 @@
       position: absolute;
       bottom: 0;
       transition: 0.3s ease;
-      color: $color2;
+      color: var(--background-color);
       letter-spacing: 2px;
       opacity: 0;
       transform: translateY(0px);
@@ -113,12 +115,11 @@
       }
     }
   }
-  @media screen and (max-width: 1050px) {
-    height: auto;
+  @media screen and (max-width: 730px) {
     display: grid;
     grid-template-columns: 100%;
     grid-template-rows: auto 1fr;
-    margin-bottom: 40px;
+    margin: -1px 0 -1px 0;
 
     .career-cards-area-title {
       text-align: center;
@@ -161,4 +162,9 @@
       }
     }
   }
+}
+
+.join-background__career-timeline {
+  height: 400px;
+  background: url("../../images/join-background-1.svg") center/cover;
 }

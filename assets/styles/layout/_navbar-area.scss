@@ -1,153 +1,256 @@
-nav {
+.navbar {
+  max-width: 1600px;
+  border-radius: 30px;
   width: 100%;
   position: fixed;
+  left: 50%;
   z-index: 4;
-  background-color: rgba(0, 0, 0, 0.425);
-  backdrop-filter: blur(10px);
+  background-color: var(--background-color);
+  transform: translateX(-50%) translateY(20px);
   transition: 0.2s ease;
-  border-bottom: 1px solid $color2;
-  box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.393);
-  ul {
-    max-width: 1700px;
+  box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.096);
+  .navbar__main-list {
+    width: 70%;
+    max-width: 1100px;
     margin: 0 auto;
     padding: 0;
     display: flex;
     justify-content: space-around;
     align-items: center;
     flex-wrap: wrap;
-    overflow: hidden;
-    li {
-      position: relative;
+
+    .navbar-item {
+      padding: 5px 0;
       list-style: none;
-      border-top: 1px solid transparent;
-      transition: 0.2s ease;
-      min-width: 20%;
       text-align: center;
-      cursor: pointer;
-      a {
+
+      .navbar-link {
         display: inline-block;
-        color: $color2;
+        color: var(--text-color);
         text-decoration: none;
-        text-transform: uppercase;
         font-size: 1.1rem;
-        transition: 0.3s;
-        padding: 25px 15px;
+        padding: 10px 20px;
         font-weight: 400;
-      }
-      &:hover {
-        border-top: 1px solid rgb(133, 200, 223);
-        a {
-          font-weight: 600;
-          color: rgb(133, 200, 223);
+        border-radius: 30px;
+        cursor: pointer;
+        transition: 0.1s ease;
+        position: relative;
+        &:hover {
+          background-color: var(--text-color);
+          color: var(--background-color);
         }
       }
-      .bg-hover {
+
+      .out-of-site::after {
+        content: "";
         position: absolute;
-        top: 0;
-        left: 0;
-        height: 480%;
-        width: 100%;
-        transform: translateY(50%) translateX(-180%) rotateZ(45deg);
-        border-left: 1px solid $color2;
-        border-right: 1px solid $color2;
-        transition: 0.2s;
-        z-index: -1;
+        transform: rotateZ(45deg);
+        right: 10px;
+        top: 14px;
+        height: 2px;
+        width: 15px;
+        background-color: var(--background-color);
+      }
+      .out-of-site::before {
+        content: "";
+        transform: rotateZ(45deg);
+        position: absolute;
+        right: 16px;
+        top: 18px;
+        height: 15px;
+        width: 2px;
+        background-color: var(--background-color);
       }
     }
-  }
-  .network-logo {
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 10%;
-    max-width: 200px;
-    min-width: 150px;
-    height: 100%;
-    text-align: center;
-    a {
-      display: inline-block;
-      padding: 20px 20px;
-      font-size: 1.5rem;
-      color: $color2;
-      text-decoration: none;
-      transition: 0.2s;
+
+    .dropdown {
+      color: var(--text-color);
+      position: relative;
+      list-style: none;
+      text-align: center;
+      cursor: pointer;
+
+      .dropdown-item {
+        padding: 5px 0;
+        list-style: none;
+        text-align: center;
+      }
+
+      .dropdown-list {
+        padding-left: 10px;
+        padding-bottom: 10px;
+        display: none;
+        position: absolute;
+        background-color: var(--background-color);
+        top: 100%;
+        left: -50%;
+        width: fit-content;
+        min-width: 300px;
+        border-radius: 0px 0px 10px 10px;
+        box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.096);
+
+        .navbar-item {
+          text-align: left;
+          .navbar-link {
+            min-width: 250px;
+          }
+        }
+
+        .navbar-item-two-part {
+          display: grid;
+          min-width: 250px;
+          padding-right: 10px;
+          grid-template-columns: 75% 25%;
+          .navbar-link-half-left {
+            min-width: 0;
+            border-radius: 30px 0 0 30px;
+          }
+          .navbar-link-half-right {
+            min-width: 0;
+            border-radius: 0 30px 30px 0;
+          }
+        }
+      }
       &:hover {
-        color: rgb(133, 200, 223);
+        .dropdown-list {
+          display: block;
+        }
       }
     }
   }
   .burger-button {
     cursor: pointer;
-    color: $color2;
+    color: var(--background-color);
     position: absolute;
-    top: 10px;
-    right: -60px;
-    display: none;
+    top: 20px;
+    right: -80px;
     font-size: 3rem;
-    text-shadow: 0 0 10px black;
     transition: 0.2s;
-    &:hover {
-      color: rgb(133, 200, 223);
-    }
-  }
+    width: 60px;
+    height: 60px;
+    display: none;
 
-  @media screen and (max-width: 1310px) {
-    ul {
-      max-width: 1000px;
-      margin-left: 0;
-    }
-  }
-  @media screen and (max-width: 1150px) {
-    ul {
-      margin-right: 150px;
-    }
-  }
+    .burger-button-container {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      height: 100%;
+      .mid-bar {
+        box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.384);
+        display: inline-block;
+        border-radius: 30px;
+        height: 10px;
+        width: 100%;
+        background-color: var(--background-color);
+      }
 
-  @media screen and (max-width: 564px) {
-    li {
-      overflow: hidden;
-      .bg-hover {
-        display: none;
+      ::before {
+        position: absolute;
+        top: 0;
+        content: "";
+        box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.384);
+        display: inline-block;
+        border-radius: 30px;
+        height: 10px;
+        width: 100%;
+        background-color: var(--background-color);
+      }
+      ::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.384);
+        display: inline-block;
+        border-radius: 30px;
+        height: 10px;
+        width: 100%;
+        background-color: var(--background-color);
       }
     }
   }
-  @media screen and (max-width: 730px) {
-    height: 100vh;
-    width: 50%;
-    border-bottom: none;
-    border-right: 1px solid $color2;
-    transform: translateX(-100%);
-    ul {
+}
+
+@media screen and (max-width: 730px) {
+  .navbar {
+    height: 100%;
+    width: calc(100vw - 100px);
+    min-width: 250px;
+    transform: translateX(0) translateY(0);
+    left: 0;
+    border-radius: 0;
+    .navbar__main-list {
       width: 100%;
       height: 50%;
-      li {
-        border-top: none;
+
+      .navbar-item {
         width: 100%;
-        text-align: center;
-        a:hover {
-          color: #8b8b8b;
-        }
-        .bg-hover {
+        text-align: left;
+
+        .out-of-site::after {
           display: none;
         }
+        .out-of-site::before {
+          display: none;
+        }
+
+        .navbar-link {
+          width: calc(100% - 40px);
+          padding: 10px 0 10px 10px;
+          margin: 0 0 0 10px;
+          &:hover {
+            background-color: var(--background-color);
+            color: var(--text-color);
+          }
+        }
+      }
+
+      .dropdown {
+        width: 100%;
+        .dropdown-item {
+          display: none;
+        }
+        .dropdown-list {
+          display: flex;
+          flex-direction: column;
+          position: static;
+          width: 100%;
+          min-width: 0;
+          padding: 0;
+          box-shadow: none;
+
+          .navbar-item-two-part {
+            padding-right: 0;
+
+            .navbar-link-half-right {
+              margin: 0 !important;
+            }
+          }
+
+          .navbar-item {
+            text-align: left;
+            width: 100%;
+            .navbar-link {
+              padding: 10px 0 10px 10px;
+              margin: 0 0 0 10px;
+              min-width: 0;
+              &:hover {
+                background-color: none;
+              }
+            }
+          }
+        }
         &:hover {
-          border-top: none;
-          border-left: 1px solid rgb(133, 200, 223);
-          a {
-            font-weight: 600;
-            color: rgb(133, 200, 223);
+          .dropdown-list {
+            display: flex;
           }
         }
       }
     }
-    .network-logo {
-      height: 10%;
-      width: 100%;
-      left: 0;
-      top: 90%;
-    }
+
     .burger-button {
-      display: block;
+      display: flex;
     }
   }
 }

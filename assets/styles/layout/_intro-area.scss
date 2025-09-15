@@ -1,48 +1,25 @@
 #intro-area {
   height: 100vh;
-  max-width: 1700px;
   margin: 0 auto;
   @include DisplayJustifyAlign;
-
+  background: url("../../images/hero-background.svg") center/cover;
   .intro-container {
-    display: grid;
-    grid-template-columns: 25% 75%;
-    min-height: 335px;
+    display: flex;
+    justify-content: center;
+    height: 250px;
     width: 100%;
     max-width: 1700px;
-    text-shadow: 0 0 2px rgba(0, 0, 0, 0.731);
 
     .intro-img {
       @include DisplayJustifyAlign;
       flex-direction: column;
       position: relative;
+      height: 100%;
       img {
-        max-width: 80%;
+        max-height: 100%;
         margin: 0 40px 0 auto;
-        border-radius: 10px;
-        box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.13);
+        border-radius: 30px;
         filter: brightness(0.9);
-      }
-    }
-    .resume-link-container {
-      position: absolute;
-      transform: translateX(-50%);
-      left: 50%;
-      width: 100%;
-      bottom: 20px;
-      text-align: center;
-      .resume-link {
-        border-radius: 10px;
-        background-color: rgba(0, 0, 0, 0.507);
-        color: rgb(240, 240, 240);
-        text-decoration: none;
-        border: 1px solid rgb(240, 240, 240);
-        padding: 10px 20px;
-        transition: 0.2s ease;
-        &:hover {
-          color: black;
-          background-color: rgb(240, 240, 240);
-        }
       }
     }
   }
@@ -52,29 +29,27 @@
     justify-content: center;
     position: relative;
     flex-direction: column;
-    color: $color2;
-    overflow: hidden;
+    color: var(--text-color);
     padding-left: 30px;
+    height: 100%;
     h1 {
       margin: 0 0 30px 0;
-      font-size: 3.4rem;
+      font-size: 2.5rem;
       font-weight: 200;
-      text-shadow: 0 0 0 $color1;
     }
     h1 .span1 {
-      text-rendering: optimizeLegibility;
-      font-weight: 400;
-      font-size: 4.2rem;
+      font-weight: 500;
+      font-size: 4rem;
       letter-spacing: 3px;
-      // color: $color2;
       .span2 {
         text-transform: uppercase;
-        font-weight: 600;
+        font-weight: 500;
       }
     }
 
     p {
-      font-weight: 200;
+      color: var(--text-color);
+      font-weight: 300;
       font-size: 1.5rem;
       line-height: 40px;
       margin: 0;
@@ -82,7 +57,7 @@
       .contact-link {
         font-weight: 400;
         text-decoration: none;
-        color: lightblue;
+        color: var(--link-color);
       }
     }
 
@@ -95,18 +70,20 @@
       position: absolute;
       top: 0;
       left: 0;
-      width: 2px;
+      width: 1px;
       height: 100%;
-      background-color: $color2;
+      background-color: var(--text-color);
     }
   }
   @media screen and (max-width: 1200px) {
     .intro-container {
-      display: flex;
       flex-direction: column;
       justify-content: space-evenly;
       align-items: center;
       width: 100%;
+      height: 100%;
+      max-height: 600px;
+
       .intro-text {
         text-align: center;
         padding-left: 0;
@@ -133,8 +110,12 @@
     }
   }
   @media screen and (max-width: 650px) {
+    min-height: 1000px;
+    height: fit-content;
+    padding-top: 50px;
+    align-items: start;
     .intro-container {
-      height: 100%;
+      height: fit-content;
       .intro-img {
         max-width: 50%;
         img {
@@ -160,54 +141,6 @@
           font-size: 2rem;
         }
       }
-    }
-  }
-}
-
-/*
- * Animation module with all animation code
- */
-.anim-text-flow,
-.anim-text-flow-hover:hover {
-  /*
-   * Animation variables
-   */
-  $animationSteps: 20;
-  $animationDuration: 50;
-  $animationElement: span;
-  $animationElementsCount: 100;
-  $delayBetweenLetters: 0.2;
-
-  /*
-   * Elements settings
-   */
-  #{$animationElement} {
-    animation-name: anim-text-flow-keys;
-    animation-duration: #{$animationDuration}s;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
-    animation-fill-mode: forwards;
-  }
-
-  /*
-   * Keyframe loop
-   */
-  @keyframes anim-text-flow-keys {
-    @for $i from 0 through $animationSteps {
-      #{percentage($i * (1 / $animationSteps))} {
-        color: hsla(random(365), 60, 60, 1);
-      }
-    }
-  }
-
-  /*
-   * Element animation delay loop
-   */
-  $totalDelayTime: $animationElementsCount * $delayBetweenLetters;
-
-  @for $i from 1 through $animationElementsCount {
-    #{$animationElement}:nth-of-type(#{$i}) {
-      animation-delay: #{($i * $delayBetweenLetters) - $totalDelayTime}s;
     }
   }
 }

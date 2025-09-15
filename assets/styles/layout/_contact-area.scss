@@ -6,6 +6,8 @@
   > div {
     width: 100%;
   }
+  background-color: var(--background-color);
+
   .coordinates-area {
     max-width: 1700px;
     margin: auto;
@@ -22,22 +24,26 @@
         transition: 0.2s ease;
         grid-template-columns: 10% 90%;
         width: 85%;
-        border-radius: 10px;
-        color: $color1;
-        background: $color2;
-        border: 1px solid $color2;
+        border-radius: 30px;
+        color: var(--background-color);
+        background: var(--text-color);
+        box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.096);
         font-size: 1.5rem;
         cursor: pointer;
         .icon-container {
           @include DisplayJustifyAlign;
-          color: $color1;
+          color: var(--text-color);
           border-radius: 30px;
           margin: 10px;
-          background-color: $color2;
-          height: 50px;
-          width: 50px;
+          background-color: var(--background-color);
+          height: 45px;
+          width: 45px;
           font-weight: 900;
-          font-size: 1.9rem;
+          font-size: 1.7rem;
+
+          span {
+            transform: translateX(2px) translateY(2px);
+          }
         }
         span {
           margin: 0;
@@ -51,38 +57,40 @@
           @include DisplayJustifyAlign;
         }
         &:hover {
-          color: $color2;
-          background: $color1;
+          color: var(--background-color);
+          background: var(--link-color);
         }
       }
     }
   }
   .form-area {
     @include DisplayJustifyAlign;
-    form {
+    #contact-form {
       padding: 30px 0;
-      border: 1px solid $color2;
-      margin: 30px;
+      margin: 30px auto;
       min-height: 600px;
       position: relative;
       overflow: hidden;
       max-height: 650px;
-      width: 80%;
-      max-width: 1700px;
-      background-color: rgba(0, 0, 0, 0.295);
+      width: 100%;
+      max-width: 1600px;
+      background-color: var(--text-color);
       backdrop-filter: blur(2px);
-      color: $color2;
+      color: var(--background-color);
       transition: 0.5s ease;
-      border-radius: 10px;
+      border-radius: 30px;
+      border: 3px solid transparent;
       height: 100%;
       display: grid;
       grid-template-columns: 1fr 1fr 1fr;
-      grid-template-rows: 20% 20% 45% 15%;
+      grid-template-rows: 20% 20% 40% 15% 5%;
+      box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.096);
       grid-template-areas:
         "a a a"
         "b b b"
         "c c c"
-        "d d d";
+        "d d d"
+        "e e e";
       fieldset {
         padding: 0;
         border: none;
@@ -94,11 +102,17 @@
         }
         input {
           padding: 10px;
-          border: 1px solid $color2;
-          border-radius: 10px;
+          border: 3px solid transparent;
+          border-radius: 30px;
           font-size: 1.1rem;
         }
       }
+      .form-part {
+        max-width: 1500px;
+        width: 100%;
+        margin: 0 auto;
+      }
+
       .form-part-1 {
         grid-area: a;
         justify-content: space-evenly;
@@ -106,6 +120,7 @@
           padding-top: 20px;
         }
         input {
+          background-color: var(--background-color);
           text-align: center;
           width: 25%;
         }
@@ -113,11 +128,13 @@
       .form-part-2 {
         grid-area: b;
         .form-part-2-container {
-          border-radius: 10px;
-          background-color: rgb(255, 255, 255);
+          border-radius: 30px;
+          background-color: var(--background-color);
           font-size: 1.1rem;
           min-width: 300px;
-          width: 30%;
+          max-width: 600px;
+          width: 100%;
+          padding: 5px;
           display: flex;
           justify-content: space-evenly;
           text-align: center;
@@ -125,16 +142,17 @@
           label {
             cursor: pointer;
             width: 34%;
+            border-radius: 30px;
             transition: 0.2s ease;
             margin: 0;
-            padding: 10px;
-            color: $color1;
+            padding: 10px 20px;
+            color: var(--text-color);
           }
           input {
             display: none;
             &:checked + label {
-              color: $color2;
-              background-color: $color1;
+              color: var(--background-color);
+              background-color: var(--link-color);
             }
           }
         }
@@ -142,10 +160,13 @@
       .form-part-3 {
         grid-area: c;
         textarea {
+          border: 3px solid transparent;
+          background-color: var(--background-color);
           height: 70%;
-          width: 80%;
+          max-width: 1500px;
+          width: 100%;
           padding: 25px;
-          border-radius: 10px;
+          border-radius: 30px;
           font-size: 1.1rem;
           resize: none;
         }
@@ -157,39 +178,39 @@
           min-width: 300px;
           width: 30%;
           transition: 0.2s ease;
-          text-transform: uppercase;
+          background-color: var(--background-color);
           cursor: pointer;
           &:hover {
-            color: $color2;
-            background-color: $color1;
+            color: var(--background-color);
+            background-color: var(--link-color);
           }
+        }
+      }
+
+      .form-part-5 {
+        grid-area: e;
+        width: 100%;
+        .error-message {
+          width: 100%;
+          text-align: center;
         }
       }
     }
   }
-  .valid {
-    animation: validate 2s ease;
-  }
-  @keyframes validate {
-    0% {
-      border: 1px solid green;
-    }
-    100% {
-      border: 1px solid $color2;
-    }
-  }
-  .notvalid {
-    animation: notvalidate 2s ease;
-  }
-  @keyframes notvalidate {
-    0% {
-      border: 1px solid red;
-    }
-    100% {
-      border: 1px solid $color2;
+}
+
+@media screen and (max-width: 1600px) {
+  #contact-area {
+    .form-area {
+      #contact-form {
+        margin: 0 20px;
+      }
     }
   }
-  @media screen and (max-width: 1200px) {
+}
+
+@media screen and (max-width: 1200px) {
+  #contact-area {
     .coordinates-area {
       display: block;
       .container {
@@ -197,35 +218,56 @@
       }
     }
   }
-  @media screen and (max-width: 650px) {
+}
+@media screen and (max-width: 650px) {
+  #contact-area {
+    height: auto;
     .coordinates-area {
       width: 100%;
       .container {
-        min-width: 100%;
+        min-width: 0;
+        width: calc(100% - 40px);
+        margin: 30px 20px 30px 20px;
         padding: 0;
-        .text-area > p {
-          font-size: 1rem;
+        .text-area {
+          width: 100%;
+          & > p {
+            font-size: 1rem;
+          }
         }
       }
     }
     .form-area {
-      form {
+      #contact-form {
         width: 90%;
-        grid-template-rows: auto auto auto auto;
+        grid-template-rows: 1fr 100px 250px 80px 50px;
+        padding: 0;
+        max-height: fit-content;
         .form-part legend {
           font-size: 1.1rem;
         }
         .form-part-1 {
           flex-direction: column;
+
+          legend {
+            margin-bottom: 10px;
+          }
           #name,
           #email,
           #telephone {
-            width: 80%;
-            margin: 5px;
+            width: calc(100% - 40px);
+            margin-bottom: 10px;
           }
         }
-        .form-part-3 legend {
-          padding-bottom: 20px;
+        .form-part-2 {
+          margin: 0 10px;
+          width: calc(100% - 20px);
+          min-width: 0;
+        }
+        .form-part-3 {
+          #description {
+            margin: 0 10px;
+          }
         }
       }
     }
