@@ -71,6 +71,9 @@ body {
     bottom: 20px;
     right: 20px;
   }
+  .join-background {
+    display: none;
+  }
 }
 .navbar {
   max-width: 1600px;
@@ -438,6 +441,7 @@ body {
   }
   #projects-area .projects-container {
     justify-content: center;
+    padding-bottom: 30px;
   }
 }
 #intro-area {
@@ -1316,6 +1320,7 @@ body {
 @media screen and (max-width: 600px) {
   #strengths-area .strengths-container .strengths-headband {
     grid-template-columns: 1fr;
+    gap: 10px;
     grid-template-rows: 1fr 1fr 1fr 1fr;
   }
 }
